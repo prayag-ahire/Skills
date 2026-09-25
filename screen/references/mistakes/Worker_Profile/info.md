@@ -32,3 +32,9 @@
 **Root Cause:** The `frontend-engineer` used `document.querySelector('svg')` to attach scroll listeners. However, because both screens are rendered side-by-side in `.figma-canvas`, `querySelector` grabbed the FIRST svg (Home Screen), but applied the `updateScroll()` math to the SECOND screen's inner group.
 **The Fix:** Added an explicit `id="worker-profile-svg"` to the second screen and updated the Javascript to target `document.getElementById('worker-profile-svg')`.
 **Prevention Rule Added:** When building a multi-screen `.figma-canvas` document, NEVER use generic DOM selectors like `document.querySelector('svg')` or `document.querySelectorAll('circle')`. ALWAYS use strict, screen-specific IDs to prevent cross-screen interference.
+
+## Mistake 6: Hidden Form Inputs in Empty States
+**The Issue:** The user noticed the "Write a review" card showed only 5 stars and an ocean of white space, hiding the actual comment text box and submit button until a star was clicked.
+**Root Cause:** `frontend-engineer` applied `display="none"` to the input group by default, leaving the 180px tall parent card mostly empty. This breaks UI affordance (the user doesn't know they *can* type a comment).
+**The Fix:** Removed `display="none"` from `review-input-group` in `proworker.html` so the text box and submit button are always visible.
+**Prevention Rule Added:** `svg-master` and `frontend-engineer` must NEVER hide primary form inputs inside an empty state card unless the card itself strictly collapses its height. If a card is sized to fit an input, the input MUST be visible by default.
