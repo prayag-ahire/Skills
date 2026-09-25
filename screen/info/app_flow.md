@@ -42,3 +42,31 @@
 - **Bio Text:** Static text description. If longer than 4 lines, truncates with a "Read more" inline button.
 - **Product Details Grid:** 
   - *Interaction:* Tapping a product card navigates the user to a dedicated "Product Detail" screen or opens a bottom sheet with purchase info.
+
+## Home Screen (Broadcast Flow Entry)
+
+### 1. Broadcast Request FAB
+- **Floating Action Button (FAB):** Positioned at the bottom right (above the tab bar) or as a sticky banner. Text: "Quick Request" or a lightning bolt icon.
+- *On Click:* Opens the **Broadcast Request Sheet** (Screen 3) as a modal overlay sliding up from the bottom.
+
+## Broadcast Request Sheet (Screen 3)
+
+### 1. Step 1: Service Selection
+- **UI:** A grid of pills (e.g., Plumber, Electrician, AC Tech).
+- *Interaction:* Single-select. Clicking a pill highlights it in blue.
+
+### 2. Step 2: Date & Time
+- **UI:** Horizontal scroll of dates (Today, Tomorrow) and time slots (Morning, Afternoon, Evening).
+- *Interaction:* Single-select for date, single-select for time.
+
+### 3. Step 3: Issue Description
+- **UI:** Text area and "Upload Photo" dotted box.
+- *Interaction:* Typing expands the text area. Clicking "Upload" opens native file picker.
+
+### 4. Step 4: Broadcast CTA
+- **Button:** Giant sticky button at the bottom of the sheet: "Broadcast to Plumbers within 5km".
+- *On Click:* 
+  - Validates that a service is selected.
+  - Hides the form.
+  - Displays a "Scanning Radar" loading state ("Pinging 14 plumbers nearby...").
+  - (Mock response): After 3 seconds, shows a success state: "Job Claimed! Prayag Ahire is on the way." and displays a "View Details" button linking to the Worker Profile.

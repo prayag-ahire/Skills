@@ -77,3 +77,6 @@ The design process must flow through these 8 stages in exact order:
 
 5. **Asset Management:**
    - Always instruct Stage 6 (`svg-master`) to check the `screen/assets/` folder for any real, user-uploaded images (like avatars, banners, or portfolio items) before relying on generated shapes or external placeholders. If real assets exist, they MUST be used to increase prototype fidelity.
+
+6. **Non-Destructive Versioning (A/B Flows):**
+   - Whenever the user asks you to "try new ideas," "improve the UX," or experiment on an existing screen, you MUST orchestrate the creation of a "V2" flow. Instruct `svg-master` to duplicate the original screen into a new flex row below the original (leaving the original untouched), and instruct `frontend-engineer` to strictly isolate the Javascript DOM IDs so interactivity does not bleed across versions.

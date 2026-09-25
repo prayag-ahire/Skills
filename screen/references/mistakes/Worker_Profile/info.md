@@ -38,3 +38,17 @@
 **Root Cause:** `frontend-engineer` applied `display="none"` to the input group by default, leaving the 180px tall parent card mostly empty. This breaks UI affordance (the user doesn't know they *can* type a comment).
 **The Fix:** Removed `display="none"` from `review-input-group` in `proworker.html` so the text box and submit button are always visible.
 **Prevention Rule Added:** `svg-master` and `frontend-engineer` must NEVER hide primary form inputs inside an empty state card unless the card itself strictly collapses its height. If a card is sized to fit an input, the input MUST be visible by default.
+
+## Mistake 7: JS Scope Bleed during A/B Flow Versioning
+**The Issue:** When creating a V2 row to test new UI ideas, all Javascript interactivity (tabs, scrolling, modals) broke simultaneously across both the V1 and V2 flows.
+**Root Cause:** The `frontend-engineer` duplicated the HTML DOM into two rows, resulting in duplicate `id` attributes. Since `getElementById` only returns the first match, and variables like `const followBtn` were redefined, it triggered JS syntax errors and cross-scope collisions that crashed everything.
+**The Fix:** Wrote a script to strictly isolate the scopes. Wrapped both blocks in IIFEs (`(() => { ... })();`) and appended `-old` suffixes to all IDs in the V1 HTML/JS to ensure perfect separation.
+**Prevention Rule Added:** Added the "Non-Destructive Versioning" rule to `frontend-engineer` mandating strict IIFE wrapping and ID suffixing whenever creating A/B canvas flows.
+
+## Mistake 8: Sticky CTA Hardware Clipping Failure
+**The Issue:** A sticky "Call [Name]" button pinned to the bottom of the screen had perfectly square corners that physically protruded outside the rounded black bezels of the iPhone frame. It also lacked a Home Indicator, making it look glued on.
+**Root Cause:** The sticky CTA group was placed at the very end of the SVG, *outside* of the `<g clip-path="url(#screen-clip-2)">` tag. Because it wasn't clipped by the screen mask, it ignored the phone's `rx=40` border radius.
+**The Fix:** 
+1. Re-injected an iOS Home Indicator (`<rect height="5" rx="2.5">`) inside the sticky footer.
+2. Moved the Sticky CTA inside the `clip-path` group. (Alternatively, drew the sticky background using a strict SVG `<path>` with `a40 40` arcs on the bottom corners to perfectly trace the phone bezels).
+**Prevention Rule Added:** `svg-master` updated to mandate that all absolute overlays/sticky footers must either reside inside the main screen `clip-path` OR manually draw perfectly mirrored bottom border radii using `<path>` arcs.

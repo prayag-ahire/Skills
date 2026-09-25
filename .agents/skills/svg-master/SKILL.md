@@ -21,6 +21,7 @@ Create pixel-perfect mobile UI using SVG as the base layer. Real photo content (
 - Horizontal padding: 16–24px, consistent for the whole screen
 - Safe top area: reserve ~80–100px for the status bar and Dynamic Island before screen content starts to ensure no overlaps
 - Bottom safe area: reserve 24–34px if the screen has a fixed bottom action bar
+- **Hardware Clipping & Bezels:** Mobile UI sticky elements pinned to the bottom of the screen (e.g. Navigation Bars, CTA Footers, Bottom Sheets) MUST be wrapped perfectly inside the `<g clip-path="url(#screen-clip)">` tag so their bottom corners inherit the phone's `40px` border radius. If placed outside the clip-path, they will render with perfectly square bottom edges that brutally bleed over the phone's curved bezels, destroying the native illusion. Furthermore, ANY element pinned to the bottom of the screen MUST manually include the iOS Home Indicator (e.g., `<rect width="120" height="5" rx="2.5" fill="#1A1A18" />` centered at the bottom edge) to maintain platform authenticity.
 
 ## FIGMA CANVAS MODE
 Instead of generating isolated screens that overwrite each other, you must build a continuous "Figma Canvas". 

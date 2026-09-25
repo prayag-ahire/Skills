@@ -11,14 +11,28 @@
     }
     .figma-canvas {
       display: flex;
-      flex-direction: row;
-      gap: 100px;
+      flex-direction: column;
+      gap: 150px;
       padding: 100px;
-      overflow-x: auto;
       background: #E5E5E5;
       min-height: 100vh;
-      align-items: flex-start;
       width: max-content;
+    }
+    .flow-row {
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .flow-title {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: #333;
     }
     .device-frame {
       width: 415px;
@@ -29,7 +43,9 @@
 </head>
 <body>
   <div class="figma-canvas">
-    <div class="device-frame">
+    <div class="flow-row">
+      <div class="flow-title">V1.0 - Original Flow</div>
+      <div class="device-frame">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%" role="img" aria-labelledby="title desc">
       <title id="title">ProWorker App Interface</title>
       <desc id="desc">A refined mobile UI for the ProWorker application, featuring a search bar, category grid, and horizontal scrolling cards.</desc>
@@ -283,10 +299,759 @@
           </g>
           <rect x="127" y="70" width="120" height="5" rx="2.5" fill="#1A1A18" />
         </g>
+        
+        
+        </g>
+
       </g>
     </svg>
     </div>
-    <!-- Worker Profile Screen -->
+
+      <!-- Worker Profile Screen -->
+    <div class="device-frame">
+      <svg id="old-worker-profile-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%" role="img">
+        <defs>
+          <clipPath id="screen-clip-2">
+            <rect x="20" y="20" width="375" height="812" rx="40" />
+          </clipPath>
+          <filter id="shadow-resting-2" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#000000" flood-opacity="0.03" />
+          </filter>
+          <filter id="shadow-floating-2" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#141410" flood-opacity="0.14" />
+          </filter>
+        </defs>
+        <style>
+          .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+          svg { user-select: none; -webkit-user-drag: none; }
+          image { -webkit-user-drag: none; }
+        </style>
+        
+        <!-- Device Frame -->
+        <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#device-shadow)" />
+        <rect x="20" y="20" width="375" height="812" rx="40" fill="#F9F9F9" />
+        <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
+        <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
+        <path d="M8 250 h2 v48 h-2 z" fill="#333333" />
+        <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
+
+        <g clip-path="url(#screen-clip-2)">
+          <rect x="20" y="20" width="375" height="812" fill="#F9F9F9" />
+          
+          <!-- Status Bar -->
+          <g transform="translate(20, 20)">
+            <text x="32" y="32" class="font-sans" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+            <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+            <g transform="translate(290, 17)" fill="#111827">
+              <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
+              <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
+              <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
+            </g>
+          </g>
+
+          <!-- Top App Bar -->
+          <g transform="translate(40, 76)">
+            <!-- Back Arrow -->
+            <path d="M8 0 L0 8 L8 16" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            <line x1="0" y1="8" x2="20" y2="8" stroke="#111827" stroke-width="2.5" stroke-linecap="round" />
+            <!-- Title -->
+            <text x="167" y="14" class="font-sans" fill="#111827" font-size="20" font-weight="700" text-anchor="middle">Worker Details</text>
+            <!-- 3 Dots -->
+            <g id="menu-btn-old" style="cursor: pointer;">
+              <rect x="315" y="-8" width="30" height="32" fill="transparent" />
+              <circle cx="330" cy="2" r="2.5" fill="#111827" />
+              <circle cx="330" cy="8" r="2.5" fill="#111827" />
+              <circle cx="330" cy="14" r="2.5" fill="#111827" />
+            </g>
+          </g>
+
+          <!-- Scrollable Body -->
+          <g id="scrollable-content-old" transform="translate(0, 0)">
+            <!-- Hero Card -->
+          <g transform="translate(36, 136)">
+            <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+            
+            <!-- Avatar -->
+            <clipPath id="avatar-clip">
+              <rect x="24" y="24" width="80" height="80" rx="16" />
+            </clipPath>
+            <rect x="24" y="24" width="80" height="80" rx="16" fill="#E5E5E5" />
+            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#avatar-clip)" />
+            
+            <!-- Identity -->
+            <text x="124" y="44" class="font-sans" fill="#111827" font-size="22" font-weight="700">Prayag ahire</text>
+            <text x="124" y="68" class="font-sans" fill="#6B7280" font-size="16" font-weight="400">Plumber</text>
+            
+            <!-- Stars -->
+            <g transform="translate(124, 82)">
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="scale(0.8)" />
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(18, 0) scale(0.8)" />
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(36, 0) scale(0.8)" />
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="2" transform="translate(54, 0) scale(0.8)" />
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="2" transform="translate(72, 0) scale(0.8)" />
+              <text x="100" y="13" class="font-sans" fill="#111827" font-size="14" font-weight="700">3.5</text>
+              <text x="126" y="13" class="font-sans" fill="#6B7280" font-size="14" font-weight="400">(2 reviews)</text>
+            </g>
+
+            <!-- Distance -->
+            <g transform="translate(124, 114)">
+              <path d="M2 10 l10 -10 l10 10 l-4 0 l0 10 l-12 0 l0 -10 z" fill="#2563EB" transform="scale(0.5) rotate(45 12 12)" />
+              <text x="16" y="10" class="font-sans" fill="#2563EB" font-size="14" font-weight="600">0.0 km away</text>
+            </g>
+
+            <!-- Socials -->
+            <g transform="translate(304, 24)">
+              <rect x="0" y="0" width="24" height="24" rx="6" fill="none" stroke="#E43F7F" stroke-width="2" />
+              <circle cx="12" cy="12" r="5" fill="none" stroke="#E43F7F" stroke-width="2" />
+              <circle cx="18" cy="6" r="1.5" fill="#E43F7F" />
+              
+              <rect x="-2" y="32" width="28" height="20" rx="4" fill="#FF0000" />
+              <polygon points="9,37 9,47 17,42" fill="#FFFFFF" />
+            </g>
+
+            <!-- Action Buttons -->
+            <g transform="translate(24, 160)">
+              <!-- Follow -->
+              <g id="follow-btn-old" style="cursor: pointer;">
+                <rect x="0" y="0" width="141" height="44" rx="22" fill="none" stroke="#1D4ED8" stroke-width="1.5" />
+                <text x="70.5" y="27" class="font-sans" fill="#1D4ED8" font-size="15" font-weight="600" text-anchor="middle">Follow</text>
+              </g>
+              
+              <!-- Call (Unavailable) -->
+              <rect x="153" y="0" width="142" height="44" rx="22" fill="#F3F4F6" />
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(175, 12) scale(0.8)" />
+              <text x="235" y="27" class="font-sans" fill="#9CA3AF" font-size="15" font-weight="600" text-anchor="middle">Unavailable</text>
+            </g>
+
+            <!-- Tabs -->
+            <g transform="translate(24, 230)">
+              <!-- Active Tab -->
+              <rect x="-4" y="-8" width="76" height="32" rx="16" fill="#2563EB" />
+              <text x="34" y="13" class="font-sans" fill="#FFFFFF" font-size="14" font-weight="600" text-anchor="middle">Photos</text>
+              
+              <!-- Inactive Tabs -->
+              <text x="110" y="13" class="font-sans" fill="#6B7280" font-size="14" font-weight="600" text-anchor="middle">Reviews</text>
+              <text x="195" y="13" class="font-sans" fill="#6B7280" font-size="14" font-weight="600" text-anchor="middle">Availability</text>
+              <text x="270" y="13" class="font-sans" fill="#6B7280" font-size="14" font-weight="600" text-anchor="middle">About</text>
+            </g>
+          </g>
+
+          <!-- DYNAMIC CONTENT: Photos Grid -->
+          <g id="tab-content-photos-old" transform="translate(36, 436)">
+            <!-- Photo 1 -->
+            <clipPath id="p1-clip"><rect x="0" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=330&amp;h=330&amp;fit=crop" x="0" y="0" width="165" height="165" clip-path="url(#p1-clip)" />
+            
+            <!-- Photo 2 -->
+            <clipPath id="p2-clip"><rect x="177" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1542013936693-884638332954?w=330&amp;h=330&amp;fit=crop" x="177" y="0" width="165" height="165" clip-path="url(#p2-clip)" />
+            
+            <!-- Photo 3 -->
+            <clipPath id="p3-clip"><rect x="0" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=330&amp;h=330&amp;fit=crop" x="0" y="177" width="165" height="165" clip-path="url(#p3-clip)" />
+            
+            <!-- Photo 4 -->
+            <clipPath id="p4-clip"><rect x="177" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=330&amp;h=330&amp;fit=crop" x="177" y="177" width="165" height="165" clip-path="url(#p4-clip)" />
+          </g>
+
+          <!-- DYNAMIC CONTENT: Reviews -->
+          <g id="tab-content-reviews-old" display="none" transform="translate(36, 436)">
+            <!-- Write Review Box -->
+            <rect x="0" y="0" width="343" height="180" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+            <text x="16" y="24" class="font-sans" fill="#111827" font-size="16" font-weight="700">Write a review</text>
+            <!-- 5 Outline Stars -->
+            <g id="review-stars-container-old" transform="translate(16, 44)" style="cursor: pointer;">
+               <path class="review-star" data-rating="1" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" />
+               <path class="review-star" data-rating="2" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(28, 0)" />
+               <path class="review-star" data-rating="3" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(56, 0)" />
+               <path class="review-star" data-rating="4" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(84, 0)" />
+               <path class="review-star" data-rating="5" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(112, 0)" />
+            </g>
+            <g id="review-input-group-old">
+              <rect x="16" y="80" width="311" height="40" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+              <text x="28" y="105" class="font-sans" fill="#9CA3AF" font-size="14">Share your experience (optional)</text>
+              <g id="submit-review-btn-old" style="cursor: pointer;">
+                <rect x="16" y="132" width="311" height="36" rx="8" fill="#2563EB" />
+                <text x="171" y="155" class="font-sans" fill="#FFFFFF" font-size="14" font-weight="600" text-anchor="middle">Submit review</text>
+              </g>
+            </g>
+
+            <!-- Dynamic New Review (Initially Hidden) -->
+            <g id="new-review-block-old" display="none">
+              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+              <circle cx="36" cy="224" r="20" fill="#FCEAF1" />
+              <text x="68" y="222" class="font-sans" fill="#111827" font-size="16" font-weight="700">You</text>
+              <text x="68" y="240" class="font-sans" fill="#9CA3AF" font-size="12">Just now</text>
+              <g id="new-review-stars" transform="translate(240, 210) scale(0.6)">
+                 <!-- Stars will be cloned here via JS or just hardcoded 5 stars -->
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(24,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(48,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(72,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(96,0)" />
+              </g>
+              <text x="16" y="270" class="font-sans" fill="#111827" font-size="14">Great experience, highly recommend!</text>
+            </g>
+
+            <!-- Review 1 -->
+            <g id="existing-reviews-old" style="transition: transform 0.3s ease;">
+              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+              <circle cx="36" cy="224" r="20" fill="#EFF6FF" />
+              <text x="68" y="222" class="font-sans" fill="#111827" font-size="16" font-weight="700">Darshan</text>
+              <text x="68" y="240" class="font-sans" fill="#9CA3AF" font-size="12">18 Sep 2026</text>
+              <g transform="translate(240, 210) scale(0.6)">
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(24,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(48,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(72,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(96,0)" />
+              </g>
+              <text x="16" y="270" class="font-sans" fill="#111827" font-size="14">Excellent service! Highly recommended</text>
+            </g>
+          </g>
+
+          <!-- DYNAMIC CONTENT: Availability -->
+          <g id="tab-content-availability-old" display="none" transform="translate(36, 436)">
+             <rect x="0" y="0" width="343" height="420" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <circle cx="26" cy="24" r="8" fill="none" stroke="#2563EB" stroke-width="2"/>
+             <line x1="26" y1="20" x2="26" y2="24" stroke="#2563EB" stroke-width="2" />
+             <line x1="26" y1="24" x2="30" y2="24" stroke="#2563EB" stroke-width="2" />
+             <text x="44" y="29" class="font-sans" fill="#111827" font-size="16" font-weight="700">Working hours</text>
+             <text x="16" y="58" class="font-sans" fill="#6B7280" font-size="16">9:00 AM – 3:00 PM</text>
+
+             <text x="16" y="100" class="font-sans" fill="#111827" font-size="16" font-weight="700">Working days</text>
+             <g transform="translate(16, 116)">
+               <!-- Sun --> <rect x="0" y="0" width="36" height="36" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/><text x="18" y="23" class="font-sans" fill="#9CA3AF" font-size="12" text-anchor="middle">Sun</text>
+               <!-- Mon --> <rect x="42" y="0" width="36" height="36" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/><text x="60" y="23" class="font-sans" fill="#9CA3AF" font-size="12" text-anchor="middle">Mon</text>
+               <!-- Tue --> <rect x="84" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="102" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Tue</text>
+               <!-- Wed --> <rect x="126" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="144" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Wed</text>
+               <!-- Thu --> <rect x="168" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="186" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Thu</text>
+               <!-- Fri --> <rect x="210" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="228" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Fri</text>
+               <!-- Sat --> <rect x="252" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="270" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Sat</text>
+             </g>
+
+             <text x="16" y="184" class="font-sans" fill="#111827" font-size="16" font-weight="700">Holidays</text>
+             <text x="16" y="206" class="font-sans" fill="#9CA3AF" font-size="12">Marked days are when this worker is not available.</text>
+             
+             <!-- Calendar Mock -->
+             <text x="163" y="246" class="font-sans" fill="#111827" font-size="16" font-weight="700" text-anchor="middle">September 2026</text>
+             <path d="M40 240 l-5 5 l5 5" fill="none" stroke="#111827" stroke-width="2" />
+             <path d="M280 240 l5 5 l-5 5" fill="none" stroke="#111827" stroke-width="2" />
+             
+             <g transform="translate(16, 276)">
+               <text x="18" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">S</text>
+               <text x="60" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">M</text>
+               <text x="102" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">T</text>
+               <text x="144" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">W</text>
+               <text x="186" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">T</text>
+               <text x="228" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">F</text>
+               <text x="270" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">S</text>
+               <!-- Row 1 -->
+               <text x="102" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">1</text>
+               <text x="144" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">2</text>
+               <text x="186" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">3</text>
+               <text x="228" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">4</text>
+               <text x="270" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">5</text>
+               <!-- Row 2 -->
+               <text x="18" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">6</text>
+               <text x="60" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">7</text>
+               <text x="102" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">8</text>
+               <text x="144" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">9</text>
+               <text x="186" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">10</text>
+               <text x="228" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">11</text>
+               <text x="270" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">12</text>
+               <!-- Row 3 -->
+               <text x="18" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">13</text>
+               <text x="60" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">14</text>
+               <text x="102" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">15</text>
+               <text x="144" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">16</text>
+               <text x="186" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">17</text>
+               <text x="228" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">18</text>
+               <text x="270" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">19</text>
+             </g>
+          </g>
+
+          <!-- DYNAMIC CONTENT: About -->
+          <g id="tab-content-about-old" display="none" transform="translate(36, 436)">
+             <!-- Bio -->
+             <foreignObject x="0" y="0" width="343" height="120">
+               <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, sans-serif; font-size: 14px; color: #6B7280; line-height: 1.5; margin: 0;">
+                 Reliable plumber with experience in pipe fitting, leak repairs, bathroom and kitchen installations, water tank connections, tap and shower fittings, and drainage maintenance. I provide quality workmanship, fair pricing, and on-time service for both residential and commercial jobs.
+               </div>
+             </foreignObject>
+
+             <text x="0" y="140" class="font-sans" fill="#111827" font-size="18" font-weight="700">Product details</text>
+             
+             <!-- Product 1 -->
+             <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <clipPath id="prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#prod1-clip)" />
+             <rect x="8" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
+             <text x="38" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
+             <text x="78" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Appqw</text>
+             <text x="78" y="340" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">₹399</text>
+
+             <!-- Product 2 -->
+             <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <clipPath id="prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#prod2-clip)" />
+             <rect x="195" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
+             <text x="225" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
+             <text x="265" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Shoes</text>
+             <text x="265" y="340" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">₹199</text>
+          </g>
+          </g>
+          </g>
+
+          <!-- OVERLAY: Dropdown Menu -->
+          <g id="dropdown-menu-old" display="none" transform="translate(170, 100)">
+            <rect x="0" y="0" width="200" height="96" rx="12" fill="#FFFFFF" filter="url(#shadow-floating-2)" />
+            
+            <g id="share-btn" style="cursor: pointer;" transform="translate(0, 0)">
+              <rect x="0" y="0" width="200" height="48" rx="12" fill="transparent" />
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8m-4-6l-4-4-4 4m4-4v13" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(16, 12)" />
+              <text x="56" y="30" class="font-sans" fill="#111827" font-size="15" font-weight="500">Share Profile</text>
+            </g>
+            
+            <line x1="16" y1="48" x2="184" y2="48" stroke="#E7E5DF" stroke-width="1" />
+            
+            <g id="report-btn" style="cursor: pointer;" transform="translate(0, 48)">
+              <rect x="0" y="0" width="200" height="48" rx="12" fill="transparent" />
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" stroke="#D92D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(16, 12)" />
+              <text x="56" y="30" class="font-sans" fill="#D92D2D" font-size="15" font-weight="500">Report Worker</text>
+            </g>
+          </g>
+          <!-- OVERLAY: Lightbox -->
+          <g id="lightbox-old" display="none">
+            <rect x="20" y="20" width="375" height="812" fill="#000000" fill-opacity="0.9" />
+            <image id="lightbox-img-old" href="" x="20" y="246" width="375" height="375" />
+            <g id="lightbox-close-old" style="cursor: pointer;" transform="translate(345, 40)">
+              <rect x="-10" y="-10" width="44" height="44" fill="transparent" />
+              <path d="M0 0 L24 24 M24 0 L0 24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+            </g>
+          </g>
+
+        </g>
+      </svg>
+    </div>
+  </div>
+    </div>
+
+    <div class="flow-row">
+      <div class="flow-title">V2.0 - Broadcast & Trust Badges</div>
+      <div class="device-frame">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%" role="img" aria-labelledby="title desc">
+      <title id="title">ProWorker App Interface</title>
+      <desc id="desc">A refined mobile UI for the ProWorker application, featuring a search bar, category grid, and horizontal scrolling cards.</desc>
+      
+      <defs>
+        <!-- Screen Clip -->
+        <clipPath id="screen-clip">
+          <rect x="20" y="20" width="375" height="812" rx="40" />
+        </clipPath>
+        
+        <!-- Shadows -->
+        <filter id="shadow-resting" x="-10%" y="-10%" width="120%" height="120%">
+          <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#141410" flood-opacity="0.06" />
+        </filter>
+
+        <!-- Icons (Lucide) -->
+        <g id="icon-bell" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+          <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+        </g>
+        <g id="icon-search" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8" />
+          <path d="m21 21-4.3-4.3" />
+        </g>
+        <g id="icon-filter" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="21" x2="14" y1="4" y2="4" />
+          <line x1="10" x2="3" y1="4" y2="4" />
+          <line x1="21" x2="12" y1="12" y2="12" />
+          <line x1="8" x2="3" y1="12" y2="12" />
+          <line x1="21" x2="16" y1="20" y2="20" />
+          <line x1="12" x2="3" y1="20" y2="20" />
+          <line x1="14" x2="14" y1="2" y2="6" />
+          <line x1="8" x2="8" y1="10" y2="14" />
+          <line x1="16" x2="16" y1="18" y2="22" />
+        </g>
+        <g id="icon-navigation" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polygon points="3 11 22 2 13 21 11 13 3 11" />
+        </g>
+        <g id="icon-chevron-down" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m6 9 6 6 6-6" />
+        </g>
+        
+        <!-- Category Icons -->
+        <g id="icon-plumber" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+        </g>
+        <g id="icon-electrician" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/>
+        </g>
+        <g id="icon-carpenter" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 12-8.5 8.5c-.83.83-2.17.83-3 0a2.12 2.12 0 0 1 0-3L12 9"/><path d="M17.64 15 22 10.64"/><path d="m20.91 11.7-1.25-1.25c-6-6-9.37-4-9.37-4l2.5 2.5a5.53 5.53 0 0 0 2.22-1l.73-.73c.4-.4.81-1.07 1.34-1.34l-2.78-2.78a2.12 2.12 0 0 1 3-3l1.25 1.25c4 0 2 3.37 2 3.37L15 2.36"/>
+        </g>
+        <g id="icon-painter" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="16" height="6" rx="2"/><path d="M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7"/><rect x="8" y="16" width="4" height="6" rx="1"/>
+        </g>
+        <g id="icon-ac" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/>
+        </g>
+        <g id="icon-cleaning" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M3 5h4"/><path d="M19 17v4"/><path d="M17 19h4"/>
+        </g>
+        <g id="icon-barber" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/>
+        </g>
+        <g id="icon-tutor" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+        </g>
+        <g id="icon-leaf" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+        </g>
+        <g id="icon-home" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+        </g>
+        <g id="icon-store" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/>
+        </g>
+        <g id="icon-user" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </g>
+      </defs>
+
+      <style>
+        .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        .text-primary { fill: #1A1A18; }
+        .text-secondary { fill: #5B5A54; }
+        .text-muted { fill: #8C8A82; }
+        .text-accent { fill: #3B82F6; }
+      </style>
+
+      <!-- Device Frame -->
+      <!-- Device Frame (Thicker bezel) -->
+      <!-- Shadow applied directly to the device -->
+      <filter id="device-shadow" x="-20%" y="-20%" width="140%" height="140%">
+        <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
+      </filter>
+      
+      <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#device-shadow)" />
+      <rect x="20" y="20" width="375" height="812" rx="40" fill="#F7F7F5" />
+      
+      <!-- Buttons on Device Frame -->
+      <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
+      <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
+      <path d="M8 250 h2 v48 h-2 z" fill="#333333" />
+      <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
+
+      <!-- Screen Content -->
+      <g clip-path="url(#screen-clip)">
+        <!-- Background -->
+        <rect x="20" y="20" width="375" height="812" fill="#F7F7F5" />
+        
+        <!-- Status Bar (iPhone style) -->
+        <g transform="translate(20, 20)">
+          <text x="32" y="32" class="font-sans text-primary" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+          <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+          <g transform="translate(290, 17)" fill="#1A1A18">
+            <!-- Cellular -->
+            <g transform="translate(0, 0)">
+              <rect x="0" y="8" width="3" height="4" rx="1" />
+              <rect x="4" y="6" width="3" height="6" rx="1" />
+              <rect x="8" y="4" width="3" height="8" rx="1" />
+              <rect x="12" y="2" width="3" height="10" rx="1" />
+            </g>
+            <!-- Wifi -->
+            <g transform="translate(20, 0)">
+              <path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+              <path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" />
+              <path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" />
+            </g>
+            <!-- Battery -->
+            <g transform="translate(42, 1)">
+              <rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#1A1A18" stroke-width="1.2" />
+              <rect x="2" y="2" width="15" height="7" rx="2" />
+              <path d="M23.5 3.5v4" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round" />
+            </g>
+          </g>
+        </g>
+
+        <!-- Header -->
+        <g transform="translate(44, 100)">
+          <text class="font-sans text-accent" font-size="28" font-weight="800" letter-spacing="-0.5">Pro<tspan class="text-primary">Worker</tspan></text>
+          <use href="#icon-bell" x="303" y="-22" width="24" height="24" class="text-primary" />
+          <circle cx="323" cy="-20" r="4" fill="#3B82F6" stroke="#F7F7F5" stroke-width="1.5" />
+        </g>
+
+        <!-- Search & Filter -->
+        <g transform="translate(44, 150)">
+          <rect x="0" y="0" width="267" height="48" rx="14" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <use href="#icon-search" x="16" y="14" width="20" height="20" class="text-secondary" />
+          <text x="48" y="29" class="font-sans text-muted" font-size="15" font-weight="400">Need quick help? Search here...</text>
+          <rect x="279" y="0" width="48" height="48" rx="14" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <use href="#icon-filter" x="291" y="14" width="20" height="20" class="text-primary" />
+        </g>
+
+        <!-- Location -->
+        <g transform="translate(44, 220)">
+          <rect x="0" y="0" width="327" height="60" rx="16" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <rect x="12" y="12" width="36" height="36" rx="18" fill="#EFF6FF" />
+          <use href="#icon-navigation" x="20" y="20" width="18" height="18" class="text-accent" />
+          <text x="60" y="28" class="font-sans text-muted" font-size="12" font-weight="500">Search near</text>
+          <text x="60" y="46" class="font-sans text-primary" font-size="14" font-weight="600">Home2 · Prahlad Nagar Road...</text>
+          <use href="#icon-chevron-down" x="291" y="20" width="20" height="20" class="text-muted" />
+        </g>
+
+        <!-- Headings -->
+        <text x="44" y="316" class="font-sans text-primary" font-size="24" font-weight="700">What are you looking for?</text>
+        <text x="44" y="354" class="font-sans text-secondary" font-size="16" font-weight="600">Popular</text>
+
+        <!-- Grid -->
+        <g transform="translate(44, 374)">
+          <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="70" height="70" rx="20" fill="#E8F6EC" />
+            <use href="#icon-plumber" x="23" y="23" width="24" height="24" stroke="#1FA34C" />
+            <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Plumber</text>
+          </g>
+          <g transform="translate(85.6, 0)">
+            <rect x="0" y="0" width="70" height="70" rx="20" fill="#F1ECFB" />
+            <use href="#icon-electrician" x="23" y="23" width="24" height="24" stroke="#7B3FE4" />
+            <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Electrician</text>
+          </g>
+          <g transform="translate(171.3, 0)">
+            <rect x="0" y="0" width="70" height="70" rx="20" fill="#FFF0E6" />
+            <use href="#icon-carpenter" x="23" y="23" width="24" height="24" stroke="#FF7A1A" />
+            <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Carpenter</text>
+          </g>
+          <g transform="translate(257, 0)">
+            <rect x="0" y="0" width="70" height="70" rx="20" fill="#FCEAF1" />
+            <use href="#icon-painter" x="23" y="23" width="24" height="24" stroke="#E43F7F" />
+            <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Painter</text>
+          </g>
+          <g transform="translate(0, 114)">
+            <rect x="0" y="0" width="70" height="70" rx="20" fill="#EFF6FF" />
+            <use href="#icon-ac" x="23" y="23" width="24" height="24" stroke="#3B82F6" />
+            <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">AC Tech</text>
+          </g>
+          <g transform="translate(85.6, 114)">
+            <rect x="0" y="0" width="70" height="70" rx="20" fill="#E8F6EC" />
+            <use href="#icon-cleaning" x="23" y="23" width="24" height="24" stroke="#1FA34C" />
+            <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Cleaning</text>
+          </g>
+          <g transform="translate(171.3, 114)">
+            <rect x="0" y="0" width="70" height="70" rx="20" fill="#F1ECFB" />
+            <use href="#icon-barber" x="23" y="23" width="24" height="24" stroke="#7B3FE4" />
+            <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Barber</text>
+          </g>
+          <g transform="translate(257, 114)">
+            <rect x="0" y="0" width="70" height="70" rx="20" fill="#FFF0E6" />
+            <use href="#icon-tutor" x="23" y="23" width="24" height="24" stroke="#FF7A1A" />
+            <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Home Tutor</text>
+          </g>
+        </g>
+
+        <text x="44" y="628" class="font-sans text-secondary" font-size="16" font-weight="600">Categories</text>
+
+        <!-- Cards -->
+        <g transform="translate(44, 648)">
+          <g>
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#EFF6FF" filter="url(#shadow-resting)" />
+            <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
+            <use href="#icon-plumber" x="26" y="26" width="20" height="20" stroke="#3B82F6" />
+            <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Home &amp; Repair</text>
+          </g>
+          <g transform="translate(170, 0)">
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#E8F6EC" filter="url(#shadow-resting)" />
+            <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
+            <use href="#icon-leaf" x="26" y="26" width="20" height="20" stroke="#1FA34C" />
+            <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Beauty &amp; Spa</text>
+          </g>
+          <g transform="translate(340, 0)">
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#F1ECFB" filter="url(#shadow-resting)" />
+            <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
+            <use href="#icon-store" x="26" y="26" width="20" height="20" stroke="#7B3FE4" />
+            <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Retailers</text>
+          </g>
+        </g>
+
+        <!-- Bottom Tab Bar -->
+        <g transform="translate(20, 748)">
+          <rect x="0" y="0" width="375" height="84" fill="#FFFFFF" />
+          <line x1="0" y1="0" x2="375" y2="0" stroke="#E7E5DF" stroke-width="1" />
+          <g transform="translate(72, 14)">
+            <use href="#icon-home" x="0" y="0" width="24" height="24" stroke="#3B82F6" stroke-width="2.5" />
+            <text x="12" y="36" class="font-sans text-accent" font-size="11" font-weight="600" text-anchor="middle">Home</text>
+          </g>
+          <g transform="translate(175.5, 14)">
+            <use href="#icon-store" x="0" y="0" width="24" height="24" class="text-secondary" />
+            <text x="12" y="36" class="font-sans text-secondary" font-size="11" font-weight="500" text-anchor="middle">Store</text>
+          </g>
+          <g transform="translate(279, 14)">
+            <use href="#icon-user" x="0" y="0" width="24" height="24" class="text-secondary" />
+            <text x="12" y="36" class="font-sans text-secondary" font-size="11" font-weight="500" text-anchor="middle">Profile</text>
+          </g>
+          <rect x="127" y="70" width="120" height="5" rx="2.5" fill="#1A1A18" />
+        </g>
+        
+        <!-- Broadcast FAB -->
+        <g id="broadcast-fab" transform="translate(195, 680)" style="cursor: pointer; transition: transform 0.2s;">
+          <rect x="0" y="0" width="160" height="48" rx="24" fill="#2563EB" filter="url(#shadow-resting)" />
+          <!-- Lightning bolt icon -->
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" transform="translate(12, 12)" />
+          <text x="44" y="29" class="font-sans" fill="#FFFFFF" font-size="14" font-weight="600">Quick Request</text>
+        </g>
+
+        <!-- Broadcast Modal (Hidden by Default) -->
+        <g id="broadcast-modal" display="none">
+          <!-- Dimmer Overlay -->
+          <rect x="20" y="20" width="375" height="812" fill="#000000" opacity="0.6" id="broadcast-dimmer" style="cursor: pointer;" />
+          
+          <!-- Bottom Sheet Container (Slides up) -->
+          <g id="broadcast-sheet" transform="translate(20, 160)" style="transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
+            <!-- Apply large top border radii by overlaying a mask or just using a path -->
+            <path d="M0 32 a32 32 0 0 1 32 -32 h311 a32 32 0 0 1 32 32 v640 h-375 z" fill="#FFFFFF" filter="url(#shadow-floating-2)" />
+            
+            <!-- Drag Handle -->
+            <rect x="163" y="12" width="48" height="4" rx="2" fill="#E5E7EB" />
+            
+            <!-- Close Button (X) -->
+            <g id="close-broadcast-btn" transform="translate(16, 16)" style="cursor: pointer;">
+              <circle cx="16" cy="16" r="16" fill="#F3F4F6" />
+              <path d="M11 11 l10 10 M21 11 l-10 10" stroke="#6B7280" stroke-width="2" stroke-linecap="round" />
+            </g>
+            
+            <!-- Header Text -->
+            <text x="187.5" y="44" class="font-sans" fill="#111827" font-size="18" font-weight="700" text-anchor="middle">Broadcast Request</text>
+            <text x="187.5" y="64" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Pings all verified workers within 5km</text>
+            
+            <!-- Scrollable Body (SVG scrolling via translate) -->
+            <g id="broadcast-scroll-area" transform="translate(0, 90)">
+              <!-- Step 1: Service Selection -->
+              <text x="24" y="20" class="font-sans" fill="#111827" font-size="16" font-weight="600">What do you need help with?</text>
+              
+              <g transform="translate(24, 40)" class="service-pills">
+                <!-- Row 1 -->
+                <rect x="0" y="0" width="90" height="36" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5" />
+                <text x="45" y="23" class="font-sans" fill="#2563EB" font-size="13" font-weight="600" text-anchor="middle">Plumbing</text>
+                
+                <rect x="100" y="0" width="95" height="36" rx="18" fill="#F3F4F6" />
+                <text x="147.5" y="23" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Electrical</text>
+                
+                <rect x="205" y="0" width="95" height="36" rx="18" fill="#F3F4F6" />
+                <text x="252.5" y="23" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">AC Repair</text>
+                
+                <!-- Row 2 -->
+                <rect x="0" y="46" width="85" height="36" rx="18" fill="#F3F4F6" />
+                <text x="42.5" y="69" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Cleaning</text>
+                
+                <rect x="95" y="46" width="90" height="36" rx="18" fill="#F3F4F6" />
+                <text x="140" y="69" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Carpentry</text>
+                
+                <rect x="195" y="46" width="70" height="36" rx="18" fill="#F3F4F6" />
+                <text x="230" y="69" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Other</text>
+              </g>
+
+              <!-- Step 2: Date & Time -->
+              <text x="24" y="160" class="font-sans" fill="#111827" font-size="16" font-weight="600">When do you need them?</text>
+              
+              <g transform="translate(24, 180)">
+                <rect x="0" y="0" width="70" height="36" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5" />
+                <text x="35" y="23" class="font-sans" fill="#2563EB" font-size="13" font-weight="600" text-anchor="middle">Today</text>
+                
+                <rect x="80" y="0" width="90" height="36" rx="18" fill="#F3F4F6" />
+                <text x="125" y="23" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Tomorrow</text>
+                
+                <rect x="180" y="0" width="90" height="36" rx="18" fill="#F3F4F6" />
+                <text x="225" y="23" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Pick Date</text>
+              </g>
+
+              <g transform="translate(24, 226)">
+                <rect x="0" y="0" width="90" height="36" rx="18" fill="#EFF6FF" stroke="#2563EB" stroke-width="1.5" />
+                <text x="45" y="23" class="font-sans" fill="#2563EB" font-size="13" font-weight="600" text-anchor="middle">Right Now</text>
+                
+                <rect x="100" y="0" width="80" height="36" rx="18" fill="#F3F4F6" />
+                <text x="140" y="23" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Morning</text>
+                
+                <rect x="190" y="0" width="90" height="36" rx="18" fill="#F3F4F6" />
+                <text x="235" y="23" class="font-sans" fill="#6B7280" font-size="13" font-weight="500" text-anchor="middle">Afternoon</text>
+              </g>
+
+              <!-- Step 3: Context Input -->
+              <text x="24" y="306" class="font-sans" fill="#111827" font-size="16" font-weight="600">Any details? (Optional)</text>
+              
+              <g transform="translate(24, 326)">
+                <rect x="0" y="0" width="327" height="96" rx="16" fill="#F3F4F6" />
+                <text x="16" y="28" class="font-sans" fill="#9CA3AF" font-size="14">Describe the issue... e.g., 'Kitchen sink</text>
+                <text x="16" y="48" class="font-sans" fill="#9CA3AF" font-size="14">pipe is leaking'</text>
+                
+                <!-- Upload Box -->
+                <rect x="0" y="112" width="327" height="56" rx="16" fill="transparent" stroke="#D1D5DB" stroke-width="2" stroke-dasharray="6,4" />
+                <text x="163.5" y="145" class="font-sans" fill="#4B5563" font-size="14" font-weight="500" text-anchor="middle">📷 Add photos</text>
+              </g>
+            </g>
+            
+            <!-- Sticky Footer CTA -->
+            <g id="broadcast-footer" transform="translate(0, 584)">
+              <rect x="0" y="0" width="375" height="88" fill="#FFFFFF" />
+              <!-- Shadow for sticky footer -->
+              <line x1="0" y1="0" x2="375" y2="0" stroke="#E5E7EB" stroke-width="1" />
+              <g id="broadcast-submit-btn" style="cursor: pointer;">
+                <rect x="24" y="16" width="327" height="56" rx="16" fill="#2563EB" />
+                <text x="187.5" y="50" class="font-sans" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">Broadcast Request</text>
+              </g>
+            </g>
+            
+            <!-- Radar Loading State (Hidden by default) -->
+            <g id="broadcast-radar-state" display="none" transform="translate(0, 90)">
+              <rect x="0" y="0" width="375" height="582" fill="#FFFFFF" />
+              
+              <g transform="translate(187.5, 200)">
+                <!-- Pulse rings -->
+                <circle cx="0" cy="0" r="100" fill="#EFF6FF" />
+                <circle cx="0" cy="0" r="60" fill="#DBEAFE" />
+                <circle cx="0" cy="0" r="20" fill="#2563EB" />
+                <!-- Search icon inside radar -->
+                <use href="#icon-search" x="-10" y="-10" width="20" height="20" stroke="#FFFFFF" stroke-width="3" />
+              </g>
+              
+              <text x="187.5" y="360" class="font-sans" fill="#111827" font-size="18" font-weight="700" text-anchor="middle">Finding available workers...</text>
+              <text x="187.5" y="384" class="font-sans" fill="#6B7280" font-size="15" font-weight="500" text-anchor="middle">Pinging 14 plumbers in your area</text>
+            </g>
+            
+            <!-- Success State (Hidden by default) -->
+            <g id="broadcast-success-state" display="none" transform="translate(0, 90)">
+              <rect x="0" y="0" width="375" height="582" fill="#FFFFFF" />
+              
+              <g transform="translate(187.5, 180)">
+                <circle cx="0" cy="0" r="40" fill="#D1FAE5" />
+                <!-- Checkmark -->
+                <path d="M-12 2 l8 8 l16 -16" fill="none" stroke="#10B981" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              
+              <text x="187.5" y="260" class="font-sans" fill="#111827" font-size="22" font-weight="700" text-anchor="middle">Job Accepted!</text>
+              
+              <!-- Profile Snippet -->
+              <rect x="40" y="290" width="295" height="80" rx="16" fill="#F9FAFB" stroke="#E5E7EB" stroke-width="1" />
+              <circle cx="70" cy="330" r="20" fill="#EFF6FF" />
+              <text x="70" y="335" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">PA</text>
+              <text x="100" y="325" class="font-sans" fill="#111827" font-size="16" font-weight="700">Prayag Ahire</text>
+              <text x="100" y="345" class="font-sans" fill="#6B7280" font-size="13">is on the way to help you.</text>
+              
+              <g transform="translate(40, 400)" style="cursor: pointer;" id="view-assigned-worker-btn">
+                <rect x="0" y="0" width="295" height="48" rx="12" fill="#2563EB" />
+                <text x="147.5" y="29" class="font-sans" fill="#FFFFFF" font-size="15" font-weight="600" text-anchor="middle">View Details</text>
+              </g>
+            </g>
+          </g>
+        </g>
+
+      </g>
+    </svg>
+    </div>
+
+      <!-- Worker Profile Screen -->
     <div class="device-frame">
       <svg id="worker-profile-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%" role="img">
         <defs>
@@ -579,9 +1344,9 @@
              <text x="225" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
              <text x="265" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Shoes</text>
              <text x="265" y="340" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">₹199</text>
-          </g>
-          </g>
-          </g>
+           </g>
+           </g> <!-- End Tab Content About -->
+           </g> <!-- End Scrollable Content -->
 
           <!-- OVERLAY: Dropdown Menu -->
           <g id="dropdown-menu" display="none" transform="translate(170, 100)">
@@ -611,12 +1376,26 @@
             </g>
           </g>
 
+        <!-- Sticky CTA Footer -->
+        <g transform="translate(20, 744)" id="sticky-footer-cta">
+          <!-- Custom path to round ONLY the bottom corners (rx=40) -->
+          <path d="M0 0 h375 v48 a40 40 0 0 1 -40 40 h-295 a40 40 0 0 1 -40 -40 z" fill="#FFFFFF" />
+          <line x1="0" y1="0" x2="375" y2="0" stroke="#E5E7EB" stroke-width="1" />
+          <rect x="24" y="16" width="327" height="56" rx="28" fill="#111827" />
+          <text x="187.5" y="50" class="font-sans" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">Call Prayag Ahire</text>
+          
+          <!-- iOS Home Indicator -->
+          <rect x="127" y="76" width="120" height="5" rx="2.5" fill="#1A1A18" />
         </g>
+    
+        </g> <!-- End Screen Clip -->
       </svg>
     </div>
   </div>
-
   <script>
+    (() => {
+// --- V2 (NEW) JS LOGIC ---
+    
     // Stage 7: Frontend Engineer Interactivity
     document.addEventListener('DOMContentLoaded', () => {
       // 1. Follow Button Interaction
@@ -842,7 +1621,419 @@
       window.addEventListener('mouseup', stopDrag);
       workerSvg.addEventListener('mouseleave', stopDrag);
 
+      // --- BROADCAST MODAL INTERACTION LOGIC (STAGE 7) ---
+      const broadcastFab = document.getElementById('broadcast-fab');
+      const broadcastModal = document.getElementById('broadcast-modal');
+      const broadcastDimmer = document.getElementById('broadcast-dimmer');
+      const closeBroadcastBtn = document.getElementById('close-broadcast-btn');
+      const broadcastSheet = document.getElementById('broadcast-sheet');
+      
+      const broadcastScrollArea = document.getElementById('broadcast-scroll-area');
+      const broadcastFooter = document.getElementById('broadcast-footer');
+      const broadcastSubmitBtn = document.getElementById('broadcast-submit-btn');
+      
+      const radarState = document.getElementById('broadcast-radar-state');
+      const successState = document.getElementById('broadcast-success-state');
+      const viewWorkerBtn = document.getElementById('view-assigned-worker-btn');
+
+      // Open Modal
+      if (broadcastFab && broadcastModal) {
+         broadcastFab.addEventListener('click', () => {
+            // Reset states
+            broadcastScrollArea.setAttribute('display', 'block');
+            broadcastFooter.setAttribute('display', 'block');
+            radarState.setAttribute('display', 'none');
+            successState.setAttribute('display', 'none');
+            
+            // Show modal
+            broadcastModal.setAttribute('display', 'block');
+            // Small timeout to allow display:block to paint before transforming
+            setTimeout(() => {
+               broadcastSheet.setAttribute('transform', 'translate(20, 160)');
+            }, 10);
+         });
+      }
+
+      // Close Modal
+      const closeBroadcastModal = () => {
+         broadcastSheet.setAttribute('transform', 'translate(20, 812)');
+         setTimeout(() => {
+            broadcastModal.setAttribute('display', 'none');
+         }, 300); // Wait for transition
+      };
+
+      if (closeBroadcastBtn) closeBroadcastBtn.addEventListener('click', closeBroadcastModal);
+      if (broadcastDimmer) broadcastDimmer.addEventListener('click', closeBroadcastModal);
+      if (viewWorkerBtn) viewWorkerBtn.addEventListener('click', closeBroadcastModal);
+
+      // Pill Selection Logic
+      const allPills = document.querySelectorAll('.service-pills rect');
+      const allPillTexts = document.querySelectorAll('.service-pills text');
+      
+      allPills.forEach((pill, index) => {
+         pill.style.cursor = 'pointer';
+         allPillTexts[index].style.cursor = 'pointer';
+         
+         const handlePillClick = () => {
+            // Deselect all
+            allPills.forEach((p, i) => {
+               p.setAttribute('fill', '#F3F4F6');
+               p.removeAttribute('stroke');
+               allPillTexts[i].setAttribute('fill', '#6B7280');
+               allPillTexts[i].setAttribute('font-weight', '500');
+            });
+            // Select clicked
+            pill.setAttribute('fill', '#EFF6FF');
+            pill.setAttribute('stroke', '#2563EB');
+            pill.setAttribute('stroke-width', '1.5');
+            allPillTexts[index].setAttribute('fill', '#2563EB');
+            allPillTexts[index].setAttribute('font-weight', '600');
+         };
+         
+         pill.addEventListener('click', handlePillClick);
+         allPillTexts[index].addEventListener('click', handlePillClick);
+      });
+
+      // Submit Broadcast Request
+      if (broadcastSubmitBtn) {
+         broadcastSubmitBtn.addEventListener('click', () => {
+            // Hide Form, Show Radar
+            broadcastScrollArea.setAttribute('display', 'none');
+            broadcastFooter.setAttribute('display', 'none');
+            radarState.setAttribute('display', 'block');
+            
+            // Simulate Network Request (3 seconds)
+            setTimeout(() => {
+               radarState.setAttribute('display', 'none');
+               successState.setAttribute('display', 'block');
+            }, 3000);
+         });
+      }
+
     });
-  </script>
+  
+
+    })();
+(() => {
+// --- V1 (OLD) JS LOGIC ---
+    
+    // Stage 7: Frontend Engineer Interactivity
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Follow Button Interaction
+      const followBtn = document.getElementById('follow-btn-old');
+      if (followBtn) {
+        let isFollowing = false;
+        followBtn.addEventListener('click', () => {
+          const rect = followBtn.querySelector('rect');
+          const text = followBtn.querySelector('text');
+          if (!isFollowing) {
+            rect.setAttribute('fill', '#F3F4F6');
+            rect.setAttribute('stroke', '#F3F4F6');
+            text.setAttribute('fill', '#4B5563');
+            text.textContent = 'Following';
+            isFollowing = true;
+          } else {
+            rect.setAttribute('fill', 'none');
+            rect.setAttribute('stroke', '#1D4ED8');
+            text.setAttribute('fill', '#1D4ED8');
+            text.textContent = 'Follow';
+            isFollowing = false;
+          }
+        });
+      }
+
+      // 1.5. Dropdown Menu
+      const menuBtn = document.getElementById('menu-btn-old');
+      const dropdownMenu = document.getElementById('dropdown-menu-old');
+      if (menuBtn && dropdownMenu) {
+        menuBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const current = dropdownMenu.getAttribute('display');
+          dropdownMenu.setAttribute('display', current === 'none' ? 'block' : 'none');
+        });
+        document.addEventListener('click', () => {
+          dropdownMenu.setAttribute('display', 'none');
+        });
+      }
+      // 2. Tabs Interaction
+      const tabsGroup = document.querySelector('g[transform="translate(24, 230)"]');
+      if (tabsGroup) {
+        const tabs = [
+          { text: 'Photos', x: 34, width: 76, rx: '-4' },
+          { text: 'Reviews', x: 110, width: 85, rx: '68' },
+          { text: 'Availability', x: 195, width: 95, rx: '148' },
+          { text: 'About', x: 270, width: 70, rx: '235' }
+        ];
+        
+        // Remove existing static rect/text
+        tabsGroup.innerHTML = '';
+        
+        // Rebuild interactive tabs
+        let activeBg = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+        activeBg.setAttribute('y', '-8');
+        activeBg.setAttribute('height', '32');
+        activeBg.setAttribute('rx', '16');
+        activeBg.setAttribute('fill', '#2563EB');
+        tabsGroup.appendChild(activeBg);
+
+        let currentActive = 0;
+        
+        const tabContents = [
+          document.getElementById('tab-content-photos-old'),
+          document.getElementById('tab-content-reviews-old'),
+          document.getElementById('tab-content-availability-old'),
+          document.getElementById('tab-content-about-old')
+        ];
+
+        tabs.forEach((tab, index) => {
+          let textNode = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+          textNode.setAttribute('x', tab.x);
+          textNode.setAttribute('y', '13');
+          textNode.setAttribute('class', 'font-sans');
+          textNode.setAttribute('font-size', '14');
+          textNode.setAttribute('font-weight', '600');
+          textNode.setAttribute('text-anchor', 'middle');
+          textNode.style.cursor = 'pointer';
+          textNode.textContent = tab.text;
+          
+          if (index === currentActive) {
+            activeBg.setAttribute('x', tab.rx);
+            activeBg.setAttribute('width', tab.width);
+            textNode.setAttribute('fill', '#FFFFFF');
+          } else {
+            textNode.setAttribute('fill', '#6B7280');
+          }
+          
+          textNode.addEventListener('click', () => {
+            // Update Background position smoothly
+            activeBg.style.transition = 'all 0.3s ease';
+            activeBg.setAttribute('x', tab.rx);
+            activeBg.setAttribute('width', tab.width);
+            
+            // Reset all text colors
+            tabsGroup.querySelectorAll('text').forEach(t => t.setAttribute('fill', '#6B7280'));
+            // Set active text color
+            textNode.setAttribute('fill', '#FFFFFF');
+            
+            // Swap Content Visibility
+            tabContents.forEach((tc, i) => {
+              if (tc) {
+                if (i === index) tc.removeAttribute('display');
+                else tc.setAttribute('display', 'none');
+              }
+            });
+          });
+
+          tabsGroup.appendChild(textNode);
+        });
+      }
+
+      // 3. Image Lightbox
+      const lightbox = document.getElementById('lightbox-old');
+      const lightboxImg = document.getElementById('lightbox-img-old');
+      const lightboxClose = document.getElementById('lightbox-close-old');
+      const photos = document.querySelectorAll('.photo-thumbnail');
+      if (lightbox && lightboxImg && lightboxClose) {
+        photos.forEach(photo => {
+          photo.addEventListener('click', () => {
+            lightboxImg.setAttribute('href', photo.getAttribute('href'));
+            lightbox.removeAttribute('display');
+          });
+        });
+        lightboxClose.addEventListener('click', () => {
+          lightbox.setAttribute('display', 'none');
+        });
+      }
+
+      // 4. Star Rating and Submit Review
+      const starsContainer = document.getElementById('review-stars-container-old');
+      const reviewInputGroup = document.getElementById('review-input-group-old');
+      const submitBtn = document.getElementById('submit-review-btn-old');
+      if (starsContainer && reviewInputGroup && submitBtn) {
+        const stars = starsContainer.querySelectorAll('.review-star');
+        let selectedRating = 0;
+        stars.forEach(star => {
+          star.addEventListener('click', (e) => {
+            selectedRating = parseInt(star.getAttribute('data-rating'));
+            stars.forEach(s => {
+              const r = parseInt(s.getAttribute('data-rating'));
+              if (r <= selectedRating) {
+                s.setAttribute('fill', '#F59E0B');
+              } else {
+                s.setAttribute('fill', 'none');
+              }
+            });
+            reviewInputGroup.removeAttribute('display');
+          });
+        });
+
+        submitBtn.addEventListener('click', () => {
+          // Show new review and shift old ones down
+          const newReview = document.getElementById('new-review-block-old');
+          const oldReviews = document.getElementById('existing-reviews-old');
+          
+          newReview.removeAttribute('display');
+          oldReviews.setAttribute('transform', 'translate(0, 136)');
+
+          // Update star count in new review visually based on selected
+          const newStars = newReview.querySelectorAll('path');
+          newStars.forEach((s, i) => {
+             if (i < selectedRating) s.setAttribute('fill', '#F59E0B');
+             else s.setAttribute('fill', 'none');
+          });
+
+          // Reset Input form
+          reviewInputGroup.setAttribute('display', 'none');
+          stars.forEach(s => s.setAttribute('fill', 'none'));
+          selectedRating = 0;
+        });
+      }
+
+      // 5. Vertical Scrolling Simulation
+      const scrollContent = document.getElementById('scrollable-content-old');
+      let currentScroll = 0;
+      let startY = 0;
+      
+      const updateScroll = (dy) => {
+         currentScroll += dy;
+         if (currentScroll > 0) currentScroll = 0;
+         if (currentScroll < -600) currentScroll = -600;
+         scrollContent.setAttribute('transform', `translate(0, ${currentScroll})`);
+      };
+
+      const workerSvg = document.getElementById('old-worker-profile-svg');
+      workerSvg.addEventListener('wheel', (e) => {
+         updateScroll(-e.deltaY);
+      });
+
+      workerSvg.addEventListener('touchstart', (e) => {
+         startY = e.touches[0].clientY;
+      });
+
+      workerSvg.addEventListener('touchmove', (e) => {
+         const dy = e.touches[0].clientY - startY;
+         startY = e.touches[0].clientY;
+         updateScroll(dy);
+         e.preventDefault();
+      }, { passive: false });
+
+      // Mouse drag-to-scroll for laptops
+      let isDragging = false;
+      workerSvg.addEventListener('mousedown', (e) => {
+         isDragging = true;
+         startY = e.clientY;
+      });
+
+      window.addEventListener('mousemove', (e) => {
+         if (!isDragging) return;
+         const dy = e.clientY - startY;
+         // Only scroll if moved a bit to avoid jitter
+         if (Math.abs(dy) > 1) {
+            startY = e.clientY;
+            updateScroll(dy);
+            e.preventDefault(); // Stop native drag
+         }
+      });
+
+      const stopDrag = () => {
+         isDragging = false;
+      };
+      
+      window.addEventListener('mouseup', stopDrag);
+      workerSvg.addEventListener('mouseleave', stopDrag);
+
+      // --- BROADCAST MODAL INTERACTION LOGIC (STAGE 7) ---
+      const broadcastFab = document.getElementById('broadcast-fab-old');
+      const broadcastModal = document.getElementById('broadcast-modal-old');
+      const broadcastDimmer = document.getElementById('broadcast-dimmer-old');
+      const closeBroadcastBtn = document.getElementById('close-broadcast-btn-old');
+      const broadcastSheet = document.getElementById('broadcast-sheet-old');
+      
+      const broadcastScrollArea = document.getElementById('broadcast-scroll-area-old');
+      const broadcastFooter = document.getElementById('broadcast-footer-old');
+      const broadcastSubmitBtn = document.getElementById('broadcast-submit-btn-old');
+      
+      const radarState = document.getElementById('broadcast-radar-state-old');
+      const successState = document.getElementById('broadcast-success-state-old');
+      const viewWorkerBtn = document.getElementById('view-assigned-worker-btn-old');
+
+      // Open Modal
+      if (broadcastFab && broadcastModal) {
+         broadcastFab.addEventListener('click', () => {
+            // Reset states
+            broadcastScrollArea.setAttribute('display', 'block');
+            broadcastFooter.setAttribute('display', 'block');
+            radarState.setAttribute('display', 'none');
+            successState.setAttribute('display', 'none');
+            
+            // Show modal
+            broadcastModal.setAttribute('display', 'block');
+            // Small timeout to allow display:block to paint before transforming
+            setTimeout(() => {
+               broadcastSheet.setAttribute('transform', 'translate(20, 160)');
+            }, 10);
+         });
+      }
+
+      // Close Modal
+      const closeBroadcastModal = () => {
+         broadcastSheet.setAttribute('transform', 'translate(20, 812)');
+         setTimeout(() => {
+            broadcastModal.setAttribute('display', 'none');
+         }, 300); // Wait for transition
+      };
+
+      if (closeBroadcastBtn) closeBroadcastBtn.addEventListener('click', closeBroadcastModal);
+      if (broadcastDimmer) broadcastDimmer.addEventListener('click', closeBroadcastModal);
+      if (viewWorkerBtn) viewWorkerBtn.addEventListener('click', closeBroadcastModal);
+
+      // Pill Selection Logic
+      const allPills = document.querySelectorAll('.service-pills rect');
+      const allPillTexts = document.querySelectorAll('.service-pills text');
+      
+      allPills.forEach((pill, index) => {
+         pill.style.cursor = 'pointer';
+         allPillTexts[index].style.cursor = 'pointer';
+         
+         const handlePillClick = () => {
+            // Deselect all
+            allPills.forEach((p, i) => {
+               p.setAttribute('fill', '#F3F4F6');
+               p.removeAttribute('stroke');
+               allPillTexts[i].setAttribute('fill', '#6B7280');
+               allPillTexts[i].setAttribute('font-weight', '500');
+            });
+            // Select clicked
+            pill.setAttribute('fill', '#EFF6FF');
+            pill.setAttribute('stroke', '#2563EB');
+            pill.setAttribute('stroke-width', '1.5');
+            allPillTexts[index].setAttribute('fill', '#2563EB');
+            allPillTexts[index].setAttribute('font-weight', '600');
+         };
+         
+         pill.addEventListener('click', handlePillClick);
+         allPillTexts[index].addEventListener('click', handlePillClick);
+      });
+
+      // Submit Broadcast Request
+      if (broadcastSubmitBtn) {
+         broadcastSubmitBtn.addEventListener('click', () => {
+            // Hide Form, Show Radar
+            broadcastScrollArea.setAttribute('display', 'none');
+            broadcastFooter.setAttribute('display', 'none');
+            radarState.setAttribute('display', 'block');
+            
+            // Simulate Network Request (3 seconds)
+            setTimeout(() => {
+               radarState.setAttribute('display', 'none');
+               successState.setAttribute('display', 'block');
+            }, 3000);
+         });
+      }
+
+    });
+  
+    })();
+</script>
 </body>
 </html>

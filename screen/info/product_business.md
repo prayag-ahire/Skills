@@ -73,3 +73,31 @@ Based on reference screenshots:
 - Store Header: `Product details`
 - Product 1: `For sale` | `Appqw` | `₹399`
 - Product 2: `For sale` | `Shoes` | `₹199`
+
+## 8. UX Copy & Text Content (Broadcast Flow)
+
+**Home Screen Entry:**
+- FAB Text: `⚡ Quick Request`
+
+**Broadcast Sheet Modal:**
+- Modal Title: `Broadcast Request`
+- Subtitle: `Pings all verified workers within 5km.`
+- **Step 1:** `What do you need help with?`
+  - Pills: `Plumbing`, `Electrical`, `AC Repair`, `Cleaning`, `Carpentry`, `Other`
+- **Step 2:** `When do you need them?`
+  - Date Pills: `Today`, `Tomorrow`, `Pick Date`
+  - Time Pills: `Right Now`, `Morning`, `Afternoon`, `Evening`
+- **Step 3:** `Any details? (Optional)`
+  - Text placeholder: `Describe the issue... e.g., 'Kitchen sink pipe is leaking'`
+  - Upload Box: `📷 Add photos`
+- **Bottom Sticky CTA:**
+  - Button Text: `Broadcast Request`
+
+**Loading State (Radar):**
+- Text: `Finding available workers...`
+- Subtext: `Pinging 14 plumbers in your area`
+
+**Success State:**
+- Title: `Job Accepted!`
+- Body: `Prayag Ahire has accepted your request and is reviewing the details.`
+- Button: `View Worker Profile`
