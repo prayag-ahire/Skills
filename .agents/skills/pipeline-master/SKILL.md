@@ -46,8 +46,8 @@ The design process must flow through these 8 stages in exact order:
    - Output: A passed QA report or a list of required fixes for the frontend engineer/SVG master to execute.
 
 9. **Stage 9: `update-skills`**
-   - Goal: Act as the Meta-Learning Architect. Observe the just-completed design process. Extract any new interaction paradigms, mockup tricks, layout solutions, or business logic rules discovered during this screen's design, and bake them into the global `.agents/skills/` files (like `svg-master` or `frontend-engineer`).
-   - Output: Updated Global Skills files.
+   - Goal: Act as the Meta-Learning Architect. Observe the just-completed design process. Extract any new interaction paradigms, mockup tricks, layout solutions, icons, or business logic rules discovered during this screen's design, and bake them into the global `.agents/skills/` files AND the `.agents/UI_UX_LEARNINGS.md` knowledge base.
+   - Output: Updated Global Skills files and Knowledge Base.
    - Rule: This step is MANDATORY at the end of every screen design. The AI must generalize its knowledge for future projects without the user asking.
 
 ## YOUR RESPONSIBILITIES
@@ -61,7 +61,7 @@ The design process must flow through these 8 stages in exact order:
    - **Screen States Directory:** You must also maintain an `info/screens/` directory. For every screen you design, create a dedicated markdown file (e.g., `info/screens/Home_Screen.md`). This file must act as a lightweight "shadow copy" of the screen, detailing its exact visual layout, text, colors, and logic. If the AI needs to modify a screen later, it should read this markdown file instead of parsing thousands of lines of complex SVG code.
    - **Reference Images Directory:** Maintain a `references/<Screen_Name>/` directory. If the user uploads a screenshot, wireframe, or inspiration image for a specific screen, you must save/move those image files into this directory. This ensures the UI/UX designers always know exactly which reference image belongs to which screen.
      - *State Audit Rule:* If multiple screenshots of the *same* screen are uploaded showing different states (like tabs), Stage 2 (`flow-master`) MUST perform a State Change Audit in `app_flow.md` detailing exactly what disappears and appears when switching states.
-   - **Mistakes Log Directory:** Maintain a `references/mistakes/<Screen_Name>/` directory. Whenever a mistake is identified (whether through a user-uploaded screenshot OR just text feedback complaining about a bug/overlap), you MUST create an `info.md` file here. The `info.md` must mathematically break down the root cause of the error and log how you fixed it. If a screenshot was provided, copy it here too.
+   - **Mistakes Log Directory:** Maintain a `.agents/mistakes/<Screen_Name>/` directory. Whenever a mistake is identified (whether through a user-uploaded screenshot OR just text feedback complaining about a bug/overlap), you MUST create an `info.md` file here. The `info.md` must mathematically break down the root cause of the error and log how you fixed it. If a screenshot was provided, copy it here too.
    - **AUTONOMOUS SELF-CORRECTION:** If the user points out a mistake (even with JUST text, no image required), do NOT wait for them to ask you to update your skills. You MUST automatically fix the issue, log it in the mistakes directory, and immediately update the relevant `SKILL.md` files (like `svg-master` or `qa-critic`) with new preventative rules so the AI never repeats the error.
    - You must continuously append the findings and decisions of *every* stage into these respective files so that downstream skills have full, unfragmented context.
 

@@ -1,0 +1,325 @@
+<svg id="old-worker-profile-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%" role="img">
+        <defs>
+          <clipPath id="screen-clip-2">
+            <rect x="20" y="20" width="375" height="812" rx="40" />
+          </clipPath>
+          <filter id="shadow-resting-2" x="-10%" y="-10%" width="120%" height="120%">
+            <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#000000" flood-opacity="0.03" />
+          </filter>
+          <filter id="shadow-floating-2" x="-20%" y="-20%" width="140%" height="140%">
+            <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#141410" flood-opacity="0.14" />
+          </filter>
+        </defs>
+        <style>
+          .font-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+          svg { user-select: none; -webkit-user-drag: none; }
+          image { -webkit-user-drag: none; }
+        </style>
+        
+        <!-- Device Frame -->
+        <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#device-shadow)" />
+        <rect x="20" y="20" width="375" height="812" rx="40" fill="#F9F9F9" />
+        <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
+        <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
+        <path d="M8 250 h2 v48 h-2 z" fill="#333333" />
+        <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
+
+        <g clip-path="url(#screen-clip-2)">
+          <rect x="20" y="20" width="375" height="812" fill="#F9F9F9" />
+          
+          <!-- Status Bar -->
+          <g transform="translate(20, 20)">
+            <text x="32" y="32" class="font-sans" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+            <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+            <g transform="translate(290, 17)" fill="#111827">
+              <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
+              <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
+              <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
+            </g>
+          </g>
+
+          <!-- Top App Bar -->
+          <g transform="translate(40, 76)">
+            <!-- Back Arrow -->
+            <path d="M8 0 L0 8 L8 16" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+            <line x1="0" y1="8" x2="20" y2="8" stroke="#111827" stroke-width="2.5" stroke-linecap="round" />
+            <!-- Title -->
+            <text x="167" y="14" class="font-sans" fill="#111827" font-size="20" font-weight="700" text-anchor="middle">Worker Details</text>
+            <!-- 3 Dots -->
+            <g id="menu-btn-old" style="cursor: pointer;">
+              <rect x="315" y="-8" width="30" height="32" fill="transparent" />
+              <circle cx="330" cy="2" r="2.5" fill="#111827" />
+              <circle cx="330" cy="8" r="2.5" fill="#111827" />
+              <circle cx="330" cy="14" r="2.5" fill="#111827" />
+            </g>
+          </g>
+
+          <!-- Scrollable Body -->
+          <g id="scrollable-content-old" transform="translate(0, 0)">
+            <!-- Hero Card -->
+          <g transform="translate(36, 136)">
+            <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+            
+            <!-- Avatar -->
+            <clipPath id="avatar-clip">
+              <rect x="24" y="24" width="80" height="80" rx="16" />
+            </clipPath>
+            <rect x="24" y="24" width="80" height="80" rx="16" fill="#E5E5E5" />
+            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#avatar-clip)" />
+            
+            <!-- Identity -->
+            <text x="124" y="44" class="font-sans" fill="#111827" font-size="22" font-weight="700">Prayag ahire</text>
+            <text x="124" y="68" class="font-sans" fill="#6B7280" font-size="16" font-weight="400">Plumber</text>
+            
+            <!-- Stars -->
+            <g transform="translate(124, 82)">
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="scale(0.8)" />
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(18, 0) scale(0.8)" />
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(36, 0) scale(0.8)" />
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="2" transform="translate(54, 0) scale(0.8)" />
+              <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="2" transform="translate(72, 0) scale(0.8)" />
+              <text x="100" y="13" class="font-sans" fill="#111827" font-size="14" font-weight="700">3.5</text>
+              <text x="126" y="13" class="font-sans" fill="#6B7280" font-size="14" font-weight="400">(2 reviews)</text>
+            </g>
+
+            <!-- Distance -->
+            <g transform="translate(124, 114)">
+              <path d="M2 10 l10 -10 l10 10 l-4 0 l0 10 l-12 0 l0 -10 z" fill="#2563EB" transform="scale(0.5) rotate(45 12 12)" />
+              <text x="16" y="10" class="font-sans" fill="#2563EB" font-size="14" font-weight="600">0.0 km away</text>
+            </g>
+
+            <!-- Socials -->
+            <g transform="translate(304, 24)">
+              <rect x="0" y="0" width="24" height="24" rx="6" fill="none" stroke="#E43F7F" stroke-width="2" />
+              <circle cx="12" cy="12" r="5" fill="none" stroke="#E43F7F" stroke-width="2" />
+              <circle cx="18" cy="6" r="1.5" fill="#E43F7F" />
+              
+              <rect x="-2" y="32" width="28" height="20" rx="4" fill="#FF0000" />
+              <polygon points="9,37 9,47 17,42" fill="#FFFFFF" />
+            </g>
+
+            <!-- Action Buttons -->
+            <g transform="translate(24, 160)">
+              <!-- Follow -->
+              <g id="follow-btn-old" style="cursor: pointer;">
+                <rect x="0" y="0" width="141" height="44" rx="22" fill="none" stroke="#1D4ED8" stroke-width="1.5" />
+                <text x="70.5" y="27" class="font-sans" fill="#1D4ED8" font-size="15" font-weight="600" text-anchor="middle">Follow</text>
+              </g>
+              
+              <!-- Call (Unavailable) -->
+              <rect x="153" y="0" width="142" height="44" rx="22" fill="#F3F4F6" />
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(175, 12) scale(0.8)" />
+              <text x="235" y="27" class="font-sans" fill="#9CA3AF" font-size="15" font-weight="600" text-anchor="middle">Unavailable</text>
+            </g>
+
+            <!-- Tabs -->
+            <g transform="translate(24, 230)">
+              <!-- Active Tab -->
+              <rect x="-4" y="-8" width="76" height="32" rx="16" fill="#2563EB" />
+              <text x="34" y="13" class="font-sans" fill="#FFFFFF" font-size="14" font-weight="600" text-anchor="middle">Photos</text>
+              
+              <!-- Inactive Tabs -->
+              <text x="110" y="13" class="font-sans" fill="#6B7280" font-size="14" font-weight="600" text-anchor="middle">Reviews</text>
+              <text x="195" y="13" class="font-sans" fill="#6B7280" font-size="14" font-weight="600" text-anchor="middle">Availability</text>
+              <text x="270" y="13" class="font-sans" fill="#6B7280" font-size="14" font-weight="600" text-anchor="middle">About</text>
+            </g>
+          </g>
+
+          <!-- DYNAMIC CONTENT: Photos Grid -->
+          <g id="tab-content-photos-old" transform="translate(36, 436)">
+            <!-- Photo 1 -->
+            <clipPath id="p1-clip"><rect x="0" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=330&amp;h=330&amp;fit=crop" x="0" y="0" width="165" height="165" clip-path="url(#p1-clip)" />
+            
+            <!-- Photo 2 -->
+            <clipPath id="p2-clip"><rect x="177" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1542013936693-884638332954?w=330&amp;h=330&amp;fit=crop" x="177" y="0" width="165" height="165" clip-path="url(#p2-clip)" />
+            
+            <!-- Photo 3 -->
+            <clipPath id="p3-clip"><rect x="0" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=330&amp;h=330&amp;fit=crop" x="0" y="177" width="165" height="165" clip-path="url(#p3-clip)" />
+            
+            <!-- Photo 4 -->
+            <clipPath id="p4-clip"><rect x="177" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=330&amp;h=330&amp;fit=crop" x="177" y="177" width="165" height="165" clip-path="url(#p4-clip)" />
+          </g>
+
+          <!-- DYNAMIC CONTENT: Reviews -->
+          <g id="tab-content-reviews-old" display="none" transform="translate(36, 436)">
+            <!-- Write Review Box -->
+            <rect x="0" y="0" width="343" height="180" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+            <text x="16" y="24" class="font-sans" fill="#111827" font-size="16" font-weight="700">Write a review</text>
+            <!-- 5 Outline Stars -->
+            <g id="review-stars-container-old" transform="translate(16, 44)" style="cursor: pointer;">
+               <path class="review-star" data-rating="1" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" />
+               <path class="review-star" data-rating="2" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(28, 0)" />
+               <path class="review-star" data-rating="3" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(56, 0)" />
+               <path class="review-star" data-rating="4" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(84, 0)" />
+               <path class="review-star" data-rating="5" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(112, 0)" />
+            </g>
+            <g id="review-input-group-old">
+              <rect x="16" y="80" width="311" height="40" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+              <text x="28" y="105" class="font-sans" fill="#9CA3AF" font-size="14">Share your experience (optional)</text>
+              <g id="submit-review-btn-old" style="cursor: pointer;">
+                <rect x="16" y="132" width="311" height="36" rx="8" fill="#2563EB" />
+                <text x="171" y="155" class="font-sans" fill="#FFFFFF" font-size="14" font-weight="600" text-anchor="middle">Submit review</text>
+              </g>
+            </g>
+
+            <!-- Dynamic New Review (Initially Hidden) -->
+            <g id="new-review-block-old" display="none">
+              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+              <circle cx="36" cy="224" r="20" fill="#FCEAF1" />
+              <text x="68" y="222" class="font-sans" fill="#111827" font-size="16" font-weight="700">You</text>
+              <text x="68" y="240" class="font-sans" fill="#9CA3AF" font-size="12">Just now</text>
+              <g id="new-review-stars" transform="translate(240, 210) scale(0.6)">
+                 <!-- Stars will be cloned here via JS or just hardcoded 5 stars -->
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(24,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(48,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(72,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(96,0)" />
+              </g>
+              <text x="16" y="270" class="font-sans" fill="#111827" font-size="14">Great experience, highly recommend!</text>
+            </g>
+
+            <!-- Review 1 -->
+            <g id="existing-reviews-old" style="transition: transform 0.3s ease;">
+              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+              <circle cx="36" cy="224" r="20" fill="#EFF6FF" />
+              <text x="68" y="222" class="font-sans" fill="#111827" font-size="16" font-weight="700">Darshan</text>
+              <text x="68" y="240" class="font-sans" fill="#9CA3AF" font-size="12">18 Sep 2026</text>
+              <g transform="translate(240, 210) scale(0.6)">
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(24,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(48,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(72,0)" />
+                 <path d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="#F59E0B" transform="translate(96,0)" />
+              </g>
+              <text x="16" y="270" class="font-sans" fill="#111827" font-size="14">Excellent service! Highly recommended</text>
+            </g>
+          </g>
+
+          <!-- DYNAMIC CONTENT: Availability -->
+          <g id="tab-content-availability-old" display="none" transform="translate(36, 436)">
+             <rect x="0" y="0" width="343" height="420" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <circle cx="26" cy="24" r="8" fill="none" stroke="#2563EB" stroke-width="2"/>
+             <line x1="26" y1="20" x2="26" y2="24" stroke="#2563EB" stroke-width="2" />
+             <line x1="26" y1="24" x2="30" y2="24" stroke="#2563EB" stroke-width="2" />
+             <text x="44" y="29" class="font-sans" fill="#111827" font-size="16" font-weight="700">Working hours</text>
+             <text x="16" y="58" class="font-sans" fill="#6B7280" font-size="16">9:00 AM – 3:00 PM</text>
+
+             <text x="16" y="100" class="font-sans" fill="#111827" font-size="16" font-weight="700">Working days</text>
+             <g transform="translate(16, 116)">
+               <!-- Sun --> <rect x="0" y="0" width="36" height="36" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/><text x="18" y="23" class="font-sans" fill="#9CA3AF" font-size="12" text-anchor="middle">Sun</text>
+               <!-- Mon --> <rect x="42" y="0" width="36" height="36" rx="8" fill="#FFFFFF" stroke="#E5E7EB"/><text x="60" y="23" class="font-sans" fill="#9CA3AF" font-size="12" text-anchor="middle">Mon</text>
+               <!-- Tue --> <rect x="84" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="102" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Tue</text>
+               <!-- Wed --> <rect x="126" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="144" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Wed</text>
+               <!-- Thu --> <rect x="168" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="186" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Thu</text>
+               <!-- Fri --> <rect x="210" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="228" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Fri</text>
+               <!-- Sat --> <rect x="252" y="0" width="36" height="36" rx="8" fill="#2563EB"/><text x="270" y="23" class="font-sans" fill="#FFFFFF" font-size="12" text-anchor="middle">Sat</text>
+             </g>
+
+             <text x="16" y="184" class="font-sans" fill="#111827" font-size="16" font-weight="700">Holidays</text>
+             <text x="16" y="206" class="font-sans" fill="#9CA3AF" font-size="12">Marked days are when this worker is not available.</text>
+             
+             <!-- Calendar Mock -->
+             <text x="163" y="246" class="font-sans" fill="#111827" font-size="16" font-weight="700" text-anchor="middle">September 2026</text>
+             <path d="M40 240 l-5 5 l5 5" fill="none" stroke="#111827" stroke-width="2" />
+             <path d="M280 240 l5 5 l-5 5" fill="none" stroke="#111827" stroke-width="2" />
+             
+             <g transform="translate(16, 276)">
+               <text x="18" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">S</text>
+               <text x="60" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">M</text>
+               <text x="102" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">T</text>
+               <text x="144" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">W</text>
+               <text x="186" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">T</text>
+               <text x="228" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">F</text>
+               <text x="270" y="0" class="font-sans" fill="#6B7280" font-size="12" text-anchor="middle">S</text>
+               <!-- Row 1 -->
+               <text x="102" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">1</text>
+               <text x="144" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">2</text>
+               <text x="186" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">3</text>
+               <text x="228" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">4</text>
+               <text x="270" y="30" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">5</text>
+               <!-- Row 2 -->
+               <text x="18" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">6</text>
+               <text x="60" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">7</text>
+               <text x="102" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">8</text>
+               <text x="144" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">9</text>
+               <text x="186" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">10</text>
+               <text x="228" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">11</text>
+               <text x="270" y="70" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">12</text>
+               <!-- Row 3 -->
+               <text x="18" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">13</text>
+               <text x="60" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">14</text>
+               <text x="102" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">15</text>
+               <text x="144" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">16</text>
+               <text x="186" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">17</text>
+               <text x="228" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">18</text>
+               <text x="270" y="110" class="font-sans" fill="#111827" font-size="14" text-anchor="middle">19</text>
+             </g>
+          </g>
+
+          <!-- DYNAMIC CONTENT: About -->
+          <g id="tab-content-about-old" display="none" transform="translate(36, 436)">
+             <!-- Bio -->
+             <foreignObject x="0" y="0" width="343" height="120">
+               <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: -apple-system, sans-serif; font-size: 14px; color: #6B7280; line-height: 1.5; margin: 0;">
+                 Reliable plumber with experience in pipe fitting, leak repairs, bathroom and kitchen installations, water tank connections, tap and shower fittings, and drainage maintenance. I provide quality workmanship, fair pricing, and on-time service for both residential and commercial jobs.
+               </div>
+             </foreignObject>
+
+             <text x="0" y="140" class="font-sans" fill="#111827" font-size="18" font-weight="700">Product details</text>
+             
+             <!-- Product 1 -->
+             <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <clipPath id="prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#prod1-clip)" />
+             <rect x="8" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
+             <text x="38" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
+             <text x="78" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Appqw</text>
+             <text x="78" y="340" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">₹399</text>
+
+             <!-- Product 2 -->
+             <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <clipPath id="prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#prod2-clip)" />
+             <rect x="195" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
+             <text x="225" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
+             <text x="265" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Shoes</text>
+             <text x="265" y="340" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">₹199</text>
+          </g>
+          </g>
+          </g>
+
+          <!-- OVERLAY: Dropdown Menu -->
+          <g id="dropdown-menu-old" display="none" transform="translate(170, 100)">
+            <rect x="0" y="0" width="200" height="96" rx="12" fill="#FFFFFF" filter="url(#shadow-floating-2)" />
+            
+            <g id="share-btn" style="cursor: pointer;" transform="translate(0, 0)">
+              <rect x="0" y="0" width="200" height="48" rx="12" fill="transparent" />
+              <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8m-4-6l-4-4-4 4m4-4v13" stroke="#111827" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(16, 12)" />
+              <text x="56" y="30" class="font-sans" fill="#111827" font-size="15" font-weight="500">Share Profile</text>
+            </g>
+            
+            <line x1="16" y1="48" x2="184" y2="48" stroke="#E7E5DF" stroke-width="1" />
+            
+            <g id="report-btn" style="cursor: pointer;" transform="translate(0, 48)">
+              <rect x="0" y="0" width="200" height="48" rx="12" fill="transparent" />
+              <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7" stroke="#D92D2D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(16, 12)" />
+              <text x="56" y="30" class="font-sans" fill="#D92D2D" font-size="15" font-weight="500">Report Worker</text>
+            </g>
+          </g>
+          <!-- OVERLAY: Lightbox -->
+          <g id="lightbox-old" display="none">
+            <rect x="20" y="20" width="375" height="812" fill="#000000" fill-opacity="0.9" />
+            <image id="lightbox-img-old" href="" x="20" y="246" width="375" height="375" />
+            <g id="lightbox-close-old" style="cursor: pointer;" transform="translate(345, 40)">
+              <rect x="-10" y="-10" width="44" height="44" fill="transparent" />
+              <path d="M0 0 L24 24 M24 0 L0 24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+            </g>
+          </g>
+
+        </g>
+      </svg>
