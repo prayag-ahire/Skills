@@ -83,6 +83,7 @@ The design process must flow through these 8 stages in exact order:
    - **Canvas Output:** Instruct `svg-master` and `build.py` to inject both V1 and V2 side-by-side (or top-and-bottom) in `proworker.html` so the user can visually compare them.
    - **Play Mode Output:** Instruct `build_app.py` to inject both V1 and V2 into the interactive `app.html` (Figma Play). `frontend-engineer` must safely isolate all JavaScript (IIFEs, Null-Checking DOM elements) so both flows work independently.
    - **Python Build Scripts:** Always ensure both `build.py` and `build_app.py` are executed so both environments are updated simultaneously whenever a new screen or script is added.
+   - **Pre-Build Health Check (Mandatory):** Before running `build.py` or `build_app.py`, ALWAYS run `python check.py` from the `.agents/` directory first. The build scripts now do this automatically and will abort if errors are found. The checker catches: duplicate IDs across SVG files, unscoped `document.querySelector` in JS, `clipPathUnits="objectBoundingBox"` on clips, unbalanced `<g>` tags, and un-namespaced `<clipPath>`/`<filter>` IDs. Fix ALL errors before building — they cause invisible rendering bugs that are extremely hard to diagnose after the fact.
 
 7. **Project Infrastructure & Resilience (The "Vanish" Rule):**
    - The `screen/` folder represents the user's volatile project output. The user might delete it entirely at any point.

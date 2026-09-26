@@ -133,7 +133,7 @@
       <g transform="translate(0, 140)">
         <rect x="0" y="0" width="343" height="124" rx="20" fill="#FFFFFF" filter="url(#v2wl-card-shadow)" />
         
-        <g transform="translate(16, 16)"><clipPath id="avatar-clip-2-new"><rect width="60" height="60" rx="30"/></clipPath><image href="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&amp;h=150&amp;fit=crop" width="60" height="60" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatar-clip-2-new)" /></g>
+        <g transform="translate(16, 16)"><clipPath id="v2wl-avatar-clip-2"><rect width="60" height="60" rx="30"/></clipPath><image href="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&amp;h=150&amp;fit=crop" width="60" height="60" preserveAspectRatio="xMidYMid slice" clip-path="url(#v2wl-avatar-clip-2)" /></g>
         
         <text x="96" y="34" font-family="-apple-system, sans-serif" font-size="17" font-weight="700" fill="#1A1A18">Ravi Kumar</text>
         <text x="96" y="54" font-family="-apple-system, sans-serif" font-size="14" font-weight="500" fill="#5B5A54">Pipe Fitting Specialist</text>
@@ -154,7 +154,7 @@
       <g transform="translate(0, 280)">
         <rect x="0" y="0" width="343" height="124" rx="20" fill="#FFFFFF" filter="url(#v2wl-card-shadow)" />
         
-        <g transform="translate(16, 16)"><clipPath id="avatar-clip-3-new"><rect width="60" height="60" rx="30"/></clipPath><image href="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&amp;h=150&amp;fit=crop" width="60" height="60" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatar-clip-3-new)" /></g>
+        <g transform="translate(16, 16)"><clipPath id="v2wl-avatar-clip-3"><rect width="60" height="60" rx="30"/></clipPath><image href="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&amp;h=150&amp;fit=crop" width="60" height="60" preserveAspectRatio="xMidYMid slice" clip-path="url(#v2wl-avatar-clip-3)" /></g>
         <!-- Verification Badge -->
         <circle cx="76" cy="86" r="10" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2" transform="translate(-20, -20)" />
         <path d="M4 8l2 2 4-4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(51, 61) scale(0.8)" />

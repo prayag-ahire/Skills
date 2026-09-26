@@ -85,7 +85,7 @@
             </g>
 
             <!-- Tabs -->
-            <g transform="translate(24, 230)">
+            <g id="v2w-tabs-group" transform="translate(24, 230)">
               <!-- Active Tab -->
               <rect x="-4" y="-8" width="76" height="32" rx="16" fill="#2563EB" />
               <text x="34" y="13" class="font-sans" fill="#FFFFFF" font-size="14" font-weight="600" text-anchor="middle">Photos</text>
@@ -129,7 +129,7 @@
                <path class="review-star" data-rating="4" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(84, 0)" />
                <path class="review-star" data-rating="5" d="M10 2l2.4 7.4h7.6l-6.2 4.5 2.4 7.4-6.2-4.5-6.2 4.5 2.4-7.4-6.2-4.5h7.6z" fill="none" stroke="#F59E0B" stroke-width="1.5" transform="translate(112, 0)" />
             </g>
-            <g id="review-input-group">
+            <g id="review-input-group" display="none">
               <rect x="16" y="80" width="311" height="40" rx="8" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
               <text x="28" y="105" class="font-sans" fill="#9CA3AF" font-size="14">Share your experience (optional)</text>
               <g id="submit-review-btn" style="cursor: pointer;">
@@ -286,8 +286,8 @@
           <!-- STICKY HEADER (drawn last, paints over scrolled content) -->
           <g id="sticky-header">
             <!-- White background with hairline bottom border -->
-            <rect x="20" y="20" width="375" height="116" fill="#FFFFFF" />
-            <line x1="20" y1="136" x2="395" y2="136" stroke="#E7E5DF" stroke-width="1" />
+            <rect x="20" y="20" width="375" height="116" fill="#FFFFFF" pointer-events="none" />
+            <line x1="20" y1="136" x2="395" y2="136" stroke="#E7E5DF" stroke-width="1" pointer-events="none" />
 
             <!-- Status Bar -->
             <g transform="translate(20, 20)">
@@ -317,10 +317,10 @@
           </g>
 
           <!-- Sticky CTA Footer -->
-          <g transform="translate(20, 744)" id="sticky-footer-cta">
-            <path d="M0 0 h375 v48 a40 40 0 0 1 -40 40 h-295 a40 40 0 0 1 -40 -40 z" fill="#FFFFFF" />
-            <line x1="0" y1="0" x2="375" y2="0" stroke="#E5E7EB" stroke-width="1" />
-            <rect x="24" y="16" width="327" height="56" rx="28" fill="#111827" />
+          <g transform="translate(20, 744)" id="sticky-footer-cta" pointer-events="none">
+            <path d="M0 0 h375 v48 a40 40 0 0 1 -40 40 h-295 a40 40 0 0 1 -40 -40 z" fill="#FFFFFF" pointer-events="none" />
+            <line x1="0" y1="0" x2="375" y2="0" stroke="#E5E7EB" stroke-width="1" pointer-events="none" />
+            <rect x="24" y="16" width="327" height="56" rx="28" fill="#111827" pointer-events="auto" style="cursor:pointer;" />
             <text x="187.5" y="50" class="font-sans" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">Call Prayag Ahire</text>
             <!-- iOS Home Indicator -->
             <rect x="127" y="76" width="120" height="5" rx="2.5" fill="#1A1A18" />
@@ -336,7 +336,7 @@
             </g>
           </g>
 
-        </g> <!-- End Screen Clip -->
+         <!-- End Screen Clip -->
 
         <!-- Device Frame Overlay (drawn LAST — masks any corner bleed from clip content) -->
         <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v2w-device-shadow)"

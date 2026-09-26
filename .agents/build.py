@@ -1,6 +1,22 @@
-import os
+import os, sys
 
 def build_html():
+    # ── Run health check first ──────────────────────────────
+    import subprocess
+    agents_dir = os.path.dirname(os.path.abspath(__file__))
+    result = subprocess.run(
+        [sys.executable, os.path.join(agents_dir, 'check.py')],
+        capture_output=True, text=True,
+        cwd=agents_dir
+    )
+    print(result.stdout)
+    if result.stderr:
+        print(result.stderr)
+    if result.returncode != 0:
+        print("Build aborted — fix errors reported by check.py first.")
+        sys.exit(1)
+    # ────────────────────────────────────────────────────────
+
     with open('../screen/src/index.template.html', 'r', encoding='utf-8') as f:
         html = f.read()
 

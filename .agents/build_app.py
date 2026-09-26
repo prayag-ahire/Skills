@@ -1,4 +1,19 @@
-import os
+import os, sys
+
+def run_check():
+    import subprocess
+    agents_dir = os.path.dirname(os.path.abspath(__file__))
+    result = subprocess.run(
+        [sys.executable, os.path.join(agents_dir, 'check.py')],
+        capture_output=True, text=True,
+        cwd=agents_dir
+    )
+    print(result.stdout)
+    if result.stderr:
+        print(result.stderr)
+    if result.returncode != 0:
+        print("Build aborted — fix errors reported by check.py first.")
+        sys.exit(1)
 
 def read_file(filepath):
     try:
@@ -8,6 +23,7 @@ def read_file(filepath):
         return ""
 
 def build_app():
+    run_check()
     # Load template
     html = read_file('../screen/src/app.template.html')
     
