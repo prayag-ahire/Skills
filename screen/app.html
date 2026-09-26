@@ -850,8 +850,7 @@ body {
           image { -webkit-user-drag: none; }
         </style>
         
-        <!-- Device Frame -->
-        <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v2w-device-shadow)" />
+        <!-- Device Frame (background only — buttons) -->
         <rect x="20" y="20" width="375" height="812" rx="40" fill="#F9F9F9" />
         <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
         <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
@@ -860,28 +859,19 @@ body {
 
         <g clip-path="url(#v2w-screen-clip-2)">
           <rect x="20" y="20" width="375" height="812" fill="#F9F9F9" />
-            <!-- Title -->
-            <text x="167" y="14" class="font-sans" fill="#111827" font-size="20" font-weight="700" text-anchor="middle">Worker Details</text>
-            <!-- 3 Dots -->
-            <g id="menu-btn" style="cursor: pointer;">
-              <rect x="315" y="-8" width="30" height="32" fill="transparent" />
-              <circle cx="330" cy="2" r="2.5" fill="#111827" />
-              <circle cx="330" cy="8" r="2.5" fill="#111827" />
-              <circle cx="330" cy="14" r="2.5" fill="#111827" />
-            </g>
-
-          <!-- Scrollable Body -->
           <g id="v2w-scrollable-content" transform="translate(0, 0)">
             <!-- Hero Card -->
           <g transform="translate(36, 136)">
             <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
             
             <!-- Avatar -->
-            <clipPath id="worker-avatar-clip-v2" clipPathUnits="objectBoundingBox">
-              <rect x="0" y="0" width="1" height="1" rx="0.2" />
-            </clipPath>
             <rect x="24" y="24" width="80" height="80" rx="16" fill="#E5E5E5" />
-            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#worker-avatar-clip-v2)" />
+            <g transform="translate(24, 24)">
+              <clipPath id="v2w-avatar-clip">
+                <rect x="0" y="0" width="80" height="80" rx="16" />
+              </clipPath>
+              <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="0" y="0" width="80" height="80" clip-path="url(#v2w-avatar-clip)" />
+            </g>
             
             <!-- Identity -->
             <text x="124" y="44" class="font-sans" fill="#111827" font-size="22" font-weight="700">Prayag ahire</text>
@@ -944,20 +934,20 @@ body {
           <!-- DYNAMIC CONTENT: Photos Grid -->
           <g id="tab-content-photos" transform="translate(36, 436)">
             <!-- Photo 1 -->
-            <clipPath id="p1-clip"><rect x="0" y="0" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=330&amp;h=330&amp;fit=crop" x="0" y="0" width="165" height="165" clip-path="url(#p1-clip)" />
+            <clipPath id="v2w-p1-clip"><rect x="0" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=330&amp;h=330&amp;fit=crop" x="0" y="0" width="165" height="165" clip-path="url(#v2w-p1-clip)" />
             
             <!-- Photo 2 -->
-            <clipPath id="p2-clip"><rect x="177" y="0" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1542013936693-884638332954?w=330&amp;h=330&amp;fit=crop" x="177" y="0" width="165" height="165" clip-path="url(#p2-clip)" />
+            <clipPath id="v2w-p2-clip"><rect x="177" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1542013936693-884638332954?w=330&amp;h=330&amp;fit=crop" x="177" y="0" width="165" height="165" clip-path="url(#v2w-p2-clip)" />
             
             <!-- Photo 3 -->
-            <clipPath id="p3-clip"><rect x="0" y="177" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=330&amp;h=330&amp;fit=crop" x="0" y="177" width="165" height="165" clip-path="url(#p3-clip)" />
+            <clipPath id="v2w-p3-clip"><rect x="0" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=330&amp;h=330&amp;fit=crop" x="0" y="177" width="165" height="165" clip-path="url(#v2w-p3-clip)" />
             
             <!-- Photo 4 -->
-            <clipPath id="p4-clip"><rect x="177" y="177" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=330&amp;h=330&amp;fit=crop" x="177" y="177" width="165" height="165" clip-path="url(#p4-clip)" />
+            <clipPath id="v2w-p4-clip"><rect x="177" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=330&amp;h=330&amp;fit=crop" x="177" y="177" width="165" height="165" clip-path="url(#v2w-p4-clip)" />
           </g>
 
           <!-- DYNAMIC CONTENT: Reviews -->
@@ -1090,8 +1080,8 @@ body {
              
              <!-- Product 1 -->
              <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
-             <clipPath id="prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
-             <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#prod1-clip)" />
+             <clipPath id="v2w-prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#v2w-prod1-clip)" />
              <rect x="8" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
              <text x="38" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
              <text x="78" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Appqw</text>
@@ -1099,8 +1089,8 @@ body {
 
              <!-- Product 2 -->
              <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
-             <clipPath id="prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
-             <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#prod2-clip)" />
+             <clipPath id="v2w-prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#v2w-prod2-clip)" />
              <rect x="195" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
              <text x="225" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
              <text x="265" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Shoes</text>
@@ -1127,58 +1117,74 @@ body {
               <text x="56" y="30" class="font-sans" fill="#D92D2D" font-size="15" font-weight="500">Report Worker</text>
             </g>
           </g>
-          <!-- STICKY HEADER -->
+          <!-- STICKY HEADER (drawn last, paints over scrolled content) -->
           <g id="sticky-header">
-            <rect x="20" y="20" width="375" height="100" fill="#F7F7F5" />
+            <!-- White background with hairline bottom border -->
+            <rect x="20" y="20" width="375" height="116" fill="#FFFFFF" />
+            <line x1="20" y1="136" x2="395" y2="136" stroke="#E7E5DF" stroke-width="1" />
 
-          
-          <!-- Status Bar -->
-          <g transform="translate(20, 20)">
-            <text x="32" y="32" class="font-sans" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
-            <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
-            <g transform="translate(290, 17)" fill="#111827">
-              <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
-              <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
-              <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
+            <!-- Status Bar -->
+            <g transform="translate(20, 20)">
+              <text x="32" y="32" class="font-sans" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+              <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+              <g transform="translate(290, 17)" fill="#111827">
+                <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
+                <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
+                <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" fill="none" /></g>
+              </g>
+            </g>
+
+            <!-- Top App Bar: Back + Title + Menu -->
+            <g transform="translate(20, 68)">
+              <g id="back-btn-worker" style="cursor: pointer;">
+                <rect x="0" y="0" width="44" height="44" fill="transparent" />
+                <path d="M28 22 L18 22 M18 22 L24 16 M18 22 L24 28" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              </g>
+              <text x="187" y="27" class="font-sans" fill="#111827" font-size="17" font-weight="700" text-anchor="middle">Worker Details</text>
+              <g id="menu-btn" style="cursor: pointer;">
+                <rect x="330" y="0" width="44" height="44" fill="transparent" />
+                <circle cx="352" cy="14" r="2.5" fill="#111827" />
+                <circle cx="352" cy="22" r="2.5" fill="#111827" />
+                <circle cx="352" cy="30" r="2.5" fill="#111827" />
+              </g>
             </g>
           </g>
 
-          <!-- Top App Bar -->
-          <g transform="translate(40, 76)">
-            <!-- Back Arrow -->
-            <g id="back-btn-worker" style="cursor: pointer;">
-              <path d="M8 0 L0 8 L8 16" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-              <line x1="0" y1="8" x2="20" y2="8" stroke="#111827" stroke-width="2.5" stroke-linecap="round" />
-            </g>
-          </g>
           <!-- Sticky CTA Footer -->
-        <g transform="translate(20, 744)" id="sticky-footer-cta">
-          <!-- Custom path to round ONLY the bottom corners (rx=40) -->
-          <path d="M0 0 h375 v48 a40 40 0 0 1 -40 40 h-295 a40 40 0 0 1 -40 -40 z" fill="#FFFFFF" />
-          <line x1="0" y1="0" x2="375" y2="0" stroke="#E5E7EB" stroke-width="1" />
-          <rect x="24" y="16" width="327" height="56" rx="28" fill="#111827" />
-          <text x="187.5" y="50" class="font-sans" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">Call Prayag Ahire</text>
-          
-          <!-- iOS Home Indicator -->
-          <rect x="127" y="76" width="120" height="5" rx="2.5" fill="#1A1A18" />
-        </g>
-        
-        <!-- OVERLAY: Lightbox (Fixed at root of screen clip) -->
-        <g id="lightbox" display="none">
-          <rect x="20" y="20" width="375" height="812" fill="#000000" fill-opacity="0.95" />
-          <image id="lightbox-img" href="" x="20" y="20" width="375" height="812" preserveAspectRatio="xMidYMid meet" />
-          <g id="lightbox-close" style="cursor: pointer;" transform="translate(345, 40)">
-            <rect x="-10" y="-10" width="44" height="44" fill="transparent" />
-            <path d="M0 0 L24 24 M24 0 L0 24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          <g transform="translate(20, 744)" id="sticky-footer-cta">
+            <path d="M0 0 h375 v48 a40 40 0 0 1 -40 40 h-295 a40 40 0 0 1 -40 -40 z" fill="#FFFFFF" />
+            <line x1="0" y1="0" x2="375" y2="0" stroke="#E5E7EB" stroke-width="1" />
+            <rect x="24" y="16" width="327" height="56" rx="28" fill="#111827" />
+            <text x="187.5" y="50" class="font-sans" fill="#FFFFFF" font-size="16" font-weight="700" text-anchor="middle">Call Prayag Ahire</text>
+            <!-- iOS Home Indicator -->
+            <rect x="127" y="76" width="120" height="5" rx="2.5" fill="#1A1A18" />
           </g>
-        </g>
-    
-      </g> <!-- End Screen Clip -->
-    </svg>
 
+          <!-- OVERLAY: Lightbox -->
+          <g id="lightbox" display="none">
+            <rect x="20" y="20" width="375" height="812" fill="#000000" fill-opacity="0.95" />
+            <image id="lightbox-img" href="" x="20" y="20" width="375" height="812" preserveAspectRatio="xMidYMid meet" />
+            <g id="lightbox-close" style="cursor: pointer;" transform="translate(345, 40)">
+              <rect x="-10" y="-10" width="44" height="44" fill="transparent" />
+              <path d="M0 0 L24 24 M24 0 L0 24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+            </g>
+          </g>
 
+        </g> <!-- End Screen Clip -->
 
+        <!-- Device Frame Overlay (drawn LAST — masks any corner bleed from clip content) -->
+        <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v2w-device-shadow)"
+              style="clip-path: none;"
+              mask="url(#v2w-bezel-mask)" />
+        <!-- Bezel mask: punch a hole for the screen, keep only the outer ring -->
+        <defs>
+          <mask id="v2w-bezel-mask">
+            <rect x="0" y="0" width="415" height="852" fill="white" />
+            <rect x="20" y="20" width="375" height="812" rx="40" fill="black" />
+          </mask>
+        </defs>
 
+      </svg>
 
     </div>
 
@@ -1627,11 +1633,11 @@ body {
             <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
             
             <!-- Avatar -->
-            <clipPath id="worker-avatar-clip-v1" clipPathUnits="objectBoundingBox">
+            <clipPath id="v1w-avatar-clip" clipPathUnits="objectBoundingBox">
               <rect x="0" y="0" width="1" height="1" rx="0.2" />
             </clipPath>
             <rect x="24" y="24" width="80" height="80" rx="16" fill="#E5E5E5" />
-            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#worker-avatar-clip-v1)" />
+            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#v1w-avatar-clip)" />
             
             <!-- Identity -->
             <text x="124" y="44" class="font-sans" fill="#111827" font-size="22" font-weight="700">Prayag ahire</text>
@@ -1694,20 +1700,20 @@ body {
           <!-- DYNAMIC CONTENT: Photos Grid -->
           <g id="tab-content-photos-old" transform="translate(36, 436)">
             <!-- Photo 1 -->
-            <clipPath id="p1-clip"><rect x="0" y="0" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=330&amp;h=330&amp;fit=crop" x="0" y="0" width="165" height="165" clip-path="url(#p1-clip)" />
+            <clipPath id="v1w-p1-clip"><rect x="0" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=330&amp;h=330&amp;fit=crop" x="0" y="0" width="165" height="165" clip-path="url(#v1w-p1-clip)" />
             
             <!-- Photo 2 -->
-            <clipPath id="p2-clip"><rect x="177" y="0" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1542013936693-884638332954?w=330&amp;h=330&amp;fit=crop" x="177" y="0" width="165" height="165" clip-path="url(#p2-clip)" />
+            <clipPath id="v1w-p2-clip"><rect x="177" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1542013936693-884638332954?w=330&amp;h=330&amp;fit=crop" x="177" y="0" width="165" height="165" clip-path="url(#v1w-p2-clip)" />
             
             <!-- Photo 3 -->
-            <clipPath id="p3-clip"><rect x="0" y="177" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=330&amp;h=330&amp;fit=crop" x="0" y="177" width="165" height="165" clip-path="url(#p3-clip)" />
+            <clipPath id="v1w-p3-clip"><rect x="0" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=330&amp;h=330&amp;fit=crop" x="0" y="177" width="165" height="165" clip-path="url(#v1w-p3-clip)" />
             
             <!-- Photo 4 -->
-            <clipPath id="p4-clip"><rect x="177" y="177" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=330&amp;h=330&amp;fit=crop" x="177" y="177" width="165" height="165" clip-path="url(#p4-clip)" />
+            <clipPath id="v1w-p4-clip"><rect x="177" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=330&amp;h=330&amp;fit=crop" x="177" y="177" width="165" height="165" clip-path="url(#v1w-p4-clip)" />
           </g>
 
           <!-- DYNAMIC CONTENT: Reviews -->
@@ -1840,8 +1846,8 @@ body {
              
              <!-- Product 1 -->
              <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
-             <clipPath id="prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
-             <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#prod1-clip)" />
+             <clipPath id="v1w-prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#v1w-prod1-clip)" />
              <rect x="8" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
              <text x="38" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
              <text x="78" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Appqw</text>
@@ -1849,8 +1855,8 @@ body {
 
              <!-- Product 2 -->
              <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
-             <clipPath id="prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
-             <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#prod2-clip)" />
+             <clipPath id="v1w-prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#v1w-prod2-clip)" />
              <rect x="195" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
              <text x="225" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
              <text x="265" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Shoes</text>
@@ -2082,7 +2088,8 @@ body {
         });
       }
       // 2. Tabs Interaction
-      const tabsGroup = document.querySelector('g[transform="translate(24, 230)"]');
+      const workerSvgForTabs = document.getElementById('worker-profile-svg');
+      const tabsGroup = workerSvgForTabs ? workerSvgForTabs.querySelector('g[transform="translate(24, 230)"]') : null;
       if (tabsGroup) {
         const tabs = [
           { text: 'Photos', x: 34, width: 76, rx: '-4' },
@@ -2484,7 +2491,8 @@ body {
         });
       }
       // 2. Tabs Interaction
-      const tabsGroup = document.querySelector('g[transform="translate(24, 230)"]');
+      const workerSvgOldForTabs = document.getElementById('old-worker-profile-svg');
+      const tabsGroup = workerSvgOldForTabs ? workerSvgOldForTabs.querySelector('g[transform="translate(24, 230)"]') : null;
       if (tabsGroup) {
         const tabs = [
           { text: 'Photos', x: 34, width: 76, rx: '-4' },

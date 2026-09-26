@@ -43,11 +43,11 @@
             <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
             
             <!-- Avatar -->
-            <clipPath id="worker-avatar-clip-v1" clipPathUnits="objectBoundingBox">
+            <clipPath id="v1w-avatar-clip" clipPathUnits="objectBoundingBox">
               <rect x="0" y="0" width="1" height="1" rx="0.2" />
             </clipPath>
             <rect x="24" y="24" width="80" height="80" rx="16" fill="#E5E5E5" />
-            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#worker-avatar-clip-v1)" />
+            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#v1w-avatar-clip)" />
             
             <!-- Identity -->
             <text x="124" y="44" class="font-sans" fill="#111827" font-size="22" font-weight="700">Prayag ahire</text>
@@ -110,20 +110,20 @@
           <!-- DYNAMIC CONTENT: Photos Grid -->
           <g id="tab-content-photos-old" transform="translate(36, 436)">
             <!-- Photo 1 -->
-            <clipPath id="p1-clip"><rect x="0" y="0" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=330&amp;h=330&amp;fit=crop" x="0" y="0" width="165" height="165" clip-path="url(#p1-clip)" />
+            <clipPath id="v1w-p1-clip"><rect x="0" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=330&amp;h=330&amp;fit=crop" x="0" y="0" width="165" height="165" clip-path="url(#v1w-p1-clip)" />
             
             <!-- Photo 2 -->
-            <clipPath id="p2-clip"><rect x="177" y="0" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1542013936693-884638332954?w=330&amp;h=330&amp;fit=crop" x="177" y="0" width="165" height="165" clip-path="url(#p2-clip)" />
+            <clipPath id="v1w-p2-clip"><rect x="177" y="0" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1542013936693-884638332954?w=330&amp;h=330&amp;fit=crop" x="177" y="0" width="165" height="165" clip-path="url(#v1w-p2-clip)" />
             
             <!-- Photo 3 -->
-            <clipPath id="p3-clip"><rect x="0" y="177" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=330&amp;h=330&amp;fit=crop" x="0" y="177" width="165" height="165" clip-path="url(#p3-clip)" />
+            <clipPath id="v1w-p3-clip"><rect x="0" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=330&amp;h=330&amp;fit=crop" x="0" y="177" width="165" height="165" clip-path="url(#v1w-p3-clip)" />
             
             <!-- Photo 4 -->
-            <clipPath id="p4-clip"><rect x="177" y="177" width="165" height="165" rx="12" /></clipPath>
-            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=330&amp;h=330&amp;fit=crop" x="177" y="177" width="165" height="165" clip-path="url(#p4-clip)" />
+            <clipPath id="v1w-p4-clip"><rect x="177" y="177" width="165" height="165" rx="12" /></clipPath>
+            <image class="photo-thumbnail" style="cursor: pointer;" href="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=330&amp;h=330&amp;fit=crop" x="177" y="177" width="165" height="165" clip-path="url(#v1w-p4-clip)" />
           </g>
 
           <!-- DYNAMIC CONTENT: Reviews -->
@@ -256,8 +256,8 @@
              
              <!-- Product 1 -->
              <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
-             <clipPath id="prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
-             <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#prod1-clip)" />
+             <clipPath id="v1w-prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#v1w-prod1-clip)" />
              <rect x="8" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
              <text x="38" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
              <text x="78" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Appqw</text>
@@ -265,8 +265,8 @@
 
              <!-- Product 2 -->
              <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
-             <clipPath id="prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
-             <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#prod2-clip)" />
+             <clipPath id="v1w-prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
+             <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#v1w-prod2-clip)" />
              <rect x="195" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
              <text x="225" y="184" class="font-sans" fill="#FFFFFF" font-size="11" text-anchor="middle">For sale</text>
              <text x="265" y="315" class="font-sans" fill="#111827" font-size="14" font-weight="700" text-anchor="middle">Shoes</text>

@@ -86,7 +86,8 @@
         });
       }
       // 2. Tabs Interaction
-      const tabsGroup = document.querySelector('g[transform="translate(24, 230)"]');
+      const workerSvgForTabs = document.getElementById('worker-profile-svg');
+      const tabsGroup = workerSvgForTabs ? workerSvgForTabs.querySelector('g[transform="translate(24, 230)"]') : null;
       if (tabsGroup) {
         const tabs = [
           { text: 'Photos', x: 34, width: 76, rx: '-4' },
