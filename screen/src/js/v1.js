@@ -1,6 +1,44 @@
+(() => {
 // --- V1 (OLD) JS LOGIC ---
 // Stage 7: Frontend Engineer Interactivity
     document.addEventListener('DOMContentLoaded', () => {
+
+      // 0. Prototype Navigation
+      const plumberBtnOld = document.getElementById('plumber-category-btn-old');
+        const popularPlumberCardOld = document.getElementById('popular-plumber-card-old');
+        if (popularPlumberCardOld) {
+          popularPlumberCardOld.addEventListener('click', () => {
+            if (window.getIsPlaying && window.getIsPlaying()) {
+              window.navigateTo('screen-v1-workerlist');
+            }
+          });
+        }
+      if (plumberBtnOld) {
+        plumberBtnOld.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v1-workerlist');
+          }
+        });
+      }
+
+      const workerListCardOld = document.getElementById('workerlist-card-1-old');
+      if (workerListCardOld) {
+        workerListCardOld.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v1-worker');
+          }
+        });
+      }
+
+      const backBtnWorkerOld = document.getElementById('back-btn-worker-old');
+      if (backBtnWorkerOld) {
+        backBtnWorkerOld.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v1-workerlist');
+          }
+        });
+      }
+
       // 1. Follow Button Interaction
       const followBtn = document.getElementById('follow-btn-old');
       if (followBtn) {
@@ -114,11 +152,12 @@
       const lightbox = document.getElementById('lightbox-old');
       const lightboxImg = document.getElementById('lightbox-img-old');
       const lightboxClose = document.getElementById('lightbox-close-old');
-      const photos = document.querySelectorAll('.photo-thumbnail');
+      const workerProfileSvgOld = document.getElementById('old-worker-profile-svg');
+      const photos = workerProfileSvgOld ? workerProfileSvgOld.querySelectorAll('.photo-thumbnail') : [];
       if (lightbox && lightboxImg && lightboxClose) {
         photos.forEach(photo => {
           photo.addEventListener('click', () => {
-            lightboxImg.setAttribute('href', photo.getAttribute('href'));
+            lightboxImg.setAttribute('href', photo.getAttribute('href').split('?')[0]);
             lightbox.removeAttribute('display');
           });
         });
@@ -184,45 +223,47 @@
       };
 
       const workerSvg = document.getElementById('old-worker-profile-svg');
-      workerSvg.addEventListener('wheel', (e) => {
-         updateScroll(-e.deltaY);
-      });
+      if (workerSvg && scrollContent) {
+        workerSvg.addEventListener('wheel', (e) => {
+           updateScroll(-e.deltaY);
+        });
 
-      workerSvg.addEventListener('touchstart', (e) => {
-         startY = e.touches[0].clientY;
-      });
+        workerSvg.addEventListener('touchstart', (e) => {
+           startY = e.touches[0].clientY;
+        });
 
-      workerSvg.addEventListener('touchmove', (e) => {
-         const dy = e.touches[0].clientY - startY;
-         startY = e.touches[0].clientY;
-         updateScroll(dy);
-         e.preventDefault();
-      }, { passive: false });
+        workerSvg.addEventListener('touchmove', (e) => {
+           const dy = e.touches[0].clientY - startY;
+           startY = e.touches[0].clientY;
+           updateScroll(dy);
+           e.preventDefault();
+        }, { passive: false });
 
-      // Mouse drag-to-scroll for laptops
-      let isDragging = false;
-      workerSvg.addEventListener('mousedown', (e) => {
-         isDragging = true;
-         startY = e.clientY;
-      });
+        // Mouse drag-to-scroll for laptops
+        let isDragging = false;
+        workerSvg.addEventListener('mousedown', (e) => {
+           isDragging = true;
+           startY = e.clientY;
+        });
 
-      window.addEventListener('mousemove', (e) => {
-         if (!isDragging) return;
-         const dy = e.clientY - startY;
-         // Only scroll if moved a bit to avoid jitter
-         if (Math.abs(dy) > 1) {
-            startY = e.clientY;
-            updateScroll(dy);
-            e.preventDefault(); // Stop native drag
-         }
-      });
+        window.addEventListener('mousemove', (e) => {
+           if (!isDragging) return;
+           const dy = e.clientY - startY;
+           // Only scroll if moved a bit to avoid jitter
+           if (Math.abs(dy) > 1) {
+              startY = e.clientY;
+              updateScroll(dy);
+              e.preventDefault(); // Stop native drag
+           }
+        });
 
-      const stopDrag = () => {
-         isDragging = false;
-      };
-      
-      window.addEventListener('mouseup', stopDrag);
-      workerSvg.addEventListener('mouseleave', stopDrag);
+        const stopDrag = () => {
+           isDragging = false;
+        };
+        
+        window.addEventListener('mouseup', stopDrag);
+        workerSvg.addEventListener('mouseleave', stopDrag);
+      }
 
       // --- BROADCAST MODAL INTERACTION LOGIC (STAGE 7) ---
       const broadcastFab = document.getElementById('broadcast-fab-old');
@@ -270,8 +311,8 @@
       if (viewWorkerBtn) viewWorkerBtn.addEventListener('click', closeBroadcastModal);
 
       // Pill Selection Logic
-      const allPills = document.querySelectorAll('.service-pills rect');
-      const allPillTexts = document.querySelectorAll('.service-pills text');
+      const allPills = workerProfileSvgOld ? workerProfileSvgOld.querySelectorAll('.service-pills rect') : [];
+      const allPillTexts = workerProfileSvgOld ? workerProfileSvgOld.querySelectorAll('.service-pills text') : [];
       
       allPills.forEach((pill, index) => {
          pill.style.cursor = 'pointer';
@@ -316,3 +357,6 @@
     });
   
     })();
+
+
+

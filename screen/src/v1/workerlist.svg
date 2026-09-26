@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%">
+  <defs>
+    <filter id="v1wl-device-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+    <clipPath id="v1wl-screen-clip">
+      <rect x="20" y="20" width="375" height="812" rx="40" />
+    </clipPath>
+    <clipPath id="v1wl-avatar-clip">
+      <rect x="0" y="0" width="64" height="64" rx="16" />
+    </clipPath>
+  </defs>
+  
+  <!-- Hardware -->
+  <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v1wl-device-shadow)" />
+  <rect x="20" y="20" width="375" height="812" rx="40" fill="#FAFAFA" />
+  
+  <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
+  <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
+  <path d="M8 250 h2 v48 h-2 z" fill="#333333" />
+  <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
+
+  <!-- Screen Content -->
+  <g clip-path="url(#v1wl-screen-clip)">
+    <!-- Background -->
+    <rect x="20" y="20" width="375" height="812" fill="#FAFAFA" />
+    
+    <!-- Top Header & Status Bar -->
+    <g transform="translate(20, 20)">
+            <!-- Status Bar -->
+      <g transform="translate(0, 0)">
+        <text x="32" y="32" font-family="-apple-system, sans-serif" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+        <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+        <g transform="translate(290, 17)" fill="#111827">
+          <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
+          <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
+          <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
+        </g>
+      </g>
+
+      <!-- Header: ProWorker Logo + Notification -->
+      <g transform="translate(16, 70)">
+        <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="28" font-weight="800" letter-spacing="-0.5">
+          <tspan fill="#2563EB">Pro</tspan><tspan fill="#111827">Worker</tspan>
+        </text>
+        <g transform="translate(305, -15)">
+          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="#111827" />
+        </g>
+      </g>
+
+      <!-- Search Bar -->
+      <g transform="translate(16, 115)">
+        <rect width="280" height="52" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#6B7280" transform="translate(12, 14)" />
+        <text x="50" y="32" font-family="-apple-system, sans-serif" font-size="16" fill="#111827">Plumber</text>
+        
+        <!-- Filter Button -->
+        <g transform="translate(292, 0)">
+          <rect width="52" height="52" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+          <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" fill="#111827" transform="translate(14, 14)" />
+        </g>
+      </g>
+
+      <!-- Location Block -->
+      <g transform="translate(16, 180)">
+        <rect width="343" height="64" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+        <!-- Location Icon -->
+        <circle cx="36" cy="32" r="16" fill="#EFF6FF" />
+        <path d="M12 21l-3-7-7-3 20-5-10 15z" fill="#2563EB" transform="translate(24, 21) scale(0.5)" />
+        
+        <!-- Location Text -->
+        <text x="64" y="26" font-family="-apple-system, sans-serif" font-size="12" fill="#64748B" font-weight="500">Search near</text>
+        <text x="64" y="46" font-family="-apple-system, sans-serif" font-size="14" fill="#0F172A" font-weight="600">rts • संजय गांधी राष्ट्रीय उद्यान, Kan...</text>
+        
+        <!-- Chevron -->
+        <path d="M7 10l5 5 5-5z" fill="#64748B" transform="translate(305, 27)" />
+      </g>
+
+      <!-- Worker Card (Clickable to go to Worker Profile) -->
+      <g id="workerlist-card-1-old" transform="translate(16, 260)" style="cursor:pointer;">
+        <rect width="343" height="106" rx="20" fill="#FFFFFF" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.02))" />
+        
+        <!-- Avatar Image Placeholder (Since it's SVG, we use image tag. We'll use the user's provided media screenshot as a generic avatar or just a placeholder image) -->
+        <g transform="translate(16, 20)">
+           <clipPath id="v1wl-list-avatar-clip"><rect width="66" height="66" rx="16"/></clipPath>
+           <image href="https://i.pravatar.cc/150?img=11" width="66" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#v1wl-list-avatar-clip)" />
+        </g>
+
+        <!-- Details -->
+        <text x="96" y="38" font-family="-apple-system, sans-serif" font-size="17" fill="#0F172A" font-weight="700">Prayag ahire</text>
+        <text x="96" y="58" font-family="-apple-system, sans-serif" font-size="14" fill="#64748B">Plumber</text>
+
+        <!-- Distance Pill -->
+        <g transform="translate(96, 68)">
+          <rect width="70" height="24" rx="12" fill="#EFF6FF" />
+          <path d="M12 21l-3-7-7-3 20-5-10 15z" fill="#2563EB" transform="translate(8, 5) scale(0.4)" />
+          <text x="26" y="16" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#2563EB">424 km</text>
+        </g>
+
+        <!-- Rating Block -->
+        <g transform="translate(255, 16)">
+          <rect width="72" height="74" rx="16" fill="#F8FAFC" />
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F59E0B" transform="translate(26, 8) scale(0.8)" />
+          <text x="36" y="46" font-family="-apple-system, sans-serif" font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">4.0</text>
+          <text x="36" y="60" font-family="-apple-system, sans-serif" font-size="10" font-weight="500" fill="#94A3B8" text-anchor="middle">0 reviews</text>
+        </g>
+      </g>
+
+      <!-- Footer Text -->
+      <text x="187.5" y="440" font-family="-apple-system, sans-serif" font-size="14" font-weight="500" fill="#94A3B8" text-anchor="middle">Made with <tspan fill="#EF4444">❤</tspan> for Indian People</text>
+      
+    </g>
+
+        <!-- Bottom Tab Bar -->
+    <g transform="translate(20, 748)">
+      <rect x="0" y="0" width="375" height="84" fill="#FFFFFF" />
+      <line x1="0" y1="0" x2="375" y2="0" stroke="#E7E5DF" stroke-width="1" />
+      <g transform="translate(72, 14)">
+        <use href="#icon-home" x="0" y="0" width="24" height="24" stroke="#3B82F6" stroke-width="2.5" />
+        <text x="12" y="36" font-family="-apple-system, sans-serif" fill="#2563EB" font-size="11" font-weight="600" text-anchor="middle">Home</text>
+      </g>
+      <g transform="translate(175.5, 14)">
+        <use href="#icon-store" x="0" y="0" width="24" height="24" fill="none" stroke="#64748B" stroke-width="2" />
+        <text x="12" y="36" font-family="-apple-system, sans-serif" fill="#64748B" font-size="11" font-weight="500" text-anchor="middle">Store</text>
+      </g>
+      <g transform="translate(279, 14)">
+        <use href="#icon-user" x="0" y="0" width="24" height="24" fill="none" stroke="#64748B" stroke-width="2" />
+        <text x="12" y="36" font-family="-apple-system, sans-serif" fill="#64748B" font-size="11" font-weight="500" text-anchor="middle">Profile</text>
+      </g>
+      <rect x="127" y="70" width="120" height="5" rx="2.5" fill="#1A1A18" />
+    </g>
+  </g>
+</svg>
+

@@ -1,0 +1,10 @@
+{
+  "continuous-learning-monitor": {
+    "PreInvocation": [
+      {
+        "type": "command",
+        "command": "python scripts/amnesia_monitor.py"
+      }
+    ]
+  }
+}

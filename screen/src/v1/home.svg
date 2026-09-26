@@ -4,12 +4,12 @@
       
       <defs>
         <!-- Screen Clip -->
-        <clipPath id="screen-clip">
+        <clipPath id="v1h-screen-clip">
           <rect x="20" y="20" width="375" height="812" rx="40" />
         </clipPath>
         
         <!-- Shadows -->
-        <filter id="shadow-resting" x="-10%" y="-10%" width="120%" height="120%">
+        <filter id="v1h-shadow-resting" x="-10%" y="-10%" width="120%" height="120%">
           <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#141410" flood-opacity="0.06" />
         </filter>
 
@@ -90,11 +90,11 @@
       <!-- Device Frame -->
       <!-- Device Frame (Thicker bezel) -->
       <!-- Shadow applied directly to the device -->
-      <filter id="device-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <filter id="v1h-device-shadow" x="-20%" y="-20%" width="140%" height="140%">
         <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
       </filter>
       
-      <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#device-shadow)" />
+      <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v1h-device-shadow)" />
       <rect x="20" y="20" width="375" height="812" rx="40" fill="#F7F7F5" />
       
       <!-- Buttons on Device Frame -->
@@ -104,7 +104,7 @@
       <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
 
       <!-- Screen Content -->
-      <g clip-path="url(#screen-clip)">
+      <g clip-path="url(#v1h-screen-clip)">
         <!-- Background -->
         <rect x="20" y="20" width="375" height="812" fill="#F7F7F5" />
         
@@ -144,16 +144,16 @@
 
         <!-- Search & Filter -->
         <g transform="translate(44, 150)">
-          <rect x="0" y="0" width="267" height="48" rx="14" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <rect x="0" y="0" width="267" height="48" rx="14" fill="#FFFFFF" filter="url(#v1h-shadow-resting)" />
           <use href="#icon-search" x="16" y="14" width="20" height="20" class="text-secondary" />
           <text x="48" y="29" class="font-sans text-muted" font-size="15" font-weight="400">Need quick help? Search here...</text>
-          <rect x="279" y="0" width="48" height="48" rx="14" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <rect x="279" y="0" width="48" height="48" rx="14" fill="#FFFFFF" filter="url(#v1h-shadow-resting)" />
           <use href="#icon-filter" x="291" y="14" width="20" height="20" class="text-primary" />
         </g>
 
         <!-- Location -->
         <g transform="translate(44, 220)">
-          <rect x="0" y="0" width="327" height="60" rx="16" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <rect x="0" y="0" width="327" height="60" rx="16" fill="#FFFFFF" filter="url(#v1h-shadow-resting)" />
           <rect x="12" y="12" width="36" height="36" rx="18" fill="#EFF6FF" />
           <use href="#icon-navigation" x="20" y="20" width="18" height="18" class="text-accent" />
           <text x="60" y="28" class="font-sans text-muted" font-size="12" font-weight="500">Search near</text>
@@ -167,7 +167,7 @@
 
         <!-- Grid -->
         <g transform="translate(44, 374)">
-          <g transform="translate(0, 0)">
+          <g id="plumber-category-btn-old" transform="translate(0, 0)" style="cursor: pointer;">
             <rect x="0" y="0" width="70" height="70" rx="20" fill="#E8F6EC" />
             <use href="#icon-plumber" x="23" y="23" width="24" height="24" stroke="#1FA34C" />
             <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Plumber</text>
@@ -213,20 +213,19 @@
 
         <!-- Cards -->
         <g transform="translate(44, 648)">
-          <g>
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#EFF6FF" filter="url(#shadow-resting)" />
+          <g id="popular-plumber-card-old" style="cursor: pointer;"><rect x="0" y="0" width="156" height="96" rx="20" fill="#EFF6FF" filter="url(#v1h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-plumber" x="26" y="26" width="20" height="20" stroke="#3B82F6" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Home &amp; Repair</text>
           </g>
           <g transform="translate(170, 0)">
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#E8F6EC" filter="url(#shadow-resting)" />
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#E8F6EC" filter="url(#v1h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-leaf" x="26" y="26" width="20" height="20" stroke="#1FA34C" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Beauty &amp; Spa</text>
           </g>
           <g transform="translate(340, 0)">
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#F1ECFB" filter="url(#shadow-resting)" />
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#F1ECFB" filter="url(#v1h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-store" x="26" y="26" width="20" height="20" stroke="#7B3FE4" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Retailers</text>

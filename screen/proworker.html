@@ -51,12 +51,12 @@
       
       <defs>
         <!-- Screen Clip -->
-        <clipPath id="screen-clip">
+        <clipPath id="v1h-screen-clip">
           <rect x="20" y="20" width="375" height="812" rx="40" />
         </clipPath>
         
         <!-- Shadows -->
-        <filter id="shadow-resting" x="-10%" y="-10%" width="120%" height="120%">
+        <filter id="v1h-shadow-resting" x="-10%" y="-10%" width="120%" height="120%">
           <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#141410" flood-opacity="0.06" />
         </filter>
 
@@ -137,11 +137,11 @@
       <!-- Device Frame -->
       <!-- Device Frame (Thicker bezel) -->
       <!-- Shadow applied directly to the device -->
-      <filter id="device-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <filter id="v1h-device-shadow" x="-20%" y="-20%" width="140%" height="140%">
         <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
       </filter>
       
-      <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#device-shadow)" />
+      <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v1h-device-shadow)" />
       <rect x="20" y="20" width="375" height="812" rx="40" fill="#F7F7F5" />
       
       <!-- Buttons on Device Frame -->
@@ -151,7 +151,7 @@
       <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
 
       <!-- Screen Content -->
-      <g clip-path="url(#screen-clip)">
+      <g clip-path="url(#v1h-screen-clip)">
         <!-- Background -->
         <rect x="20" y="20" width="375" height="812" fill="#F7F7F5" />
         
@@ -191,16 +191,16 @@
 
         <!-- Search & Filter -->
         <g transform="translate(44, 150)">
-          <rect x="0" y="0" width="267" height="48" rx="14" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <rect x="0" y="0" width="267" height="48" rx="14" fill="#FFFFFF" filter="url(#v1h-shadow-resting)" />
           <use href="#icon-search" x="16" y="14" width="20" height="20" class="text-secondary" />
           <text x="48" y="29" class="font-sans text-muted" font-size="15" font-weight="400">Need quick help? Search here...</text>
-          <rect x="279" y="0" width="48" height="48" rx="14" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <rect x="279" y="0" width="48" height="48" rx="14" fill="#FFFFFF" filter="url(#v1h-shadow-resting)" />
           <use href="#icon-filter" x="291" y="14" width="20" height="20" class="text-primary" />
         </g>
 
         <!-- Location -->
         <g transform="translate(44, 220)">
-          <rect x="0" y="0" width="327" height="60" rx="16" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <rect x="0" y="0" width="327" height="60" rx="16" fill="#FFFFFF" filter="url(#v1h-shadow-resting)" />
           <rect x="12" y="12" width="36" height="36" rx="18" fill="#EFF6FF" />
           <use href="#icon-navigation" x="20" y="20" width="18" height="18" class="text-accent" />
           <text x="60" y="28" class="font-sans text-muted" font-size="12" font-weight="500">Search near</text>
@@ -214,7 +214,7 @@
 
         <!-- Grid -->
         <g transform="translate(44, 374)">
-          <g transform="translate(0, 0)">
+          <g id="plumber-category-btn-old" transform="translate(0, 0)" style="cursor: pointer;">
             <rect x="0" y="0" width="70" height="70" rx="20" fill="#E8F6EC" />
             <use href="#icon-plumber" x="23" y="23" width="24" height="24" stroke="#1FA34C" />
             <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Plumber</text>
@@ -260,20 +260,19 @@
 
         <!-- Cards -->
         <g transform="translate(44, 648)">
-          <g>
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#EFF6FF" filter="url(#shadow-resting)" />
+          <g id="popular-plumber-card-old" style="cursor: pointer;"><rect x="0" y="0" width="156" height="96" rx="20" fill="#EFF6FF" filter="url(#v1h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-plumber" x="26" y="26" width="20" height="20" stroke="#3B82F6" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Home &amp; Repair</text>
           </g>
           <g transform="translate(170, 0)">
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#E8F6EC" filter="url(#shadow-resting)" />
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#E8F6EC" filter="url(#v1h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-leaf" x="26" y="26" width="20" height="20" stroke="#1FA34C" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Beauty &amp; Spa</text>
           </g>
           <g transform="translate(340, 0)">
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#F1ECFB" filter="url(#shadow-resting)" />
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#F1ECFB" filter="url(#v1h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-store" x="26" y="26" width="20" height="20" stroke="#7B3FE4" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Retailers</text>
@@ -304,19 +303,159 @@
 
       </g>
     </svg>
+
+    </div>
+
+      <!-- Worker List Screen -->
+    <div class="device-frame">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%">
+  <defs>
+    <filter id="v1wl-device-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+    <clipPath id="v1wl-screen-clip">
+      <rect x="20" y="20" width="375" height="812" rx="40" />
+    </clipPath>
+    <clipPath id="v1wl-avatar-clip">
+      <rect x="0" y="0" width="64" height="64" rx="16" />
+    </clipPath>
+  </defs>
+  
+  <!-- Hardware -->
+  <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v1wl-device-shadow)" />
+  <rect x="20" y="20" width="375" height="812" rx="40" fill="#FAFAFA" />
+  
+  <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
+  <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
+  <path d="M8 250 h2 v48 h-2 z" fill="#333333" />
+  <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
+
+  <!-- Screen Content -->
+  <g clip-path="url(#v1wl-screen-clip)">
+    <!-- Background -->
+    <rect x="20" y="20" width="375" height="812" fill="#FAFAFA" />
+    
+    <!-- Top Header & Status Bar -->
+    <g transform="translate(20, 20)">
+            <!-- Status Bar -->
+      <g transform="translate(0, 0)">
+        <text x="32" y="32" font-family="-apple-system, sans-serif" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+        <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+        <g transform="translate(290, 17)" fill="#111827">
+          <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
+          <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
+          <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
+        </g>
+      </g>
+
+      <!-- Header: ProWorker Logo + Notification -->
+      <g transform="translate(16, 70)">
+        <text font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="28" font-weight="800" letter-spacing="-0.5">
+          <tspan fill="#2563EB">Pro</tspan><tspan fill="#111827">Worker</tspan>
+        </text>
+        <g transform="translate(305, -15)">
+          <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z" fill="#111827" />
+        </g>
+      </g>
+
+      <!-- Search Bar -->
+      <g transform="translate(16, 115)">
+        <rect width="280" height="52" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+        <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z" fill="#6B7280" transform="translate(12, 14)" />
+        <text x="50" y="32" font-family="-apple-system, sans-serif" font-size="16" fill="#111827">Plumber</text>
+        
+        <!-- Filter Button -->
+        <g transform="translate(292, 0)">
+          <rect width="52" height="52" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1" />
+          <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" fill="#111827" transform="translate(14, 14)" />
+        </g>
+      </g>
+
+      <!-- Location Block -->
+      <g transform="translate(16, 180)">
+        <rect width="343" height="64" rx="16" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1" />
+        <!-- Location Icon -->
+        <circle cx="36" cy="32" r="16" fill="#EFF6FF" />
+        <path d="M12 21l-3-7-7-3 20-5-10 15z" fill="#2563EB" transform="translate(24, 21) scale(0.5)" />
+        
+        <!-- Location Text -->
+        <text x="64" y="26" font-family="-apple-system, sans-serif" font-size="12" fill="#64748B" font-weight="500">Search near</text>
+        <text x="64" y="46" font-family="-apple-system, sans-serif" font-size="14" fill="#0F172A" font-weight="600">rts • संजय गांधी राष्ट्रीय उद्यान, Kan...</text>
+        
+        <!-- Chevron -->
+        <path d="M7 10l5 5 5-5z" fill="#64748B" transform="translate(305, 27)" />
+      </g>
+
+      <!-- Worker Card (Clickable to go to Worker Profile) -->
+      <g id="workerlist-card-1-old" transform="translate(16, 260)" style="cursor:pointer;">
+        <rect width="343" height="106" rx="20" fill="#FFFFFF" filter="drop-shadow(0 4px 6px rgba(0,0,0,0.02))" />
+        
+        <!-- Avatar Image Placeholder (Since it's SVG, we use image tag. We'll use the user's provided media screenshot as a generic avatar or just a placeholder image) -->
+        <g transform="translate(16, 20)">
+           <clipPath id="v1wl-list-avatar-clip"><rect width="66" height="66" rx="16"/></clipPath>
+           <image href="https://i.pravatar.cc/150?img=11" width="66" height="66" preserveAspectRatio="xMidYMid slice" clip-path="url(#v1wl-list-avatar-clip)" />
+        </g>
+
+        <!-- Details -->
+        <text x="96" y="38" font-family="-apple-system, sans-serif" font-size="17" fill="#0F172A" font-weight="700">Prayag ahire</text>
+        <text x="96" y="58" font-family="-apple-system, sans-serif" font-size="14" fill="#64748B">Plumber</text>
+
+        <!-- Distance Pill -->
+        <g transform="translate(96, 68)">
+          <rect width="70" height="24" rx="12" fill="#EFF6FF" />
+          <path d="M12 21l-3-7-7-3 20-5-10 15z" fill="#2563EB" transform="translate(8, 5) scale(0.4)" />
+          <text x="26" y="16" font-family="-apple-system, sans-serif" font-size="12" font-weight="700" fill="#2563EB">424 km</text>
+        </g>
+
+        <!-- Rating Block -->
+        <g transform="translate(255, 16)">
+          <rect width="72" height="74" rx="16" fill="#F8FAFC" />
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F59E0B" transform="translate(26, 8) scale(0.8)" />
+          <text x="36" y="46" font-family="-apple-system, sans-serif" font-size="16" font-weight="800" fill="#0F172A" text-anchor="middle">4.0</text>
+          <text x="36" y="60" font-family="-apple-system, sans-serif" font-size="10" font-weight="500" fill="#94A3B8" text-anchor="middle">0 reviews</text>
+        </g>
+      </g>
+
+      <!-- Footer Text -->
+      <text x="187.5" y="440" font-family="-apple-system, sans-serif" font-size="14" font-weight="500" fill="#94A3B8" text-anchor="middle">Made with <tspan fill="#EF4444">❤</tspan> for Indian People</text>
+      
+    </g>
+
+        <!-- Bottom Tab Bar -->
+    <g transform="translate(20, 748)">
+      <rect x="0" y="0" width="375" height="84" fill="#FFFFFF" />
+      <line x1="0" y1="0" x2="375" y2="0" stroke="#E7E5DF" stroke-width="1" />
+      <g transform="translate(72, 14)">
+        <use href="#icon-home" x="0" y="0" width="24" height="24" stroke="#3B82F6" stroke-width="2.5" />
+        <text x="12" y="36" font-family="-apple-system, sans-serif" fill="#2563EB" font-size="11" font-weight="600" text-anchor="middle">Home</text>
+      </g>
+      <g transform="translate(175.5, 14)">
+        <use href="#icon-store" x="0" y="0" width="24" height="24" fill="none" stroke="#64748B" stroke-width="2" />
+        <text x="12" y="36" font-family="-apple-system, sans-serif" fill="#64748B" font-size="11" font-weight="500" text-anchor="middle">Store</text>
+      </g>
+      <g transform="translate(279, 14)">
+        <use href="#icon-user" x="0" y="0" width="24" height="24" fill="none" stroke="#64748B" stroke-width="2" />
+        <text x="12" y="36" font-family="-apple-system, sans-serif" fill="#64748B" font-size="11" font-weight="500" text-anchor="middle">Profile</text>
+      </g>
+      <rect x="127" y="70" width="120" height="5" rx="2.5" fill="#1A1A18" />
+    </g>
+  </g>
+</svg>
+
+
     </div>
 
       <!-- Worker Profile Screen -->
     <div class="device-frame">
       <svg id="old-worker-profile-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%" role="img">
         <defs>
-          <clipPath id="screen-clip-2">
+          <clipPath id="v1w-screen-clip-2">
             <rect x="20" y="20" width="375" height="812" rx="40" />
           </clipPath>
-          <filter id="shadow-resting-2" x="-10%" y="-10%" width="120%" height="120%">
+          <filter id="v1w-shadow-resting-2" x="-10%" y="-10%" width="120%" height="120%">
             <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#000000" flood-opacity="0.03" />
           </filter>
-          <filter id="shadow-floating-2" x="-20%" y="-20%" width="140%" height="140%">
+          <filter id="v1w-shadow-floating-2" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#141410" flood-opacity="0.14" />
           </filter>
         </defs>
@@ -327,32 +466,15 @@
         </style>
         
         <!-- Device Frame -->
-        <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#device-shadow)" />
+        <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v1w-device-shadow)" />
         <rect x="20" y="20" width="375" height="812" rx="40" fill="#F9F9F9" />
         <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
         <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
         <path d="M8 250 h2 v48 h-2 z" fill="#333333" />
         <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
 
-        <g clip-path="url(#screen-clip-2)">
+        <g clip-path="url(#v1w-screen-clip-2)">
           <rect x="20" y="20" width="375" height="812" fill="#F9F9F9" />
-          
-          <!-- Status Bar -->
-          <g transform="translate(20, 20)">
-            <text x="32" y="32" class="font-sans" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
-            <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
-            <g transform="translate(290, 17)" fill="#111827">
-              <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
-              <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
-              <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
-            </g>
-          </g>
-
-          <!-- Top App Bar -->
-          <g transform="translate(40, 76)">
-            <!-- Back Arrow -->
-            <path d="M8 0 L0 8 L8 16" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <line x1="0" y1="8" x2="20" y2="8" stroke="#111827" stroke-width="2.5" stroke-linecap="round" />
             <!-- Title -->
             <text x="167" y="14" class="font-sans" fill="#111827" font-size="20" font-weight="700" text-anchor="middle">Worker Details</text>
             <!-- 3 Dots -->
@@ -362,20 +484,19 @@
               <circle cx="330" cy="8" r="2.5" fill="#111827" />
               <circle cx="330" cy="14" r="2.5" fill="#111827" />
             </g>
-          </g>
 
           <!-- Scrollable Body -->
           <g id="scrollable-content-old" transform="translate(0, 0)">
             <!-- Hero Card -->
           <g transform="translate(36, 136)">
-            <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+            <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
             
             <!-- Avatar -->
-            <clipPath id="avatar-clip">
-              <rect x="24" y="24" width="80" height="80" rx="16" />
+            <clipPath id="worker-avatar-clip-v1" clipPathUnits="objectBoundingBox">
+              <rect x="0" y="0" width="1" height="1" rx="0.2" />
             </clipPath>
             <rect x="24" y="24" width="80" height="80" rx="16" fill="#E5E5E5" />
-            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#avatar-clip)" />
+            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#worker-avatar-clip-v1)" />
             
             <!-- Identity -->
             <text x="124" y="44" class="font-sans" fill="#111827" font-size="22" font-weight="700">Prayag ahire</text>
@@ -457,7 +578,7 @@
           <!-- DYNAMIC CONTENT: Reviews -->
           <g id="tab-content-reviews-old" display="none" transform="translate(36, 436)">
             <!-- Write Review Box -->
-            <rect x="0" y="0" width="343" height="180" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+            <rect x="0" y="0" width="343" height="180" rx="16" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
             <text x="16" y="24" class="font-sans" fill="#111827" font-size="16" font-weight="700">Write a review</text>
             <!-- 5 Outline Stars -->
             <g id="review-stars-container-old" transform="translate(16, 44)" style="cursor: pointer;">
@@ -478,7 +599,7 @@
 
             <!-- Dynamic New Review (Initially Hidden) -->
             <g id="new-review-block-old" display="none">
-              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
               <circle cx="36" cy="224" r="20" fill="#FCEAF1" />
               <text x="68" y="222" class="font-sans" fill="#111827" font-size="16" font-weight="700">You</text>
               <text x="68" y="240" class="font-sans" fill="#9CA3AF" font-size="12">Just now</text>
@@ -495,7 +616,7 @@
 
             <!-- Review 1 -->
             <g id="existing-reviews-old" style="transition: transform 0.3s ease;">
-              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
               <circle cx="36" cy="224" r="20" fill="#EFF6FF" />
               <text x="68" y="222" class="font-sans" fill="#111827" font-size="16" font-weight="700">Darshan</text>
               <text x="68" y="240" class="font-sans" fill="#9CA3AF" font-size="12">18 Sep 2026</text>
@@ -512,7 +633,7 @@
 
           <!-- DYNAMIC CONTENT: Availability -->
           <g id="tab-content-availability-old" display="none" transform="translate(36, 436)">
-             <rect x="0" y="0" width="343" height="420" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <rect x="0" y="0" width="343" height="420" rx="16" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
              <circle cx="26" cy="24" r="8" fill="none" stroke="#2563EB" stroke-width="2"/>
              <line x1="26" y1="20" x2="26" y2="24" stroke="#2563EB" stroke-width="2" />
              <line x1="26" y1="24" x2="30" y2="24" stroke="#2563EB" stroke-width="2" />
@@ -583,7 +704,7 @@
              <text x="0" y="140" class="font-sans" fill="#111827" font-size="18" font-weight="700">Product details</text>
              
              <!-- Product 1 -->
-             <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
              <clipPath id="prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
              <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#prod1-clip)" />
              <rect x="8" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
@@ -592,7 +713,7 @@
              <text x="78" y="340" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">₹399</text>
 
              <!-- Product 2 -->
-             <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v1w-shadow-resting-2)" />
              <clipPath id="prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
              <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#prod2-clip)" />
              <rect x="195" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
@@ -601,11 +722,33 @@
              <text x="265" y="340" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">₹199</text>
           </g>
           </g>
+          <!-- STICKY HEADER -->
+          <g id="sticky-header-old">
+            <rect x="20" y="20" width="375" height="100" fill="#F9F9F9" />
+
+          
+          <!-- Status Bar -->
+          <g transform="translate(20, 20)">
+            <text x="32" y="32" class="font-sans" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+            <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+            <g transform="translate(290, 17)" fill="#111827">
+              <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
+              <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
+              <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
+            </g>
           </g>
 
+          <!-- Top App Bar -->
+          <g transform="translate(40, 76)">
+            <!-- Back Arrow -->
+            <g id="back-btn-worker-old" style="cursor: pointer;">
+              <path d="M8 0 L0 8 L8 16" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              <line x1="0" y1="8" x2="20" y2="8" stroke="#111827" stroke-width="2.5" stroke-linecap="round" />
+            </g>
+          </g>
           <!-- OVERLAY: Dropdown Menu -->
           <g id="dropdown-menu-old" display="none" transform="translate(170, 100)">
-            <rect x="0" y="0" width="200" height="96" rx="12" fill="#FFFFFF" filter="url(#shadow-floating-2)" />
+            <rect x="0" y="0" width="200" height="96" rx="12" fill="#FFFFFF" filter="url(#v1w-shadow-floating-2)" />
             
             <g id="share-btn" style="cursor: pointer;" transform="translate(0, 0)">
               <rect x="0" y="0" width="200" height="48" rx="12" fill="transparent" />
@@ -621,18 +764,24 @@
               <text x="56" y="30" class="font-sans" fill="#D92D2D" font-size="15" font-weight="500">Report Worker</text>
             </g>
           </g>
-          <!-- OVERLAY: Lightbox -->
+
+
+          <!-- OVERLAY: Lightbox (Fixed at root of screen clip) -->
           <g id="lightbox-old" display="none">
-            <rect x="20" y="20" width="375" height="812" fill="#000000" fill-opacity="0.9" />
-            <image id="lightbox-img-old" href="" x="20" y="246" width="375" height="375" />
+            <rect x="20" y="20" width="375" height="812" fill="#000000" fill-opacity="0.95" />
+            <image id="lightbox-img-old" href="" x="20" y="20" width="375" height="812" preserveAspectRatio="xMidYMid meet" />
             <g id="lightbox-close-old" style="cursor: pointer;" transform="translate(345, 40)">
               <rect x="-10" y="-10" width="44" height="44" fill="transparent" />
               <path d="M0 0 L24 24 M24 0 L0 24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
             </g>
           </g>
 
+          </g>
         </g>
       </svg>
+
+
+
     </div>
   </div>
     </div>
@@ -646,12 +795,12 @@
       
       <defs>
         <!-- Screen Clip -->
-        <clipPath id="screen-clip">
+        <clipPath id="v2h-screen-clip">
           <rect x="20" y="20" width="375" height="812" rx="40" />
         </clipPath>
         
         <!-- Shadows -->
-        <filter id="shadow-resting" x="-10%" y="-10%" width="120%" height="120%">
+        <filter id="v2h-shadow-resting" x="-10%" y="-10%" width="120%" height="120%">
           <feDropShadow dx="0" dy="1" stdDeviation="1.5" flood-color="#141410" flood-opacity="0.06" />
         </filter>
 
@@ -732,11 +881,11 @@
       <!-- Device Frame -->
       <!-- Device Frame (Thicker bezel) -->
       <!-- Shadow applied directly to the device -->
-      <filter id="device-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <filter id="v2h-device-shadow" x="-20%" y="-20%" width="140%" height="140%">
         <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
       </filter>
       
-      <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#device-shadow)" />
+      <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v2h-device-shadow)" />
       <rect x="20" y="20" width="375" height="812" rx="40" fill="#F7F7F5" />
       
       <!-- Buttons on Device Frame -->
@@ -746,7 +895,7 @@
       <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
 
       <!-- Screen Content -->
-      <g clip-path="url(#screen-clip)">
+      <g clip-path="url(#v2h-screen-clip)">
         <!-- Background -->
         <rect x="20" y="20" width="375" height="812" fill="#F7F7F5" />
         
@@ -786,16 +935,18 @@
 
         <!-- Search & Filter -->
         <g transform="translate(44, 150)">
-          <rect x="0" y="0" width="267" height="48" rx="14" fill="#FFFFFF" filter="url(#shadow-resting)" />
-          <use href="#icon-search" x="16" y="14" width="20" height="20" class="text-secondary" />
-          <text x="48" y="29" class="font-sans text-muted" font-size="15" font-weight="400">Need quick help? Search here...</text>
-          <rect x="279" y="0" width="48" height="48" rx="14" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <g id="search-bar-btn" style="cursor: pointer;">
+            <rect x="0" y="0" width="267" height="48" rx="14" fill="#FFFFFF" filter="url(#v2h-shadow-resting)" />
+            <use href="#icon-search" x="16" y="14" width="20" height="20" class="text-secondary" />
+            <text x="48" y="29" class="font-sans text-muted" font-size="15" font-weight="400">Need quick help? Search here...</text>
+          </g>
+          <rect x="279" y="0" width="48" height="48" rx="14" fill="#FFFFFF" filter="url(#v2h-shadow-resting)" />
           <use href="#icon-filter" x="291" y="14" width="20" height="20" class="text-primary" />
         </g>
 
         <!-- Location -->
         <g transform="translate(44, 220)">
-          <rect x="0" y="0" width="327" height="60" rx="16" fill="#FFFFFF" filter="url(#shadow-resting)" />
+          <rect x="0" y="0" width="327" height="60" rx="16" fill="#FFFFFF" filter="url(#v2h-shadow-resting)" />
           <rect x="12" y="12" width="36" height="36" rx="18" fill="#EFF6FF" />
           <use href="#icon-navigation" x="20" y="20" width="18" height="18" class="text-accent" />
           <text x="60" y="28" class="font-sans text-muted" font-size="12" font-weight="500">Search near</text>
@@ -809,7 +960,7 @@
 
         <!-- Grid -->
         <g transform="translate(44, 374)">
-          <g transform="translate(0, 0)">
+          <g id="plumber-category-btn" transform="translate(0, 0)" style="cursor: pointer;">
             <rect x="0" y="0" width="70" height="70" rx="20" fill="#E8F6EC" />
             <use href="#icon-plumber" x="23" y="23" width="24" height="24" stroke="#1FA34C" />
             <text x="35" y="88" class="font-sans text-primary" font-size="12" font-weight="600" text-anchor="middle">Plumber</text>
@@ -855,20 +1006,19 @@
 
         <!-- Cards -->
         <g transform="translate(44, 648)">
-          <g>
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#EFF6FF" filter="url(#shadow-resting)" />
+          <g id="popular-plumber-card" style="cursor: pointer;"><rect x="0" y="0" width="156" height="96" rx="20" fill="#EFF6FF" filter="url(#v2h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-plumber" x="26" y="26" width="20" height="20" stroke="#3B82F6" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Home &amp; Repair</text>
           </g>
           <g transform="translate(170, 0)">
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#E8F6EC" filter="url(#shadow-resting)" />
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#E8F6EC" filter="url(#v2h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-leaf" x="26" y="26" width="20" height="20" stroke="#1FA34C" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Beauty &amp; Spa</text>
           </g>
           <g transform="translate(340, 0)">
-            <rect x="0" y="0" width="156" height="96" rx="20" fill="#F1ECFB" filter="url(#shadow-resting)" />
+            <rect x="0" y="0" width="156" height="96" rx="20" fill="#F1ECFB" filter="url(#v2h-shadow-resting)" />
             <circle cx="36" cy="36" r="20" fill="#FFFFFF" />
             <use href="#icon-store" x="26" y="26" width="20" height="20" stroke="#7B3FE4" />
             <text x="20" y="78" class="font-sans text-primary" font-size="15" font-weight="700">Retailers</text>
@@ -896,7 +1046,7 @@
         
         <!-- Broadcast FAB -->
         <g id="broadcast-fab" transform="translate(195, 680)" style="cursor: pointer; transition: transform 0.2s;">
-          <rect x="0" y="0" width="160" height="48" rx="24" fill="#2563EB" filter="url(#shadow-resting)" />
+          <rect x="0" y="0" width="160" height="48" rx="24" fill="#2563EB" filter="url(#v2h-shadow-resting)" />
           <!-- Lightning bolt icon -->
           <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" transform="translate(12, 12)" />
           <text x="44" y="29" class="font-sans" fill="#FFFFFF" font-size="14" font-weight="600">Quick Request</text>
@@ -910,7 +1060,7 @@
           <!-- Bottom Sheet Container (Slides up) -->
           <g id="broadcast-sheet" transform="translate(20, 160)" style="transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);">
             <!-- Apply large top border radii by overlaying a mask or just using a path -->
-            <path d="M0 32 a32 32 0 0 1 32 -32 h311 a32 32 0 0 1 32 32 v640 h-375 z" fill="#FFFFFF" filter="url(#shadow-floating-2)" />
+            <path d="M0 32 a32 32 0 0 1 32 -32 h311 a32 32 0 0 1 32 32 v640 h-375 z" fill="#FFFFFF" filter="url(#v2h-shadow-floating-2)" />
             
             <!-- Drag Handle -->
             <rect x="163" y="12" width="48" height="4" rx="2" fill="#E5E7EB" />
@@ -1048,19 +1198,238 @@
 
       </g>
     </svg>
+
+    </div>
+
+      <!-- Worker List Screen -->
+    <div class="device-frame">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%">
+  <defs>
+    <filter id="v2wl-device-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="20" stdDeviation="25" flood-color="#000000" flood-opacity="0.15" />
+    </filter>
+    <filter id="v2wl-card-shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#141410" flood-opacity="0.04" />
+    </filter>
+    <clipPath id="v2wl-screen-clip">
+      <rect x="20" y="20" width="375" height="812" rx="40" />
+    </clipPath>
+    <clipPath id="v2wl-avatar-clip">
+      <circle cx="56" cy="76" r="30" />
+    </clipPath>
+  </defs>
+
+  <!-- Hardware -->
+  <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v2wl-device-shadow)" />
+  <rect x="20" y="20" width="375" height="812" rx="40" fill="#F7F7F5" />
+  
+  <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
+  <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
+  <path d="M8 250 h2 v48 h-2 z" fill="#333333" />
+  <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
+
+  <!-- Screen Content -->
+  <g clip-path="url(#v2wl-screen-clip)">
+    <!-- Background -->
+    <rect x="20" y="20" width="375" height="812" fill="#F7F7F5" />
+    
+    <!-- Status Bar -->
+    <g transform="translate(20, 20)">
+      <text x="32" y="32" font-family="-apple-system, sans-serif" fill="#1A1A18" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+      <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+      <g transform="translate(290, 17)" fill="#1A1A18">
+        <g transform="translate(0, 0)">
+          <rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" />
+        </g>
+        <g transform="translate(20, 0)">
+          <path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" />
+        </g>
+        <g transform="translate(42, 1)">
+          <rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#1A1A18" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#1A1A18" stroke-width="1.5" stroke-linecap="round" />
+        </g>
+      </g>
+    </g>
+
+    <!-- Header & Search Context -->
+    <g transform="translate(20, 90)">
+      <!-- Back button -->
+      <g id="back-btn-workerlist" style="cursor:pointer;">
+        <circle cx="36" cy="24" r="20" fill="#FFFFFF" filter="url(#v2wl-card-shadow)" />
+        <path d="M20 12h-8M16 8l-4 4 4 4" fill="none" stroke="#1A1A18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(24, 12)" />
+      </g>
+      
+      <!-- Search Summary Pill -->
+      <g transform="translate(64, 4)">
+        <rect width="247" height="40" rx="20" fill="#FFFFFF" filter="url(#v2wl-card-shadow)" />
+        <!-- Search icon -->
+        <circle cx="20" cy="20" r="14" fill="#EFF6FF" />
+        <path d="M11 11a4 4 0 1 0-8 0 4 4 0 0 0 8 0zM21 21l-4.3-4.3" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(8, 8) scale(0.6)" />
+        <text x="44" y="25" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#1A1A18">Plumber</text>
+        <circle cx="106" cy="20" r="2" fill="#8C8A82" />
+        <text x="116" y="25" font-family="-apple-system, sans-serif" font-size="14" font-weight="500" fill="#8C8A82">Sanjay Gandhi...</text>
+      </g>
+      
+      <!-- Filter Button -->
+      <g transform="translate(319, 4)">
+        <rect width="40" height="40" rx="20" fill="#FFFFFF" filter="url(#v2wl-card-shadow)" />
+        <path d="M4 6h16M4 12h16M4 18h16M8 4v4M16 10v4M8 16v4" fill="none" stroke="#1A1A18" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(8, 8) scale(0.6)" />
+      </g>
+    </g>
+
+    <!-- Scrollable Body -->
+    <g id="scrollable-content-workerlist" transform="translate(0, 0)">
+
+    <!-- Quick Filters -->
+    <g transform="translate(36, 154)">
+      <rect x="0" y="0" width="82" height="32" rx="16" fill="#1A1A18" />
+      <text x="41" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Top Rated</text>
+      
+      <rect x="90" y="0" width="94" height="32" rx="16" fill="#FFFFFF" stroke="#E7E5DF" stroke-width="1" />
+      <text x="137" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="500" fill="#5B5A54" text-anchor="middle">Nearest first</text>
+      
+      <rect x="192" y="0" width="112" height="32" rx="16" fill="#FFFFFF" stroke="#E7E5DF" stroke-width="1" />
+      <text x="248" y="20" font-family="-apple-system, sans-serif" font-size="13" font-weight="500" fill="#5B5A54" text-anchor="middle">Verified Pro ✓</text>
+    </g>
+    
+    <!-- Title -->
+    <text x="36" y="230" font-family="-apple-system, sans-serif" font-size="22" font-weight="700" fill="#1A1A18">14 Plumbers nearby</text>
+
+    <!-- Map Snippet Button -->
+    <g transform="translate(36, 250)">
+      <rect width="343" height="48" rx="12" fill="#E8F6EC" />
+      <text x="171.5" y="29" font-family="-apple-system, sans-serif" font-size="14" font-weight="600" fill="#1FA34C" text-anchor="middle">🗺️ View workers on Map</text>
+    </g>
+
+    <!-- Worker List -->
+    <g transform="translate(36, 314)">
+      
+      <!-- Worker Card 1 -->
+      <g id="workerlist-card-1" style="cursor:pointer;">
+        <rect x="0" y="0" width="343" height="124" rx="20" fill="#FFFFFF" filter="url(#v2wl-card-shadow)" />
+        
+        <g transform="translate(16, 16)"><clipPath id="v2wl-avatar-clip-1"><rect width="60" height="60" rx="30"/></clipPath><image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=150&amp;h=150&amp;fit=crop" width="60" height="60" preserveAspectRatio="xMidYMid slice" clip-path="url(#v2wl-avatar-clip-1)" /></g>
+        <!-- Verification Badge -->
+        <circle cx="76" cy="86" r="10" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2" transform="translate(-20, -20)" />
+        <path d="M4 8l2 2 4-4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(51, 61) scale(0.8)" />
+        
+        <text x="96" y="34" font-family="-apple-system, sans-serif" font-size="17" font-weight="700" fill="#1A1A18">Prayag Ahire</text>
+        <text x="96" y="54" font-family="-apple-system, sans-serif" font-size="14" font-weight="500" fill="#5B5A54">Expert Plumber • 8 yrs exp</text>
+        
+        <!-- Info Badges -->
+        <g transform="translate(96, 68)">
+          <!-- Rating -->
+          <rect x="0" y="0" width="58" height="26" rx="8" fill="#FFFBEB" />
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F59E0B" transform="translate(4, 5) scale(0.6)" />
+          <text x="24" y="17" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#92400E">4.8</text>
+          
+          <!-- Distance -->
+          <rect x="66" y="0" width="68" height="26" rx="8" fill="#F3F4F6" />
+          <text x="100" y="17" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#4B5563" text-anchor="middle">424 km</text>
+          
+          <!-- Price Est -->
+          <text x="142" y="18" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#1FA34C">₹300<tspan font-weight="500" font-size="12" fill="#8C8A82">/hr</tspan></text>
+        </g>
+        
+        <!-- Next Icon -->
+        <path d="M9 18l6-6-6-6" fill="none" stroke="#E7E5DF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(305, 50)" />
+      </g>
+
+      <!-- Worker Card 2 -->
+      <g transform="translate(0, 140)">
+        <rect x="0" y="0" width="343" height="124" rx="20" fill="#FFFFFF" filter="url(#v2wl-card-shadow)" />
+        
+        <g transform="translate(16, 16)"><clipPath id="avatar-clip-2-new"><rect width="60" height="60" rx="30"/></clipPath><image href="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&amp;h=150&amp;fit=crop" width="60" height="60" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatar-clip-2-new)" /></g>
+        
+        <text x="96" y="34" font-family="-apple-system, sans-serif" font-size="17" font-weight="700" fill="#1A1A18">Ravi Kumar</text>
+        <text x="96" y="54" font-family="-apple-system, sans-serif" font-size="14" font-weight="500" fill="#5B5A54">Pipe Fitting Specialist</text>
+        
+        <g transform="translate(96, 68)">
+          <rect x="0" y="0" width="58" height="26" rx="8" fill="#FFFBEB" />
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F59E0B" transform="translate(4, 5) scale(0.6)" />
+          <text x="24" y="17" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#92400E">4.6</text>
+          
+          <rect x="66" y="0" width="58" height="26" rx="8" fill="#F3F4F6" />
+          <text x="95" y="17" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#4B5563" text-anchor="middle">5.1 km</text>
+          
+          <text x="132" y="18" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#1FA34C">₹250<tspan font-weight="500" font-size="12" fill="#8C8A82">/hr</tspan></text>
+        </g>
+      </g>
+      
+      <!-- Worker Card 3 -->
+      <g transform="translate(0, 280)">
+        <rect x="0" y="0" width="343" height="124" rx="20" fill="#FFFFFF" filter="url(#v2wl-card-shadow)" />
+        
+        <g transform="translate(16, 16)"><clipPath id="avatar-clip-3-new"><rect width="60" height="60" rx="30"/></clipPath><image href="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&amp;h=150&amp;fit=crop" width="60" height="60" preserveAspectRatio="xMidYMid slice" clip-path="url(#avatar-clip-3-new)" /></g>
+        <!-- Verification Badge -->
+        <circle cx="76" cy="86" r="10" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2" transform="translate(-20, -20)" />
+        <path d="M4 8l2 2 4-4" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(51, 61) scale(0.8)" />
+
+        <text x="96" y="34" font-family="-apple-system, sans-serif" font-size="17" font-weight="700" fill="#1A1A18">Amit Sharma</text>
+        <text x="96" y="54" font-family="-apple-system, sans-serif" font-size="14" font-weight="500" fill="#5B5A54">General Plumbing</text>
+        
+        <g transform="translate(96, 68)">
+          <rect x="0" y="0" width="58" height="26" rx="8" fill="#FFFBEB" />
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#F59E0B" transform="translate(4, 5) scale(0.6)" />
+          <text x="24" y="17" font-family="-apple-system, sans-serif" font-size="13" font-weight="700" fill="#92400E">4.9</text>
+          
+          <rect x="66" y="0" width="58" height="26" rx="8" fill="#F3F4F6" />
+          <text x="95" y="17" font-family="-apple-system, sans-serif" font-size="13" font-weight="600" fill="#4B5563" text-anchor="middle">8.2 km</text>
+          
+          <text x="132" y="18" font-family="-apple-system, sans-serif" font-size="14" font-weight="700" fill="#1FA34C">₹400<tspan font-weight="500" font-size="12" fill="#8C8A82">/hr</tspan></text>
+        </g>
+      </g>
+    </g>
+
+    </g><!-- End Scrollable Body -->
+
+    <!-- Bottom Navigation -->
+    <g transform="translate(20, 748)">
+      <rect x="0" y="0" width="375" height="84" fill="#FFFFFF" />
+      <line x1="0" y1="0" x2="375" y2="0" stroke="#E7E5DF" stroke-width="1" />
+      
+      <!-- Home -->
+      <g transform="translate(72, 14)">
+        <g fill="none" stroke="#1A1A18" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" />
+        </g>
+        <text x="12" y="36" font-family="-apple-system, sans-serif" font-size="11" font-weight="600" fill="#1A1A18" text-anchor="middle">Home</text>
+      </g>
+      
+      <!-- Store -->
+      <g transform="translate(175.5, 14)">
+        <g fill="none" stroke="#8C8A82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/>
+        </g>
+        <text x="12" y="36" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#8C8A82" text-anchor="middle">Store</text>
+      </g>
+      
+      <!-- Profile -->
+      <g transform="translate(279, 14)">
+        <g fill="none" stroke="#8C8A82" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </g>
+        <text x="12" y="36" font-family="-apple-system, sans-serif" font-size="11" font-weight="500" fill="#8C8A82" text-anchor="middle">Profile</text>
+      </g>
+      
+      <rect x="127" y="70" width="120" height="5" rx="2.5" fill="#1A1A18" />
+    </g>
+  </g>
+</svg>
+
+
     </div>
 
       <!-- Worker Profile Screen -->
     <div class="device-frame">
       <svg id="worker-profile-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 415 852" width="100%" height="100%" role="img">
         <defs>
-          <clipPath id="screen-clip-2">
+          <clipPath id="v2w-screen-clip-2">
             <rect x="20" y="20" width="375" height="812" rx="40" />
           </clipPath>
-          <filter id="shadow-resting-2" x="-10%" y="-10%" width="120%" height="120%">
+          <filter id="v2w-shadow-resting-2" x="-10%" y="-10%" width="120%" height="120%">
             <feDropShadow dx="0" dy="2" stdDeviation="5" flood-color="#000000" flood-opacity="0.03" />
           </filter>
-          <filter id="shadow-floating-2" x="-20%" y="-20%" width="140%" height="140%">
+          <filter id="v2w-shadow-floating-2" x="-20%" y="-20%" width="140%" height="140%">
             <feDropShadow dx="0" dy="4" stdDeviation="16" flood-color="#141410" flood-opacity="0.14" />
           </filter>
         </defs>
@@ -1071,32 +1440,15 @@
         </style>
         
         <!-- Device Frame -->
-        <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#device-shadow)" />
+        <rect x="10" y="10" width="395" height="832" rx="50" fill="#111111" filter="url(#v2w-device-shadow)" />
         <rect x="20" y="20" width="375" height="812" rx="40" fill="#F9F9F9" />
         <path d="M8 150 h2 v24 h-2 z" fill="#333333" />
         <path d="M8 190 h2 v48 h-2 z" fill="#333333" />
         <path d="M8 250 h2 v48 h-2 z" fill="#333333" />
         <path d="M405 220 h2 v72 h-2 z" fill="#333333" />
 
-        <g clip-path="url(#screen-clip-2)">
+        <g clip-path="url(#v2w-screen-clip-2)">
           <rect x="20" y="20" width="375" height="812" fill="#F9F9F9" />
-          
-          <!-- Status Bar -->
-          <g transform="translate(20, 20)">
-            <text x="32" y="32" class="font-sans" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
-            <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
-            <g transform="translate(290, 17)" fill="#111827">
-              <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
-              <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
-              <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
-            </g>
-          </g>
-
-          <!-- Top App Bar -->
-          <g transform="translate(40, 76)">
-            <!-- Back Arrow -->
-            <path d="M8 0 L0 8 L8 16" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-            <line x1="0" y1="8" x2="20" y2="8" stroke="#111827" stroke-width="2.5" stroke-linecap="round" />
             <!-- Title -->
             <text x="167" y="14" class="font-sans" fill="#111827" font-size="20" font-weight="700" text-anchor="middle">Worker Details</text>
             <!-- 3 Dots -->
@@ -1106,20 +1458,19 @@
               <circle cx="330" cy="8" r="2.5" fill="#111827" />
               <circle cx="330" cy="14" r="2.5" fill="#111827" />
             </g>
-          </g>
 
           <!-- Scrollable Body -->
-          <g id="scrollable-content" transform="translate(0, 0)">
+          <g id="v2w-scrollable-content" transform="translate(0, 0)">
             <!-- Hero Card -->
           <g transform="translate(36, 136)">
-            <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+            <rect x="0" y="0" width="343" height="280" rx="20" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
             
             <!-- Avatar -->
-            <clipPath id="avatar-clip">
-              <rect x="24" y="24" width="80" height="80" rx="16" />
+            <clipPath id="worker-avatar-clip-v2" clipPathUnits="objectBoundingBox">
+              <rect x="0" y="0" width="1" height="1" rx="0.2" />
             </clipPath>
             <rect x="24" y="24" width="80" height="80" rx="16" fill="#E5E5E5" />
-            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#avatar-clip)" />
+            <image href="https://images.unsplash.com/photo-1540569014015-19a7be504e3a?w=160&amp;h=160&amp;fit=crop" x="24" y="24" width="80" height="80" clip-path="url(#worker-avatar-clip-v2)" />
             
             <!-- Identity -->
             <text x="124" y="44" class="font-sans" fill="#111827" font-size="22" font-weight="700">Prayag ahire</text>
@@ -1201,7 +1552,7 @@
           <!-- DYNAMIC CONTENT: Reviews -->
           <g id="tab-content-reviews" display="none" transform="translate(36, 436)">
             <!-- Write Review Box -->
-            <rect x="0" y="0" width="343" height="180" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+            <rect x="0" y="0" width="343" height="180" rx="16" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
             <text x="16" y="24" class="font-sans" fill="#111827" font-size="16" font-weight="700">Write a review</text>
             <!-- 5 Outline Stars -->
             <g id="review-stars-container" transform="translate(16, 44)" style="cursor: pointer;">
@@ -1222,7 +1573,7 @@
 
             <!-- Dynamic New Review (Initially Hidden) -->
             <g id="new-review-block" display="none">
-              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
               <circle cx="36" cy="224" r="20" fill="#FCEAF1" />
               <text x="68" y="222" class="font-sans" fill="#111827" font-size="16" font-weight="700">You</text>
               <text x="68" y="240" class="font-sans" fill="#9CA3AF" font-size="12">Just now</text>
@@ -1239,7 +1590,7 @@
 
             <!-- Review 1 -->
             <g id="existing-reviews" style="transition: transform 0.3s ease;">
-              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+              <rect x="0" y="200" width="343" height="120" rx="16" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
               <circle cx="36" cy="224" r="20" fill="#EFF6FF" />
               <text x="68" y="222" class="font-sans" fill="#111827" font-size="16" font-weight="700">Darshan</text>
               <text x="68" y="240" class="font-sans" fill="#9CA3AF" font-size="12">18 Sep 2026</text>
@@ -1256,7 +1607,7 @@
 
           <!-- DYNAMIC CONTENT: Availability -->
           <g id="tab-content-availability" display="none" transform="translate(36, 436)">
-             <rect x="0" y="0" width="343" height="420" rx="16" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <rect x="0" y="0" width="343" height="420" rx="16" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
              <circle cx="26" cy="24" r="8" fill="none" stroke="#2563EB" stroke-width="2"/>
              <line x1="26" y1="20" x2="26" y2="24" stroke="#2563EB" stroke-width="2" />
              <line x1="26" y1="24" x2="30" y2="24" stroke="#2563EB" stroke-width="2" />
@@ -1327,7 +1678,7 @@
              <text x="0" y="140" class="font-sans" fill="#111827" font-size="18" font-weight="700">Product details</text>
              
              <!-- Product 1 -->
-             <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <rect x="0" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
              <clipPath id="prod1-clip"><rect x="0" y="160" width="156" height="120" rx="12" /></clipPath>
              <image href="https://images.unsplash.com/photo-1584916201218-f4242ceb4809?w=312&amp;h=240&amp;fit=crop" x="0" y="160" width="156" height="120" clip-path="url(#prod1-clip)" />
              <rect x="8" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
@@ -1336,7 +1687,7 @@
              <text x="78" y="340" class="font-sans" fill="#2563EB" font-size="14" font-weight="700" text-anchor="middle">₹399</text>
 
              <!-- Product 2 -->
-             <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#shadow-resting-2)" />
+             <rect x="187" y="160" width="156" height="200" rx="12" fill="#FFFFFF" filter="url(#v2w-shadow-resting-2)" />
              <clipPath id="prod2-clip"><rect x="187" y="160" width="156" height="120" rx="12" /></clipPath>
              <image href="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=312&amp;h=240&amp;fit=crop" x="187" y="160" width="156" height="120" clip-path="url(#prod2-clip)" />
              <rect x="195" y="168" width="60" height="24" rx="12" fill="#111827" fill-opacity="0.8" />
@@ -1349,7 +1700,7 @@
 
           <!-- OVERLAY: Dropdown Menu -->
           <g id="dropdown-menu" display="none" transform="translate(170, 100)">
-            <rect x="0" y="0" width="200" height="96" rx="12" fill="#FFFFFF" filter="url(#shadow-floating-2)" />
+            <rect x="0" y="0" width="200" height="96" rx="12" fill="#FFFFFF" filter="url(#v2w-shadow-floating-2)" />
             
             <g id="share-btn" style="cursor: pointer;" transform="translate(0, 0)">
               <rect x="0" y="0" width="200" height="48" rx="12" fill="transparent" />
@@ -1365,17 +1716,31 @@
               <text x="56" y="30" class="font-sans" fill="#D92D2D" font-size="15" font-weight="500">Report Worker</text>
             </g>
           </g>
-          <!-- OVERLAY: Lightbox -->
-          <g id="lightbox" display="none">
-            <rect x="20" y="20" width="375" height="812" fill="#000000" fill-opacity="0.9" />
-            <image id="lightbox-img" href="" x="20" y="246" width="375" height="375" />
-            <g id="lightbox-close" style="cursor: pointer;" transform="translate(345, 40)">
-              <rect x="-10" y="-10" width="44" height="44" fill="transparent" />
-              <path d="M0 0 L24 24 M24 0 L0 24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          <!-- STICKY HEADER -->
+          <g id="sticky-header">
+            <rect x="20" y="20" width="375" height="100" fill="#F7F7F5" />
+
+          
+          <!-- Status Bar -->
+          <g transform="translate(20, 20)">
+            <text x="32" y="32" class="font-sans" fill="#111827" font-size="15" font-weight="600" text-anchor="middle">14:47</text>
+            <rect x="126" y="11" width="123" height="35" rx="17.5" fill="#000000" />
+            <g transform="translate(290, 17)" fill="#111827">
+              <g transform="translate(0, 0)"><rect x="0" y="8" width="3" height="4" rx="1" /><rect x="4" y="6" width="3" height="6" rx="1" /><rect x="8" y="4" width="3" height="8" rx="1" /><rect x="12" y="2" width="3" height="10" rx="1" /></g>
+              <g transform="translate(20, 0)"><path d="M8 12.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" /><path d="M3.5 8C6.1 5.4 9.9 5.4 12.5 8l-1.5 1.5C9.4 7.9 6.6 7.9 5 9.5L3.5 8z" /><path d="M0.5 5C4.7 1.2 11.3 1.2 15.5 5l-1.5 1.5c-3.4-3-8.6-3-12 0L0.5 5z" /></g>
+              <g transform="translate(42, 1)"><rect x="0" y="0" width="22" height="11" rx="3.5" fill="none" stroke="#111827" stroke-width="1.2" /><rect x="2" y="2" width="15" height="7" rx="2" /><path d="M23.5 3.5v4" stroke="#111827" stroke-width="1.5" stroke-linecap="round" /></g>
             </g>
           </g>
 
-        <!-- Sticky CTA Footer -->
+          <!-- Top App Bar -->
+          <g transform="translate(40, 76)">
+            <!-- Back Arrow -->
+            <g id="back-btn-worker" style="cursor: pointer;">
+              <path d="M8 0 L0 8 L8 16" fill="none" stroke="#111827" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+              <line x1="0" y1="8" x2="20" y2="8" stroke="#111827" stroke-width="2.5" stroke-linecap="round" />
+            </g>
+          </g>
+          <!-- Sticky CTA Footer -->
         <g transform="translate(20, 744)" id="sticky-footer-cta">
           <!-- Custom path to round ONLY the bottom corners (rx=40) -->
           <path d="M0 0 h375 v48 a40 40 0 0 1 -40 40 h-295 a40 40 0 0 1 -40 -40 z" fill="#FFFFFF" />
@@ -1386,9 +1751,24 @@
           <!-- iOS Home Indicator -->
           <rect x="127" y="76" width="120" height="5" rx="2.5" fill="#1A1A18" />
         </g>
+        
+        <!-- OVERLAY: Lightbox (Fixed at root of screen clip) -->
+        <g id="lightbox" display="none">
+          <rect x="20" y="20" width="375" height="812" fill="#000000" fill-opacity="0.95" />
+          <image id="lightbox-img" href="" x="20" y="20" width="375" height="812" preserveAspectRatio="xMidYMid meet" />
+          <g id="lightbox-close" style="cursor: pointer;" transform="translate(345, 40)">
+            <rect x="-10" y="-10" width="44" height="44" fill="transparent" />
+            <path d="M0 0 L24 24 M24 0 L0 24" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+          </g>
+        </g>
     
-        </g> <!-- End Screen Clip -->
-      </svg>
+      </g> <!-- End Screen Clip -->
+    </svg>
+
+
+
+
+
     </div>
   </div>
   <script>
@@ -1397,6 +1777,52 @@
     
     // Stage 7: Frontend Engineer Interactivity
     document.addEventListener('DOMContentLoaded', () => {
+      
+      // 0. Prototype Navigation
+      const plumberBtn = document.getElementById('plumber-category-btn');
+        const popularPlumberCard = document.getElementById('popular-plumber-card');
+        if (popularPlumberCard) {
+          popularPlumberCard.addEventListener('click', () => {
+            if (window.getIsPlaying && window.getIsPlaying()) {
+              window.navigateTo('screen-v2-workerlist');
+            }
+          });
+        }
+      if (plumberBtn) {
+        plumberBtn.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v2-workerlist');
+          }
+        });
+      }
+
+      const workerListCard = document.getElementById('workerlist-card-1');
+      if (workerListCard) {
+        workerListCard.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v2-worker');
+          }
+        });
+      }
+
+      const backBtnWorkerlist = document.getElementById('back-btn-workerlist');
+      if (backBtnWorkerlist) {
+        backBtnWorkerlist.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v2-home');
+          }
+        });
+      }
+
+      const backBtnWorker = document.getElementById('back-btn-worker');
+      if (backBtnWorker) {
+        backBtnWorker.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v2-workerlist');
+          }
+        });
+      }
+
       // 1. Follow Button Interaction
       const followBtn = document.getElementById('follow-btn');
       if (followBtn) {
@@ -1510,11 +1936,12 @@
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const lightboxClose = document.getElementById('lightbox-close');
-      const photos = document.querySelectorAll('.photo-thumbnail');
+      const workerProfileSvg = document.getElementById('worker-profile-svg');
+      const photos = workerProfileSvg ? workerProfileSvg.querySelectorAll('.photo-thumbnail') : [];
       if (lightbox && lightboxImg && lightboxClose) {
         photos.forEach(photo => {
           photo.addEventListener('click', () => {
-            lightboxImg.setAttribute('href', photo.getAttribute('href'));
+            lightboxImg.setAttribute('href', photo.getAttribute('href').split('?')[0]);
             lightbox.removeAttribute('display');
           });
         });
@@ -1568,7 +1995,7 @@
       }
 
       // 5. Vertical Scrolling Simulation
-      const scrollContent = document.getElementById('scrollable-content');
+      const scrollContent = document.getElementById('v2w-scrollable-content');
       let currentScroll = 0;
       let startY = 0;
       
@@ -1580,48 +2007,51 @@
       };
 
       const workerSvg = document.getElementById('worker-profile-svg');
-      workerSvg.addEventListener('wheel', (e) => {
-         updateScroll(-e.deltaY);
-      });
+      if (workerSvg && scrollContent) {
+        workerSvg.addEventListener('wheel', (e) => {
+           updateScroll(-e.deltaY);
+        });
 
-      workerSvg.addEventListener('touchstart', (e) => {
-         startY = e.touches[0].clientY;
-      });
+        workerSvg.addEventListener('touchstart', (e) => {
+           startY = e.touches[0].clientY;
+        });
 
-      workerSvg.addEventListener('touchmove', (e) => {
-         const dy = e.touches[0].clientY - startY;
-         startY = e.touches[0].clientY;
-         updateScroll(dy);
-         e.preventDefault();
-      }, { passive: false });
+        workerSvg.addEventListener('touchmove', (e) => {
+           const dy = e.touches[0].clientY - startY;
+           startY = e.touches[0].clientY;
+           updateScroll(dy);
+           e.preventDefault();
+        }, { passive: false });
 
-      // Mouse drag-to-scroll for laptops
-      let isDragging = false;
-      workerSvg.addEventListener('mousedown', (e) => {
-         isDragging = true;
-         startY = e.clientY;
-      });
+        // Mouse drag-to-scroll for laptops
+        let isDragging = false;
+        workerSvg.addEventListener('mousedown', (e) => {
+           isDragging = true;
+           startY = e.clientY;
+        });
 
-      window.addEventListener('mousemove', (e) => {
-         if (!isDragging) return;
-         const dy = e.clientY - startY;
-         // Only scroll if moved a bit to avoid jitter
-         if (Math.abs(dy) > 1) {
-            startY = e.clientY;
-            updateScroll(dy);
-            e.preventDefault(); // Stop native drag
-         }
-      });
+        window.addEventListener('mousemove', (e) => {
+           if (!isDragging) return;
+           const dy = e.clientY - startY;
+           // Only scroll if moved a bit to avoid jitter
+           if (Math.abs(dy) > 1) {
+              startY = e.clientY;
+              updateScroll(dy);
+              e.preventDefault(); // Stop native drag
+           }
+        });
 
-      const stopDrag = () => {
-         isDragging = false;
-      };
-      
-      window.addEventListener('mouseup', stopDrag);
-      workerSvg.addEventListener('mouseleave', stopDrag);
+        const stopDrag = () => {
+           isDragging = false;
+        };
+        
+        window.addEventListener('mouseup', stopDrag);
+        workerSvg.addEventListener('mouseleave', stopDrag);
+      }
 
       // --- BROADCAST MODAL INTERACTION LOGIC (STAGE 7) ---
       const broadcastFab = document.getElementById('broadcast-fab');
+      const searchBarBtn = document.getElementById('search-bar-btn');
       const broadcastModal = document.getElementById('broadcast-modal');
       const broadcastDimmer = document.getElementById('broadcast-dimmer');
       const closeBroadcastBtn = document.getElementById('close-broadcast-btn');
@@ -1636,8 +2066,8 @@
       const viewWorkerBtn = document.getElementById('view-assigned-worker-btn');
 
       // Open Modal
-      if (broadcastFab && broadcastModal) {
-         broadcastFab.addEventListener('click', () => {
+      if ((broadcastFab || searchBarBtn) && broadcastModal) {
+         const openModal = () => {
             // Reset states
             broadcastScrollArea.setAttribute('display', 'block');
             broadcastFooter.setAttribute('display', 'block');
@@ -1650,7 +2080,9 @@
             setTimeout(() => {
                broadcastSheet.setAttribute('transform', 'translate(20, 160)');
             }, 10);
-         });
+         };
+         if (broadcastFab) broadcastFab.addEventListener('click', openModal);
+         if (searchBarBtn) searchBarBtn.addEventListener('click', openModal);
       }
 
       // Close Modal
@@ -1666,8 +2098,8 @@
       if (viewWorkerBtn) viewWorkerBtn.addEventListener('click', closeBroadcastModal);
 
       // Pill Selection Logic
-      const allPills = document.querySelectorAll('.service-pills rect');
-      const allPillTexts = document.querySelectorAll('.service-pills text');
+      const allPills = workerSvg ? workerSvg.querySelectorAll('.service-pills rect') : [];
+      const allPillTexts = workerSvg ? workerSvg.querySelectorAll('.service-pills text') : [];
       
       allPills.forEach((pill, index) => {
          pill.style.cursor = 'pointer';
@@ -1709,14 +2141,90 @@
          });
       }
 
+      // Workerlist Scroll
+      const workerlistScrollContent = document.getElementById('scrollable-content-workerlist');
+      if (workerlistScrollContent) {
+        let wlScroll = 0;
+        let wlStartY = 0;
+        const wlSvg = document.getElementById('screen-v2-workerlist');
+
+        const updateWlScroll = (dy) => {
+          wlScroll += dy;
+          if (wlScroll > 0) wlScroll = 0;
+          if (wlScroll < -400) wlScroll = -400;
+          workerlistScrollContent.setAttribute('transform', `translate(0, ${wlScroll})`);
+        };
+
+        if (wlSvg) {
+          wlSvg.addEventListener('wheel', (e) => { updateWlScroll(-e.deltaY * 0.5); e.preventDefault(); }, { passive: false });
+          wlSvg.addEventListener('touchstart', (e) => { wlStartY = e.touches[0].clientY; });
+          wlSvg.addEventListener('touchmove', (e) => {
+            const dy = e.touches[0].clientY - wlStartY;
+            wlStartY = e.touches[0].clientY;
+            updateWlScroll(dy);
+            e.preventDefault();
+          }, { passive: false });
+          let wlDragging = false;
+          wlSvg.addEventListener('mousedown', (e) => { wlDragging = true; wlStartY = e.clientY; });
+          wlSvg.addEventListener('mousemove', (e) => {
+            if (!wlDragging) return;
+            updateWlScroll(e.clientY - wlStartY);
+            wlStartY = e.clientY;
+          });
+          wlSvg.addEventListener('mouseup', () => { wlDragging = false; });
+          wlSvg.addEventListener('mouseleave', () => { wlDragging = false; });
+        }
+      }
+
     });
   
 
     })();
+
+
+
+
 (() => {
 // --- V1 (OLD) JS LOGIC ---
 // Stage 7: Frontend Engineer Interactivity
     document.addEventListener('DOMContentLoaded', () => {
+
+      // 0. Prototype Navigation
+      const plumberBtnOld = document.getElementById('plumber-category-btn-old');
+        const popularPlumberCardOld = document.getElementById('popular-plumber-card-old');
+        if (popularPlumberCardOld) {
+          popularPlumberCardOld.addEventListener('click', () => {
+            if (window.getIsPlaying && window.getIsPlaying()) {
+              window.navigateTo('screen-v1-workerlist');
+            }
+          });
+        }
+      if (plumberBtnOld) {
+        plumberBtnOld.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v1-workerlist');
+          }
+        });
+      }
+
+      const workerListCardOld = document.getElementById('workerlist-card-1-old');
+      if (workerListCardOld) {
+        workerListCardOld.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v1-worker');
+          }
+        });
+      }
+
+      const backBtnWorkerOld = document.getElementById('back-btn-worker-old');
+      if (backBtnWorkerOld) {
+        backBtnWorkerOld.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v1-workerlist');
+          }
+        });
+      }
+
       // 1. Follow Button Interaction
       const followBtn = document.getElementById('follow-btn-old');
       if (followBtn) {
@@ -1830,11 +2338,12 @@
       const lightbox = document.getElementById('lightbox-old');
       const lightboxImg = document.getElementById('lightbox-img-old');
       const lightboxClose = document.getElementById('lightbox-close-old');
-      const photos = document.querySelectorAll('.photo-thumbnail');
+      const workerProfileSvgOld = document.getElementById('old-worker-profile-svg');
+      const photos = workerProfileSvgOld ? workerProfileSvgOld.querySelectorAll('.photo-thumbnail') : [];
       if (lightbox && lightboxImg && lightboxClose) {
         photos.forEach(photo => {
           photo.addEventListener('click', () => {
-            lightboxImg.setAttribute('href', photo.getAttribute('href'));
+            lightboxImg.setAttribute('href', photo.getAttribute('href').split('?')[0]);
             lightbox.removeAttribute('display');
           });
         });
@@ -1900,45 +2409,47 @@
       };
 
       const workerSvg = document.getElementById('old-worker-profile-svg');
-      workerSvg.addEventListener('wheel', (e) => {
-         updateScroll(-e.deltaY);
-      });
+      if (workerSvg && scrollContent) {
+        workerSvg.addEventListener('wheel', (e) => {
+           updateScroll(-e.deltaY);
+        });
 
-      workerSvg.addEventListener('touchstart', (e) => {
-         startY = e.touches[0].clientY;
-      });
+        workerSvg.addEventListener('touchstart', (e) => {
+           startY = e.touches[0].clientY;
+        });
 
-      workerSvg.addEventListener('touchmove', (e) => {
-         const dy = e.touches[0].clientY - startY;
-         startY = e.touches[0].clientY;
-         updateScroll(dy);
-         e.preventDefault();
-      }, { passive: false });
+        workerSvg.addEventListener('touchmove', (e) => {
+           const dy = e.touches[0].clientY - startY;
+           startY = e.touches[0].clientY;
+           updateScroll(dy);
+           e.preventDefault();
+        }, { passive: false });
 
-      // Mouse drag-to-scroll for laptops
-      let isDragging = false;
-      workerSvg.addEventListener('mousedown', (e) => {
-         isDragging = true;
-         startY = e.clientY;
-      });
+        // Mouse drag-to-scroll for laptops
+        let isDragging = false;
+        workerSvg.addEventListener('mousedown', (e) => {
+           isDragging = true;
+           startY = e.clientY;
+        });
 
-      window.addEventListener('mousemove', (e) => {
-         if (!isDragging) return;
-         const dy = e.clientY - startY;
-         // Only scroll if moved a bit to avoid jitter
-         if (Math.abs(dy) > 1) {
-            startY = e.clientY;
-            updateScroll(dy);
-            e.preventDefault(); // Stop native drag
-         }
-      });
+        window.addEventListener('mousemove', (e) => {
+           if (!isDragging) return;
+           const dy = e.clientY - startY;
+           // Only scroll if moved a bit to avoid jitter
+           if (Math.abs(dy) > 1) {
+              startY = e.clientY;
+              updateScroll(dy);
+              e.preventDefault(); // Stop native drag
+           }
+        });
 
-      const stopDrag = () => {
-         isDragging = false;
-      };
-      
-      window.addEventListener('mouseup', stopDrag);
-      workerSvg.addEventListener('mouseleave', stopDrag);
+        const stopDrag = () => {
+           isDragging = false;
+        };
+        
+        window.addEventListener('mouseup', stopDrag);
+        workerSvg.addEventListener('mouseleave', stopDrag);
+      }
 
       // --- BROADCAST MODAL INTERACTION LOGIC (STAGE 7) ---
       const broadcastFab = document.getElementById('broadcast-fab-old');
@@ -1986,8 +2497,8 @@
       if (viewWorkerBtn) viewWorkerBtn.addEventListener('click', closeBroadcastModal);
 
       // Pill Selection Logic
-      const allPills = document.querySelectorAll('.service-pills rect');
-      const allPillTexts = document.querySelectorAll('.service-pills text');
+      const allPills = workerProfileSvgOld ? workerProfileSvgOld.querySelectorAll('.service-pills rect') : [];
+      const allPillTexts = workerProfileSvgOld ? workerProfileSvgOld.querySelectorAll('.service-pills text') : [];
       
       allPills.forEach((pill, index) => {
          pill.style.cursor = 'pointer';
@@ -2032,6 +2543,10 @@
     });
   
     })();
+
+
+
+
   </script>
 </body>
 </html>

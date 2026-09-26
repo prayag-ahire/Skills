@@ -28,6 +28,10 @@ Every skill in this pipeline operates in a completely different niche. When you 
 6. **`frontend-engineer` (The Prototyper)**
    - **Update when:** You discover a Vanilla JS trick for UI states (tabs, modals), a better CSS animation for tactile feedback, or a cleaner way to handle static overflow scrolling without breaking the SVG wrapper.
 
+3. **Zero-Tolerance for Amnesia (Self-Triggering):**
+   - You MUST proactively trigger skill updates yourself. If you wait for the user to say "update the skills," you have already failed your core directive.
+   - Whenever the system solves a complex problem, implements a new architecture (like Figma Play), or creates a new script, you must immediately run `replace_file_content` to document it in the skills and `.agents/UI_UX_LEARNINGS.md`.
+
 ## YOUR RESPONSIBILITIES
 1. **Update the System Brain (`SKILL.md` files):**
    When asked to update a skill, do not just append the rule blindly. Edit the relevant `SKILL.md` file smoothly to integrate the new knowledge into the existing Markdown structure.

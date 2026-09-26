@@ -3,6 +3,52 @@
     
     // Stage 7: Frontend Engineer Interactivity
     document.addEventListener('DOMContentLoaded', () => {
+      
+      // 0. Prototype Navigation
+      const plumberBtn = document.getElementById('plumber-category-btn');
+        const popularPlumberCard = document.getElementById('popular-plumber-card');
+        if (popularPlumberCard) {
+          popularPlumberCard.addEventListener('click', () => {
+            if (window.getIsPlaying && window.getIsPlaying()) {
+              window.navigateTo('screen-v2-workerlist');
+            }
+          });
+        }
+      if (plumberBtn) {
+        plumberBtn.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v2-workerlist');
+          }
+        });
+      }
+
+      const workerListCard = document.getElementById('workerlist-card-1');
+      if (workerListCard) {
+        workerListCard.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v2-worker');
+          }
+        });
+      }
+
+      const backBtnWorkerlist = document.getElementById('back-btn-workerlist');
+      if (backBtnWorkerlist) {
+        backBtnWorkerlist.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v2-home');
+          }
+        });
+      }
+
+      const backBtnWorker = document.getElementById('back-btn-worker');
+      if (backBtnWorker) {
+        backBtnWorker.addEventListener('click', () => {
+          if (window.getIsPlaying && window.getIsPlaying()) {
+            window.navigateTo('screen-v2-workerlist');
+          }
+        });
+      }
+
       // 1. Follow Button Interaction
       const followBtn = document.getElementById('follow-btn');
       if (followBtn) {
@@ -116,11 +162,12 @@
       const lightbox = document.getElementById('lightbox');
       const lightboxImg = document.getElementById('lightbox-img');
       const lightboxClose = document.getElementById('lightbox-close');
-      const photos = document.querySelectorAll('.photo-thumbnail');
+      const workerProfileSvg = document.getElementById('worker-profile-svg');
+      const photos = workerProfileSvg ? workerProfileSvg.querySelectorAll('.photo-thumbnail') : [];
       if (lightbox && lightboxImg && lightboxClose) {
         photos.forEach(photo => {
           photo.addEventListener('click', () => {
-            lightboxImg.setAttribute('href', photo.getAttribute('href'));
+            lightboxImg.setAttribute('href', photo.getAttribute('href').split('?')[0]);
             lightbox.removeAttribute('display');
           });
         });
@@ -174,7 +221,7 @@
       }
 
       // 5. Vertical Scrolling Simulation
-      const scrollContent = document.getElementById('scrollable-content');
+      const scrollContent = document.getElementById('v2w-scrollable-content');
       let currentScroll = 0;
       let startY = 0;
       
@@ -186,48 +233,51 @@
       };
 
       const workerSvg = document.getElementById('worker-profile-svg');
-      workerSvg.addEventListener('wheel', (e) => {
-         updateScroll(-e.deltaY);
-      });
+      if (workerSvg && scrollContent) {
+        workerSvg.addEventListener('wheel', (e) => {
+           updateScroll(-e.deltaY);
+        });
 
-      workerSvg.addEventListener('touchstart', (e) => {
-         startY = e.touches[0].clientY;
-      });
+        workerSvg.addEventListener('touchstart', (e) => {
+           startY = e.touches[0].clientY;
+        });
 
-      workerSvg.addEventListener('touchmove', (e) => {
-         const dy = e.touches[0].clientY - startY;
-         startY = e.touches[0].clientY;
-         updateScroll(dy);
-         e.preventDefault();
-      }, { passive: false });
+        workerSvg.addEventListener('touchmove', (e) => {
+           const dy = e.touches[0].clientY - startY;
+           startY = e.touches[0].clientY;
+           updateScroll(dy);
+           e.preventDefault();
+        }, { passive: false });
 
-      // Mouse drag-to-scroll for laptops
-      let isDragging = false;
-      workerSvg.addEventListener('mousedown', (e) => {
-         isDragging = true;
-         startY = e.clientY;
-      });
+        // Mouse drag-to-scroll for laptops
+        let isDragging = false;
+        workerSvg.addEventListener('mousedown', (e) => {
+           isDragging = true;
+           startY = e.clientY;
+        });
 
-      window.addEventListener('mousemove', (e) => {
-         if (!isDragging) return;
-         const dy = e.clientY - startY;
-         // Only scroll if moved a bit to avoid jitter
-         if (Math.abs(dy) > 1) {
-            startY = e.clientY;
-            updateScroll(dy);
-            e.preventDefault(); // Stop native drag
-         }
-      });
+        window.addEventListener('mousemove', (e) => {
+           if (!isDragging) return;
+           const dy = e.clientY - startY;
+           // Only scroll if moved a bit to avoid jitter
+           if (Math.abs(dy) > 1) {
+              startY = e.clientY;
+              updateScroll(dy);
+              e.preventDefault(); // Stop native drag
+           }
+        });
 
-      const stopDrag = () => {
-         isDragging = false;
-      };
-      
-      window.addEventListener('mouseup', stopDrag);
-      workerSvg.addEventListener('mouseleave', stopDrag);
+        const stopDrag = () => {
+           isDragging = false;
+        };
+        
+        window.addEventListener('mouseup', stopDrag);
+        workerSvg.addEventListener('mouseleave', stopDrag);
+      }
 
       // --- BROADCAST MODAL INTERACTION LOGIC (STAGE 7) ---
       const broadcastFab = document.getElementById('broadcast-fab');
+      const searchBarBtn = document.getElementById('search-bar-btn');
       const broadcastModal = document.getElementById('broadcast-modal');
       const broadcastDimmer = document.getElementById('broadcast-dimmer');
       const closeBroadcastBtn = document.getElementById('close-broadcast-btn');
@@ -242,8 +292,8 @@
       const viewWorkerBtn = document.getElementById('view-assigned-worker-btn');
 
       // Open Modal
-      if (broadcastFab && broadcastModal) {
-         broadcastFab.addEventListener('click', () => {
+      if ((broadcastFab || searchBarBtn) && broadcastModal) {
+         const openModal = () => {
             // Reset states
             broadcastScrollArea.setAttribute('display', 'block');
             broadcastFooter.setAttribute('display', 'block');
@@ -256,7 +306,9 @@
             setTimeout(() => {
                broadcastSheet.setAttribute('transform', 'translate(20, 160)');
             }, 10);
-         });
+         };
+         if (broadcastFab) broadcastFab.addEventListener('click', openModal);
+         if (searchBarBtn) searchBarBtn.addEventListener('click', openModal);
       }
 
       // Close Modal
@@ -272,8 +324,8 @@
       if (viewWorkerBtn) viewWorkerBtn.addEventListener('click', closeBroadcastModal);
 
       // Pill Selection Logic
-      const allPills = document.querySelectorAll('.service-pills rect');
-      const allPillTexts = document.querySelectorAll('.service-pills text');
+      const allPills = workerSvg ? workerSvg.querySelectorAll('.service-pills rect') : [];
+      const allPillTexts = workerSvg ? workerSvg.querySelectorAll('.service-pills text') : [];
       
       allPills.forEach((pill, index) => {
          pill.style.cursor = 'pointer';
@@ -315,8 +367,45 @@
          });
       }
 
+      // Workerlist Scroll
+      const workerlistScrollContent = document.getElementById('scrollable-content-workerlist');
+      if (workerlistScrollContent) {
+        let wlScroll = 0;
+        let wlStartY = 0;
+        const wlSvg = document.getElementById('screen-v2-workerlist');
+
+        const updateWlScroll = (dy) => {
+          wlScroll += dy;
+          if (wlScroll > 0) wlScroll = 0;
+          if (wlScroll < -400) wlScroll = -400;
+          workerlistScrollContent.setAttribute('transform', `translate(0, ${wlScroll})`);
+        };
+
+        if (wlSvg) {
+          wlSvg.addEventListener('wheel', (e) => { updateWlScroll(-e.deltaY * 0.5); e.preventDefault(); }, { passive: false });
+          wlSvg.addEventListener('touchstart', (e) => { wlStartY = e.touches[0].clientY; });
+          wlSvg.addEventListener('touchmove', (e) => {
+            const dy = e.touches[0].clientY - wlStartY;
+            wlStartY = e.touches[0].clientY;
+            updateWlScroll(dy);
+            e.preventDefault();
+          }, { passive: false });
+          let wlDragging = false;
+          wlSvg.addEventListener('mousedown', (e) => { wlDragging = true; wlStartY = e.clientY; });
+          wlSvg.addEventListener('mousemove', (e) => {
+            if (!wlDragging) return;
+            updateWlScroll(e.clientY - wlStartY);
+            wlStartY = e.clientY;
+          });
+          wlSvg.addEventListener('mouseup', () => { wlDragging = false; });
+          wlSvg.addEventListener('mouseleave', () => { wlDragging = false; });
+        }
+      }
+
     });
   
 
     })();
-(() => {
+
+
+

@@ -21,3 +21,12 @@
 
 5. **Strict `screen/` Boundary:**
    The `screen/` folder (and similar root folders) is sacred. It must ONLY contain information, code, and assets that belong to the user and the actual application/screen being worked on. NO AI meta-files, logs, or scratch scripts are permitted in this space.
+
+6. **Screenshot Mirroring Rule (V1 vs V2):**
+   Whenever the user uploads a screenshot, the AI MUST build the literal translation of that screenshot and inject it directly into the **V1 (Old Flow)** in both the Canvas (`proworker.html`) and Play Mode (`app.html`). Only AFTER mirroring the raw screenshot into V1 should the AI autonomously design an improved premium version of that screen for the **V2 (New Flow)**. Never skip creating the V1 version.
+
+7. **Vanish Protocol (Infrastructure Resilience):**
+   If the user deletes or resets the `screen/` project folder, you must silently and autonomously restore `app.template.html`, `index.template.html`, `build_app.py`, and `build.py` from `.agents/templates/` before doing any other work to prevent unrecoverable data loss.
+
+8. **Strict Template Injection Matching:**
+   When using Python scripts (e.g., `build_app.py`) to inject JS, CSS, or SVG into HTML templates via `.replace()`, you MUST ensure your string replacement target *exactly* matches the syntax in the template. (e.g., Use `// INJECT_JS_GLOBAL` inside a `<script>` tag, NOT `<!-- INJECT_JS_GLOBAL -->`). Failing to match the comment type will result in silent build pipeline failures where code is omitted from the final bundle.

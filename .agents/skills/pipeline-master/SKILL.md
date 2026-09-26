@@ -78,5 +78,14 @@ The design process must flow through these 8 stages in exact order:
 5. **Asset Management:**
    - Always instruct Stage 6 (`svg-master`) to check the `screen/assets/` folder for any real, user-uploaded images (like avatars, banners, or portfolio items) before relying on generated shapes or external placeholders. If real assets exist, they MUST be used to increase prototype fidelity.
 
-6. **Non-Destructive Versioning (A/B Flows):**
-   - Whenever the user asks you to "try new ideas," "improve the UX," or experiment on an existing screen, you MUST orchestrate the creation of a "V2" flow. Instruct `svg-master` to duplicate the original screen into a new flex row below the original (leaving the original untouched), and instruct `frontend-engineer` to strictly isolate the Javascript DOM IDs so interactivity does not bleed across versions.
+6. **Non-Destructive Versioning & Dual-Flow Architecture:**
+   - Whenever the user asks you to "try new ideas," "improve the UX," or experiment on an existing screen, you MUST orchestrate the creation of a "V2" flow (the New Flow) while preserving the "V1" flow (the Old Flow / literal screenshots).
+   - **Canvas Output:** Instruct `svg-master` and `build.py` to inject both V1 and V2 side-by-side (or top-and-bottom) in `proworker.html` so the user can visually compare them.
+   - **Play Mode Output:** Instruct `build_app.py` to inject both V1 and V2 into the interactive `app.html` (Figma Play). `frontend-engineer` must safely isolate all JavaScript (IIFEs, Null-Checking DOM elements) so both flows work independently.
+   - **Python Build Scripts:** Always ensure both `build.py` and `build_app.py` are executed so both environments are updated simultaneously whenever a new screen or script is added.
+
+7. **Project Infrastructure & Resilience (The "Vanish" Rule):**
+   - The `screen/` folder represents the user's volatile project output. The user might delete it entirely at any point.
+   - If you start a pipeline run and find that the `screen/` folder or the build scripts are missing, you MUST first restore the base infrastructure before doing any design work.
+   - You must autonomously run terminal commands to copy the base templates (`index.template.html`, `app.template.html`, `build.py`, `build_app.py`) from `.agents/templates/` into their respective locations in the `screen/` folder (or `.agents/` for the scripts).
+   - This ensures the AI can flawlessly recreate the Canvas and Figma Play environments from scratch, completely decoupled from the user's project files.
